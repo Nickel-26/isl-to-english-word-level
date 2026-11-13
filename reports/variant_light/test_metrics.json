@@ -1,0 +1,56 @@
+{
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/light.pt",
+ "checkpoint_epoch": 51,
+ "split": "test",
+ "clips": 192,
+ "classes": 51,
+ "accuracy": 0.9583,
+ "top3_accuracy": 0.9948,
+ "macro_f1": 0.9591,
+ "published_accuracy": 0.945,
+ "published_gap": -0.0133,
+ "published_caveat": "The published INCLUDE-50 94.5% result uses a pretrained CNN feature extractor plus an encoder. This project uses MediaPipe keypoints only, so the comparison is not like-for-like.",
+ "rest_check": {
+  "examples": 300,
+  "predicted_rest_rate": 0.9966666666666667,
+  "mean_max_probability": 0.30784982442855835,
+  "note": "Synthetic rest built from training poses, not real webcam no-sign footage. Treat as a sanity check only."
+ },
+ "most_confused": [
+  {
+   "true": "boy",
+   "predicted": "girl",
+   "count": 2
+  },
+  {
+   "true": "brother",
+   "predicted": "death",
+   "count": 1
+  },
+  {
+   "true": "dog",
+   "predicted": "death",
+   "count": 1
+  },
+  {
+   "true": "hello",
+   "predicted": "girl",
+   "count": 1
+  },
+  {
+   "true": "summer",
+   "predicted": "black",
+   "count": 1
+  },
+  {
+   "true": "summer",
+   "predicted": "hat",
+   "count": 1
+  },
+  {
+   "true": "year",
+   "predicted": "dog",
+   "count": 1
+  }
+ ]
+}

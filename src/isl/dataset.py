@@ -155,6 +155,57 @@ def _speed(sequence: np.ndarray, factor: float, rng: np.random.Generator) -> np.
     return out
 
 
+def mirror_sequence(sequence: np.ndarray) -> np.ndarray:
+    """Horizontal flip: negate x, swap the left/right hand blocks and flags.
+
+    ISL signs are largely one-handed and many are executed with either hand.
+    INCLUDE signers are not consistent about which hand they use, and a webcam
+    user has no reason to match them. Mirroring makes the model invariant to
+    that choice instead of memorising the dataset's handedness.
+    """
+    out = np.array(sequence, dtype=np.float32, copy=True)
+    out[:, 0 : POSE_POINTS * 2 + 2 * HAND_POINTS * 2 : 2] *= -1.0
+
+    left = out[:, POSE_POINTS * 2 : (POSE_POINTS + HAND_POINTS) * 2].copy()
+    right = out[:, (POSE_POINTS + HAND_POINTS) * 2 : (POSE_POINTS + 2 * HAND_POINTS) * 2].copy()
+    out[:, POSE_POINTS * 2 : (POSE_POINTS + HAND_POINTS) * 2] = right
+    out[:, (POSE_POINTS + HAND_POINTS) * 2 : (POSE_POINTS + 2 * HAND_POINTS) * 2] = left
+
+    left_flag = out[:, -2].copy()
+    out[:, -2] = out[:, -1]
+    out[:, -1] = left_flag
+    return out
+
+
+def _hand_dropout(
+    sequence: np.ndarray,
+    rng: np.random.Generator,
+    probability: float,
+    max_span: int,
+) -> None:
+    """Zero out contiguous hand spans, in place.
+
+    MediaPipe loses a hand for several frames at a time in live video. Training
+    only on ~97%-present clips makes the model brittle to exactly that. Dropping
+    whole spans (not isolated frames) reproduces the real failure pattern.
+    """
+    if probability <= 0.0:
+        return
+    frames = sequence.shape[0]
+    span_limit = max(1, min(int(max_span), frames))
+    for col, flag in (
+        (slice(POSE_POINTS * 2, (POSE_POINTS + HAND_POINTS) * 2), -2),
+        (slice((POSE_POINTS + HAND_POINTS) * 2, (POSE_POINTS + 2 * HAND_POINTS) * 2), -1),
+    ):
+        if rng.random() >= probability:
+            continue
+        for _ in range(int(rng.integers(1, 3))):
+            length = int(rng.integers(1, span_limit + 1))
+            start = int(rng.integers(0, frames - length + 1))
+            sequence[start : start + length, col] = 0.0
+            sequence[start : start + length, flag] = 0.0
+
+
 def augment_sequence(
     sequence: np.ndarray,
     rng: np.random.Generator,
@@ -164,11 +215,29 @@ def augment_sequence(
     time_shift: int = 2,
     scale_range: tuple[float, float] = (0.9, 1.15),
     speed_range: tuple[float, float] = (0.8, 1.25),
+    mirror_prob: float = 0.0,
+    mirror_one_handed: float = 0.0,
+    hand_dropout: float = 0.0,
+    hand_dropout_span: int = 8,
+    noise_std: float = 0.0,
+    translate: float = 0.0,
 ) -> np.ndarray:
-    """Apply random shift/scale/speed, leaving presence flags as 0/1."""
+    """Apply random shift/scale/speed/mirror/dropout/noise, flags stay 0/1."""
     out = np.array(sequence, dtype=np.float32, copy=True)
     if not enabled:
         return out
+
+    if mirror_prob > 0.0 and rng.random() < mirror_prob:
+        out = mirror_sequence(out)
+
+    if mirror_one_handed > 0.0 and rng.random() < mirror_one_handed:
+        # A sign executed with one hand should be recognised whether the user
+        # uses the left or the right hand. Mirroring only one-handed examples
+        # preserves the semantics of two-handed signs, unlike global mirroring.
+        left_rate = float(out[:, -2].mean())
+        right_rate = float(out[:, -1].mean())
+        if (left_rate > 0.5) != (right_rate > 0.5):
+            out = mirror_sequence(out)
 
     if rng.random() < p:
         out = _time_shift(out, int(time_shift), rng)
@@ -177,8 +246,19 @@ def augment_sequence(
         scale = float(rng.uniform(*scale_range))
         out[:, :-FLAGS] *= scale
 
+    if translate > 0.0 and rng.random() < p:
+        offset = rng.uniform(-translate, translate, size=2).astype(np.float32)
+        out[:, 0 : out.shape[1] - FLAGS : 2] += offset[0]
+        out[:, 1 : out.shape[1] - FLAGS : 2] += offset[1]
+
     if rng.random() < p:
         out = _speed(out, float(rng.uniform(*speed_range)), rng)
+
+    _hand_dropout(out, rng, hand_dropout, hand_dropout_span)
+
+    if noise_std > 0.0:
+        coords = out[:, :-FLAGS]
+        coords += rng.normal(0.0, noise_std, coords.shape).astype(np.float32)
 
     out[:, -FLAGS:] = (out[:, -FLAGS:] >= 0.5).astype(np.float32)
     return out
@@ -197,6 +277,12 @@ def augment_from_config(
         time_shift=int(cfg.get("augment.time_shift", 2)),
         scale_range=(float(scale[0]), float(scale[1])),
         speed_range=(float(speed[0]), float(speed[1])),
+        mirror_prob=float(cfg.get("augment.mirror", 0.0)),
+        mirror_one_handed=float(cfg.get("augment.mirror_one_handed", 0.0)),
+        hand_dropout=float(cfg.get("augment.hand_dropout", 0.0)),
+        hand_dropout_span=int(cfg.get("augment.hand_dropout_span", 8)),
+        noise_std=float(cfg.get("augment.noise_std", 0.0)),
+        translate=float(cfg.get("augment.translate", 0.0)),
     )
 
 

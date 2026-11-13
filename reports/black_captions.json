@@ -1,0 +1,181 @@
+{
+ "created_at": "2026-11-13T18:24:15",
+ "input": "eval_vids/black.mp4",
+ "output": "/home/pranay/Pranay/Coding/ivp/reports/black_captions.mp4",
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/include50_best.pt",
+ "device": "cuda",
+ "settings": {
+  "window_seconds": 2.5,
+  "start_after_seconds": 1.4526666666666668,
+  "threshold": 0.6,
+  "alpha": 0.5,
+  "min_streak": 2,
+  "min_hand_coverage": 0.3,
+  "reset_after_missing_seconds": 0.8,
+  "infer_every_seconds": 0.33,
+  "max_words": 12
+ },
+ "summary": {
+  "duration_seconds": 1.93,
+  "frames": 44,
+  "inferences": 5,
+  "average_fps": 22.8,
+  "frames_without_hands": 31,
+  "frames_without_pose": 0,
+  "blocked_inferences": 0,
+  "low_confidence_inferences": 0,
+  "rest_predictions": 0,
+  "label_switches": 1,
+  "label_time": {
+   "Fan": 4,
+   "(below threshold)": 1
+  },
+  "video_fps": 15.145,
+  "processed_seconds": 2.905,
+  "video_duration_seconds": 2.905
+ },
+ "transcript": "Fan",
+ "caption_events": [
+  {
+   "t": 1.783,
+   "word": "Fan"
+  }
+ ],
+ "timeline": [
+  {
+   "t": 1.453,
+   "label": null,
+   "display": "...",
+   "confidence": 0.7779,
+   "raw_label": "fan",
+   "raw_confidence": 0.7779,
+   "streak": 1,
+   "fps": 15.1,
+   "hand_coverage": 0.4348,
+   "top3": [
+    {
+     "label": "fan",
+     "p": 0.7779
+    },
+    {
+     "label": "black",
+     "p": 0.0373
+    },
+    {
+     "label": "priest",
+     "p": 0.0194
+    }
+   ],
+   "margin": 0.7406,
+   "entropy": 1.2661
+  },
+  {
+   "t": 1.783,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7144,
+   "raw_label": "fan",
+   "raw_confidence": 0.651,
+   "streak": 2,
+   "fps": 15.1,
+   "hand_coverage": 0.4643,
+   "top3": [
+    {
+     "label": "fan",
+     "p": 0.651
+    },
+    {
+     "label": "black",
+     "p": 0.0929
+    },
+    {
+     "label": "summer",
+     "p": 0.0278
+    }
+   ],
+   "margin": 0.5581,
+   "entropy": 1.7326
+  },
+  {
+   "t": 2.113,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7625,
+   "raw_label": "fan",
+   "raw_confidence": 0.8105,
+   "streak": 3,
+   "fps": 15.1,
+   "hand_coverage": 0.3939,
+   "top3": [
+    {
+     "label": "fan",
+     "p": 0.8105
+    },
+    {
+     "label": "black",
+     "p": 0.0361
+    },
+    {
+     "label": "priest",
+     "p": 0.0163
+    }
+   ],
+   "margin": 0.7744,
+   "entropy": 1.1077
+  },
+  {
+   "t": 2.443,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.8,
+   "raw_label": "fan",
+   "raw_confidence": 0.8376,
+   "streak": 4,
+   "fps": 15.1,
+   "hand_coverage": 0.3421,
+   "top3": [
+    {
+     "label": "fan",
+     "p": 0.8376
+    },
+    {
+     "label": "black",
+     "p": 0.0267
+    },
+    {
+     "label": "priest",
+     "p": 0.0127
+    }
+   ],
+   "margin": 0.8108,
+   "entropy": 0.9868
+  },
+  {
+   "t": 2.773,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.8116,
+   "raw_label": "fan",
+   "raw_confidence": 0.8233,
+   "streak": 5,
+   "fps": 15.1,
+   "hand_coverage": 0.3421,
+   "top3": [
+    {
+     "label": "fan",
+     "p": 0.8233
+    },
+    {
+     "label": "black",
+     "p": 0.0235
+    },
+    {
+     "label": "new",
+     "p": 0.0131
+    }
+   ],
+   "margin": 0.7997,
+   "entropy": 1.0631
+  }
+ ]
+}

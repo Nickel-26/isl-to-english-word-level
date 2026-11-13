@@ -1,0 +1,50 @@
+label,display,recall,support,correct
+summer,Summer,0.3333,3,1
+boy,Boy,0.5,4,2
+brother,Brother,0.8,5,4
+dog,Dog,0.8571,7,6
+hello,Hello,0.8571,7,6
+year,Year,0.8571,7,6
+bird,Bird,1.0,1,1
+house,House,1.0,1,1
+priest,Priest,1.0,1,1
+white,White,1.0,1,1
+election,Election,1.0,2,2
+father,Father,1.0,2,2
+girl,Girl,1.0,2,2
+monday,Monday,1.0,2,2
+pen,Pen,1.0,2,2
+red,Red,1.0,2,2
+court,Court,1.0,3,3
+cow,Cow,1.0,3,3
+fall,Fall,1.0,3,3
+fan,Fan,1.0,3,3
+good,Good,1.0,3,3
+happy,Happy,1.0,3,3
+i,I,1.0,3,3
+new,New,1.0,3,3
+paint,Paint,1.0,3,3
+quiet,Quiet,1.0,3,3
+teacher,Teacher,1.0,3,3
+time,Time,1.0,3,3
+tshirt,T-shirt,1.0,3,3
+window,Window,1.0,3,3
+youplural,You (plural),1.0,3,3
+biglarge,Big / Large,1.0,4,4
+car,Car,1.0,4,4
+cellphone,Cell phone,1.0,4,4
+goodmorning,Good morning,1.0,4,4
+shoes,Shoes,1.0,4,4
+smalllittle,Small / Little,1.0,4,4
+storeorshop,Store / Shop,1.0,4,4
+black,Black,1.0,5,5
+death,Death,1.0,5,5
+bank,Bank,1.0,6,6
+hat,Hat,1.0,6,6
+hot,Hot,1.0,6,6
+long,Long,1.0,6,6
+loud,Loud,1.0,6,6
+short,Short,1.0,6,6
+thankyou,Thank you,1.0,7,7
+trainticket,Train ticket,1.0,8,8
+it,It,1.0,9,9

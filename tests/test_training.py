@@ -20,6 +20,7 @@ from isl.dataset import (  # noqa: E402
     augment_sequence,
     build_arrays,
     class_counts,
+    mirror_sequence,
     synthesize_rest,
 )
 from isl.model import (  # noqa: E402
@@ -90,6 +91,90 @@ class TestAugment(unittest.TestCase):
         )
         np.testing.assert_allclose(out[:, :-FLAGS], base[:, :-FLAGS] * 1.1, atol=1e-5)
         np.testing.assert_array_equal(out[:, -FLAGS:], base[:, -FLAGS:])
+
+    def test_mirror_negates_x_and_swaps_hands(self) -> None:
+        base = fake_pool(1)[0].copy()
+        # Distinct values so a mistaken swap or sign flip cannot pass by luck.
+        base[:, 0 : POSE_POINTS * 2 : 2] = np.arange(POSE_POINTS)[None, :]
+        base[:, 1 : POSE_POINTS * 2 : 2] = 100.0
+        base[:, POSE_POINTS * 2 : (POSE_POINTS + HAND_POINTS) * 2] = 7.0
+        base[:, (POSE_POINTS + HAND_POINTS) * 2 : (POSE_POINTS + 2 * HAND_POINTS) * 2] = 9.0
+        base[:, -2] = 1.0
+        base[:, -1] = 0.0
+
+        out = mirror_sequence(base)
+        np.testing.assert_allclose(
+            out[:, 0 : POSE_POINTS * 2 : 2], -base[:, 0 : POSE_POINTS * 2 : 2]
+        )
+        left = out[:, POSE_POINTS * 2 : (POSE_POINTS + HAND_POINTS) * 2]
+        right = out[:, (POSE_POINTS + HAND_POINTS) * 2 : (POSE_POINTS + 2 * HAND_POINTS) * 2]
+        np.testing.assert_allclose(left[:, 0::2], -9.0)
+        np.testing.assert_allclose(left[:, 1::2], 9.0)
+        np.testing.assert_allclose(right[:, 0::2], -7.0)
+        np.testing.assert_allclose(right[:, 1::2], 7.0)
+        self.assertEqual(out[0, -2], 0.0)
+        self.assertEqual(out[0, -1], 1.0)
+        # Input must not be mutated.
+        self.assertEqual(base[0, -2], 1.0)
+
+    def test_mirror_one_handed_flips_only_single_hand_sequences(self) -> None:
+        base = fake_pool(1)[0].copy()
+        base[:, 0 : POSE_POINTS * 2 : 2] = np.arange(POSE_POINTS)[None, :]
+        base[:, -2] = 0.0
+        base[:, -1] = 1.0
+
+        out = augment_sequence(
+            base,
+            np.random.default_rng(7),
+            enabled=True,
+            p=0.0,
+            mirror_one_handed=1.0,
+        )
+        # x negated and hands swapped: the right hand becomes the left hand.
+        np.testing.assert_allclose(
+            out[:, 0 : POSE_POINTS * 2 : 2], -base[:, 0 : POSE_POINTS * 2 : 2]
+        )
+        self.assertEqual(float(out[:, -2].mean()), 1.0)
+        self.assertEqual(float(out[:, -1].mean()), 0.0)
+
+        # Two-handed sequences must be left untouched.
+        two_handed = fake_pool(1)[0].copy()
+        two_handed[:, -2] = 1.0
+        two_handed[:, -1] = 1.0
+        unchanged = augment_sequence(
+            two_handed,
+            np.random.default_rng(8),
+            enabled=True,
+            p=0.0,
+            mirror_one_handed=1.0,
+        )
+        np.testing.assert_array_equal(unchanged, two_handed)
+
+    def test_hand_dropout_masks_hand_and_flag_together(self) -> None:
+        base = fake_pool(1)[0]
+        out = augment_sequence(
+            base,
+            np.random.default_rng(5),
+            enabled=True,
+            p=0.0,
+            hand_dropout=1.0,
+            hand_dropout_span=6,
+        )
+        for flag, block in (
+            (-2, slice(POSE_POINTS * 2, (POSE_POINTS + HAND_POINTS) * 2)),
+            (-1, slice((POSE_POINTS + HAND_POINTS) * 2, (POSE_POINTS + 2 * HAND_POINTS) * 2)),
+        ):
+            missing = out[:, flag] == 0.0
+            self.assertTrue(missing.any())
+            self.assertTrue((out[missing][:, block] == 0.0).all())
+            self.assertTrue((out[~missing][:, flag] == 1.0).all())
+
+    def test_hand_dropout_off_is_identity(self) -> None:
+        base = fake_pool(1)[0]
+        out = augment_sequence(
+            base, np.random.default_rng(6), enabled=True, p=0.0, hand_dropout=0.0
+        )
+        np.testing.assert_array_equal(out, base)
 
 
 class TestRest(unittest.TestCase):

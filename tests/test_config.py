@@ -51,6 +51,32 @@ class TestConfig(unittest.TestCase):
             with self.assertRaises(ConfigError):
                 Config(path)
 
+    def test_suppress_labels_are_config_driven(self) -> None:
+        self.assertEqual(self.cfg.suppress_labels, ["it"])
+        # Suppression is presentation-only: the sign stays a model class.
+        self.assertIn("it", self.cfg.labels)
+        self.assertIn("it", self.cfg.displays)
+
+    def test_unknown_suppress_label_rejected(self) -> None:
+        raw = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
+        raw["demo"]["suppress_labels"] = ["notasign"]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "configs" / "bad_suppress.yaml"
+            path.parent.mkdir(parents=True)
+            path.write_text(yaml.safe_dump(raw), encoding="utf-8")
+            with self.assertRaises(ConfigError):
+                Config(path)
+
+    def test_non_list_suppress_labels_rejected(self) -> None:
+        raw = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
+        raw["demo"]["suppress_labels"] = "it"
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "configs" / "bad_suppress_type.yaml"
+            path.parent.mkdir(parents=True)
+            path.write_text(yaml.safe_dump(raw), encoding="utf-8")
+            with self.assertRaises(ConfigError):
+                Config(path)
+
     def test_video_key_ignores_extension_case(self) -> None:
         self.assertEqual(
             video_key("Home/40. Paint/MVI_8817.MOV"),

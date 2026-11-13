@@ -1,0 +1,127 @@
+{
+ "created_at": "2026-11-13T18:31:10",
+ "input": "../eval_vids/quiet.mp4",
+ "output": "/home/pranay/Pranay/Coding/ivp/reports/quiet_captions.mp4",
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/include50_best.pt",
+ "device": "cuda",
+ "settings": {
+  "window_seconds": 2.5,
+  "start_after_seconds": 1.0846666666666667,
+  "threshold": 0.6,
+  "alpha": 0.5,
+  "min_streak": 2,
+  "min_hand_coverage": 0.3,
+  "reset_after_missing_seconds": 0.8,
+  "infer_every_seconds": 0.33,
+  "max_words": 12
+ },
+ "summary": {
+  "duration_seconds": 1.64,
+  "frames": 33,
+  "inferences": 3,
+  "average_fps": 20.2,
+  "frames_without_hands": 21,
+  "frames_without_pose": 0,
+  "blocked_inferences": 0,
+  "low_confidence_inferences": 2,
+  "rest_predictions": 0,
+  "label_switches": 1,
+  "label_time": {
+   "(below threshold)": 2,
+   "Quiet": 1
+  },
+  "video_fps": 15.212,
+  "processed_seconds": 2.169,
+  "video_duration_seconds": 2.169
+ },
+ "transcript": "Quiet",
+ "caption_events": [
+  {
+   "t": 1.906,
+   "word": "Quiet"
+  }
+ ],
+ "timeline": [
+  {
+   "t": 1.118,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1298,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1298,
+   "streak": 1,
+   "fps": 15.2,
+   "hand_coverage": 0.3333,
+   "top3": [
+    {
+     "label": "quiet",
+     "p": 0.1298
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.1157
+    },
+    {
+     "label": "red",
+     "p": 0.0798
+    }
+   ],
+   "margin": 0.0141,
+   "entropy": 3.2044
+  },
+  {
+   "t": 1.512,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3785,
+   "raw_label": "quiet",
+   "raw_confidence": 0.6271,
+   "streak": 2,
+   "fps": 15.2,
+   "hand_coverage": 0.5,
+   "top3": [
+    {
+     "label": "quiet",
+     "p": 0.6271
+    },
+    {
+     "label": "white",
+     "p": 0.0567
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0365
+    }
+   ],
+   "margin": 0.5705,
+   "entropy": 1.8691
+  },
+  {
+   "t": 1.906,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.618,
+   "raw_label": "quiet",
+   "raw_confidence": 0.8575,
+   "streak": 3,
+   "fps": 15.2,
+   "hand_coverage": 0.4,
+   "top3": [
+    {
+     "label": "quiet",
+     "p": 0.8575
+    },
+    {
+     "label": "white",
+     "p": 0.0344
+    },
+    {
+     "label": "dry",
+     "p": 0.0092
+    }
+   ],
+   "margin": 0.8231,
+   "entropy": 0.8674
+  }
+ ]
+}

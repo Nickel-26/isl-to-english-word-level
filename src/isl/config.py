@@ -90,6 +90,18 @@ class Config:
         return "rest"
 
     @property
+    def suppress_labels(self) -> list[str]:
+        """Labels the demo hides even when the model commits them.
+
+        This is a presentation-only setting: the checkpoint still predicts the
+        label and official test metrics are unchanged.
+        """
+        value = self.get("demo.suppress_labels", [])
+        if value is None:
+            return []
+        return [str(label) for label in value]
+
+    @property
     def num_classes(self) -> int:
         return len(self._signs) + (1 if self.rest_enabled else 0)
 
@@ -184,6 +196,24 @@ class Config:
                 "A dataset sign is literally called 'rest'; it clashes with the rest class. "
                 "Rename it in dataset.signs or disable dataset.rest."
             )
+
+        suppressed = self.get("demo.suppress_labels", [])
+        if suppressed is not None and not isinstance(suppressed, list):
+            raise ConfigError("demo.suppress_labels must be a list of labels.")
+        valid_suppress = set(seen)
+        if self.rest_enabled:
+            valid_suppress.add(self.rest_label)
+        for label in suppressed or []:
+            if not isinstance(label, str):
+                raise ConfigError(
+                    "demo.suppress_labels entries must be strings, "
+                    f"got {type(label).__name__}."
+                )
+            if label not in valid_suppress:
+                raise ConfigError(
+                    f"demo.suppress_labels contains {label!r}, which is not a dataset "
+                    "sign or the rest class. Check the spelling against dataset.signs."
+                )
 
         pose_points = int(self.get("keypoints.pose_points", 25))
         if not 1 <= pose_points <= 33:

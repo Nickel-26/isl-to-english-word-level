@@ -1,0 +1,46 @@
+{
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/drop30nt.pt",
+ "checkpoint_epoch": 39,
+ "split": "test",
+ "clips": 192,
+ "classes": 51,
+ "accuracy": 0.9635,
+ "top3_accuracy": 0.9844,
+ "macro_f1": 0.9612,
+ "published_accuracy": 0.945,
+ "published_gap": -0.0185,
+ "published_caveat": "The published INCLUDE-50 94.5% result uses a pretrained CNN feature extractor plus an encoder. This project uses MediaPipe keypoints only, so the comparison is not like-for-like.",
+ "rest_check": {
+  "examples": 300,
+  "predicted_rest_rate": 0.9633333333333334,
+  "mean_max_probability": 0.31510818004608154,
+  "note": "Synthetic rest built from training poses, not real webcam no-sign footage. Treat as a sanity check only."
+ },
+ "most_confused": [
+  {
+   "true": "cellphone",
+   "predicted": "black",
+   "count": 2
+  },
+  {
+   "true": "goodmorning",
+   "predicted": "good",
+   "count": 2
+  },
+  {
+   "true": "biglarge",
+   "predicted": "loud",
+   "count": 1
+  },
+  {
+   "true": "boy",
+   "predicted": "girl",
+   "count": 1
+  },
+  {
+   "true": "brother",
+   "predicted": "quiet",
+   "count": 1
+  }
+ ]
+}

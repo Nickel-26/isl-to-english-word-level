@@ -1,0 +1,5283 @@
+{
+ "created_at": "2026-11-13T18:45:50",
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/include50_best.pt",
+ "source": "0",
+ "device": "cuda",
+ "settings": {
+  "window_seconds": 2.5,
+  "start_after_seconds": 2.0,
+  "threshold": 0.6,
+  "alpha": 0.5,
+  "min_streak": 2,
+  "min_hand_coverage": 0.3,
+  "reset_after_missing_seconds": 0.8,
+  "infer_every_seconds": 0.33,
+  "mirror": false
+ },
+ "summary": {
+  "duration_seconds": 67.17,
+  "frames": 972,
+  "inferences": 190,
+  "average_fps": 14.5,
+  "frames_without_hands": 379,
+  "frames_without_pose": 0,
+  "blocked_inferences": 56,
+  "low_confidence_inferences": 153,
+  "rest_predictions": 0,
+  "label_switches": 20,
+  "label_time": {
+   "(below threshold)": 155,
+   "Black": 13,
+   "Paint": 6,
+   "It": 5,
+   "You (plural)": 5,
+   "Window": 3,
+   "Girl": 2,
+   "Hello": 1
+  }
+ },
+ "timeline": [
+  {
+   "t": 2.988,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.2025,
+   "streak": 0,
+   "fps": 15.2,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.2025
+    },
+    {
+     "label": "death",
+     "p": 0.0508
+    },
+    {
+     "label": "bank",
+     "p": 0.0472
+    }
+   ],
+   "margin": 0.1517,
+   "entropy": 3.4632
+  },
+  {
+   "t": 3.32,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1885,
+   "streak": 0,
+   "fps": 15.7,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1885
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0536
+    },
+    {
+     "label": "bank",
+     "p": 0.0489
+    }
+   ],
+   "margin": 0.1349,
+   "entropy": 3.4827
+  },
+  {
+   "t": 3.724,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1672,
+   "streak": 0,
+   "fps": 15.3,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1672
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0599
+    },
+    {
+     "label": "bank",
+     "p": 0.0532
+    }
+   ],
+   "margin": 0.1073,
+   "entropy": 3.5059
+  },
+  {
+   "t": 4.056,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1622,
+   "streak": 0,
+   "fps": 15.2,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1622
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0622
+    },
+    {
+     "label": "bank",
+     "p": 0.053
+    }
+   ],
+   "margin": 0.1,
+   "entropy": 3.5105
+  },
+  {
+   "t": 4.392,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1399,
+   "streak": 0,
+   "fps": 15.1,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1399
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0694
+    },
+    {
+     "label": "bank",
+     "p": 0.0517
+    }
+   ],
+   "margin": 0.0706,
+   "entropy": 3.5346
+  },
+  {
+   "t": 4.724,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1032,
+   "streak": 0,
+   "fps": 15.1,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1032
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0706
+    },
+    {
+     "label": "it",
+     "p": 0.0538
+    }
+   ],
+   "margin": 0.0327,
+   "entropy": 3.5499
+  },
+  {
+   "t": 5.061,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.0929,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.0929
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0714
+    },
+    {
+     "label": "it",
+     "p": 0.0629
+    }
+   ],
+   "margin": 0.0215,
+   "entropy": 3.5339
+  },
+  {
+   "t": 5.392,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.0927,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.0927
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0747
+    },
+    {
+     "label": "fall",
+     "p": 0.0608
+    }
+   ],
+   "margin": 0.018,
+   "entropy": 3.529
+  },
+  {
+   "t": 5.728,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "storeorshop",
+   "raw_confidence": 0.0844,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "storeorshop",
+     "p": 0.0844
+    },
+    {
+     "label": "rest",
+     "p": 0.0816
+    },
+    {
+     "label": "it",
+     "p": 0.0561
+    }
+   ],
+   "margin": 0.0028,
+   "entropy": 3.5344
+  },
+  {
+   "t": 6.06,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1318,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1318
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0628
+    },
+    {
+     "label": "house",
+     "p": 0.0485
+    }
+   ],
+   "margin": 0.0691,
+   "entropy": 3.5412
+  },
+  {
+   "t": 6.392,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1369,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1369
+    },
+    {
+     "label": "pen",
+     "p": 0.0681
+    },
+    {
+     "label": "house",
+     "p": 0.0672
+    }
+   ],
+   "margin": 0.0688,
+   "entropy": 3.5121
+  },
+  {
+   "t": 6.728,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "pen",
+   "raw_confidence": 0.1866,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1579,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "pen",
+     "p": 0.1866
+    },
+    {
+     "label": "rest",
+     "p": 0.121
+    },
+    {
+     "label": "house",
+     "p": 0.0671
+    }
+   ],
+   "margin": 0.0656,
+   "entropy": 3.3202
+  },
+  {
+   "t": 7.06,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "pen",
+   "raw_confidence": 0.2268,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2895,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "pen",
+     "p": 0.2268
+    },
+    {
+     "label": "rest",
+     "p": 0.0736
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0602
+    }
+   ],
+   "margin": 0.1532,
+   "entropy": 3.2464
+  },
+  {
+   "t": 7.396,
+   "label": null,
+   "display": "...",
+   "confidence": 0.162,
+   "raw_label": "pen",
+   "raw_confidence": 0.162,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "pen",
+     "p": 0.162
+    },
+    {
+     "label": "boy",
+     "p": 0.1162
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0784
+    }
+   ],
+   "margin": 0.0458,
+   "entropy": 3.2522
+  },
+  {
+   "t": 7.728,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1216,
+   "raw_label": "boy",
+   "raw_confidence": 0.1266,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.4474,
+   "top3": [
+    {
+     "label": "boy",
+     "p": 0.1266
+    },
+    {
+     "label": "bird",
+     "p": 0.1208
+    },
+    {
+     "label": "pen",
+     "p": 0.0812
+    }
+   ],
+   "margin": 0.0057,
+   "entropy": 3.3144
+  },
+  {
+   "t": 8.064,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1086,
+   "raw_label": "bird",
+   "raw_confidence": 0.1522,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.5789,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.1522
+    },
+    {
+     "label": "boy",
+     "p": 0.0945
+    },
+    {
+     "label": "biglarge",
+     "p": 0.0612
+    }
+   ],
+   "margin": 0.0577,
+   "entropy": 3.3221
+  },
+  {
+   "t": 8.396,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1515,
+   "raw_label": "bird",
+   "raw_confidence": 0.1944,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.7105,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.1944
+    },
+    {
+     "label": "boy",
+     "p": 0.0815
+    },
+    {
+     "label": "dry",
+     "p": 0.067
+    }
+   ],
+   "margin": 0.1129,
+   "entropy": 3.291
+  },
+  {
+   "t": 8.732,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1995,
+   "raw_label": "bird",
+   "raw_confidence": 0.2475,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.8421,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.2475
+    },
+    {
+     "label": "dry",
+     "p": 0.0748
+    },
+    {
+     "label": "death",
+     "p": 0.0654
+    }
+   ],
+   "margin": 0.1727,
+   "entropy": 3.1817
+  },
+  {
+   "t": 9.064,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2057,
+   "raw_label": "bird",
+   "raw_confidence": 0.2119,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.8684,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.2119
+    },
+    {
+     "label": "death",
+     "p": 0.0858
+    },
+    {
+     "label": "dry",
+     "p": 0.0792
+    }
+   ],
+   "margin": 0.1261,
+   "entropy": 3.1807
+  },
+  {
+   "t": 9.4,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2563,
+   "raw_label": "bird",
+   "raw_confidence": 0.307,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 0.8158,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.307
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.1839
+    },
+    {
+     "label": "death",
+     "p": 0.0694
+    }
+   ],
+   "margin": 0.1231,
+   "entropy": 2.8131
+  },
+  {
+   "t": 9.732,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3202,
+   "raw_label": "bird",
+   "raw_confidence": 0.3841,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 0.7895,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.3841
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.3499
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0287
+    }
+   ],
+   "margin": 0.0342,
+   "entropy": 2.0457
+  },
+  {
+   "t": 10.068,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3261,
+   "raw_label": "bird",
+   "raw_confidence": 0.3319,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 0.8158,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.3319
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.2358
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0385
+    }
+   ],
+   "margin": 0.0961,
+   "entropy": 2.5822
+  },
+  {
+   "t": 10.4,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3422,
+   "raw_label": "bird",
+   "raw_confidence": 0.3583,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 0.7105,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.3583
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.1053
+    },
+    {
+     "label": "boy",
+     "p": 0.0679
+    }
+   ],
+   "margin": 0.253,
+   "entropy": 2.7873
+  },
+  {
+   "t": 10.736,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3458,
+   "raw_label": "bird",
+   "raw_confidence": 0.3495,
+   "streak": 9,
+   "fps": 15.0,
+   "hand_coverage": 0.5789,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.3495
+    },
+    {
+     "label": "boy",
+     "p": 0.1016
+    },
+    {
+     "label": "girl",
+     "p": 0.0716
+    }
+   ],
+   "margin": 0.248,
+   "entropy": 2.8061
+  },
+  {
+   "t": 11.068,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3531,
+   "raw_label": "bird",
+   "raw_confidence": 0.3604,
+   "streak": 10,
+   "fps": 15.0,
+   "hand_coverage": 0.4474,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.3604
+    },
+    {
+     "label": "girl",
+     "p": 0.0811
+    },
+    {
+     "label": "boy",
+     "p": 0.0636
+    }
+   ],
+   "margin": 0.2793,
+   "entropy": 2.8204
+  },
+  {
+   "t": 11.404,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2769,
+   "raw_label": "bird",
+   "raw_confidence": 0.2007,
+   "streak": 11,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.2007
+    },
+    {
+     "label": "girl",
+     "p": 0.0775
+    },
+    {
+     "label": "boy",
+     "p": 0.0644
+    }
+   ],
+   "margin": 0.1232,
+   "entropy": 3.2432
+  },
+  {
+   "t": 11.736,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.17,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2105,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.17
+    },
+    {
+     "label": "youplural",
+     "p": 0.1337
+    },
+    {
+     "label": "bank",
+     "p": 0.0625
+    }
+   ],
+   "margin": 0.0362,
+   "entropy": 3.1957
+  },
+  {
+   "t": 12.072,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.1695,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1579,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.1695
+    },
+    {
+     "label": "new",
+     "p": 0.1174
+    },
+    {
+     "label": "death",
+     "p": 0.0958
+    }
+   ],
+   "margin": 0.0521,
+   "entropy": 3.1644
+  },
+  {
+   "t": 12.404,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "new",
+   "raw_confidence": 0.1972,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1053,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "new",
+     "p": 0.1972
+    },
+    {
+     "label": "fall",
+     "p": 0.1807
+    },
+    {
+     "label": "death",
+     "p": 0.0866
+    }
+   ],
+   "margin": 0.0164,
+   "entropy": 3.0268
+  },
+  {
+   "t": 12.74,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.2417,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.2417
+    },
+    {
+     "label": "new",
+     "p": 0.0685
+    },
+    {
+     "label": "house",
+     "p": 0.0672
+    }
+   ],
+   "margin": 0.1732,
+   "entropy": 3.1596
+  },
+  {
+   "t": 13.073,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.1661,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.1661
+    },
+    {
+     "label": "house",
+     "p": 0.0739
+    },
+    {
+     "label": "rest",
+     "p": 0.0677
+    }
+   ],
+   "margin": 0.0922,
+   "entropy": 3.3931
+  },
+  {
+   "t": 13.408,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.3077,
+   "streak": 0,
+   "fps": 14.9,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.3077
+    },
+    {
+     "label": "death",
+     "p": 0.043
+    },
+    {
+     "label": "window",
+     "p": 0.0288
+    }
+   ],
+   "margin": 0.2647,
+   "entropy": 3.2435
+  },
+  {
+   "t": 13.74,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.2886,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.2886
+    },
+    {
+     "label": "death",
+     "p": 0.0345
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0299
+    }
+   ],
+   "margin": 0.2541,
+   "entropy": 3.2971
+  },
+  {
+   "t": 14.076,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.2416,
+   "streak": 0,
+   "fps": 14.9,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.2416
+    },
+    {
+     "label": "fall",
+     "p": 0.0368
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0367
+    }
+   ],
+   "margin": 0.2048,
+   "entropy": 3.404
+  },
+  {
+   "t": 14.408,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.2141,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.2141
+    },
+    {
+     "label": "fall",
+     "p": 0.0465
+    },
+    {
+     "label": "it",
+     "p": 0.0402
+    }
+   ],
+   "margin": 0.1675,
+   "entropy": 3.4536
+  },
+  {
+   "t": 14.74,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1855,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1855
+    },
+    {
+     "label": "it",
+     "p": 0.0594
+    },
+    {
+     "label": "fall",
+     "p": 0.0551
+    }
+   ],
+   "margin": 0.1261,
+   "entropy": 3.4922
+  },
+  {
+   "t": 15.076,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1416,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1416
+    },
+    {
+     "label": "it",
+     "p": 0.0836
+    },
+    {
+     "label": "fall",
+     "p": 0.0699
+    }
+   ],
+   "margin": 0.058,
+   "entropy": 3.5311
+  },
+  {
+   "t": 15.408,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1316,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1316
+    },
+    {
+     "label": "it",
+     "p": 0.1187
+    },
+    {
+     "label": "fall",
+     "p": 0.0932
+    }
+   ],
+   "margin": 0.0129,
+   "entropy": 3.4671
+  },
+  {
+   "t": 15.744,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1551,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1551
+    },
+    {
+     "label": "rest",
+     "p": 0.1153
+    },
+    {
+     "label": "fall",
+     "p": 0.1144
+    }
+   ],
+   "margin": 0.0399,
+   "entropy": 3.3855
+  },
+  {
+   "t": 16.076,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.1845,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1845
+    },
+    {
+     "label": "it",
+     "p": 0.0927
+    },
+    {
+     "label": "fall",
+     "p": 0.0894
+    }
+   ],
+   "margin": 0.0918,
+   "entropy": 3.4308
+  },
+  {
+   "t": 16.412,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "rest",
+   "raw_confidence": 0.2316,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1053,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.2316
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0634
+    },
+    {
+     "label": "quiet",
+     "p": 0.0489
+    }
+   ],
+   "margin": 0.1682,
+   "entropy": 3.3663
+  },
+  {
+   "t": 16.744,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "red",
+   "raw_confidence": 0.1535,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1842,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "red",
+     "p": 0.1535
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.1448
+    },
+    {
+     "label": "girl",
+     "p": 0.1224
+    }
+   ],
+   "margin": 0.0087,
+   "entropy": 3.1272
+  },
+  {
+   "t": 17.08,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.3037,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2632,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.3037
+    },
+    {
+     "label": "red",
+     "p": 0.1539
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.1091
+    }
+   ],
+   "margin": 0.1498,
+   "entropy": 2.7458
+  },
+  {
+   "t": 17.412,
+   "label": null,
+   "display": "...",
+   "confidence": 0.6753,
+   "raw_label": "girl",
+   "raw_confidence": 0.6753,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.6753
+    },
+    {
+     "label": "youplural",
+     "p": 0.0486
+    },
+    {
+     "label": "red",
+     "p": 0.0412
+    }
+   ],
+   "margin": 0.6267,
+   "entropy": 1.6729
+  },
+  {
+   "t": 17.748,
+   "label": "girl",
+   "display": "Girl",
+   "confidence": 0.6975,
+   "raw_label": "girl",
+   "raw_confidence": 0.7198,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.7198
+    },
+    {
+     "label": "youplural",
+     "p": 0.0819
+    },
+    {
+     "label": "boy",
+     "p": 0.0224
+    }
+   ],
+   "margin": 0.6379,
+   "entropy": 1.4317
+  },
+  {
+   "t": 18.08,
+   "label": "girl",
+   "display": "Girl",
+   "confidence": 0.6009,
+   "raw_label": "girl",
+   "raw_confidence": 0.5043,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.5043
+    },
+    {
+     "label": "youplural",
+     "p": 0.2273
+    },
+    {
+     "label": "death",
+     "p": 0.0343
+    }
+   ],
+   "margin": 0.277,
+   "entropy": 1.9305
+  },
+  {
+   "t": 18.416,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4422,
+   "raw_label": "girl",
+   "raw_confidence": 0.2834,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.3158,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.2834
+    },
+    {
+     "label": "youplural",
+     "p": 0.2667
+    },
+    {
+     "label": "death",
+     "p": 0.0717
+    }
+   ],
+   "margin": 0.0167,
+   "entropy": 2.5327
+  },
+  {
+   "t": 18.748,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.2027,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2895,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.2027
+    },
+    {
+     "label": "youplural",
+     "p": 0.1398
+    },
+    {
+     "label": "death",
+     "p": 0.1154
+    }
+   ],
+   "margin": 0.0629,
+   "entropy": 2.9712
+  },
+  {
+   "t": 19.084,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "new",
+   "raw_confidence": 0.2201,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2368,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "new",
+     "p": 0.2201
+    },
+    {
+     "label": "fall",
+     "p": 0.2041
+    },
+    {
+     "label": "court",
+     "p": 0.0715
+    }
+   ],
+   "margin": 0.0161,
+   "entropy": 2.899
+  },
+  {
+   "t": 19.416,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.2167,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.2167
+    },
+    {
+     "label": "new",
+     "p": 0.1123
+    },
+    {
+     "label": "summer",
+     "p": 0.0813
+    }
+   ],
+   "margin": 0.1045,
+   "entropy": 3.1028
+  },
+  {
+   "t": 19.752,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.0802,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.0802
+    },
+    {
+     "label": "youplural",
+     "p": 0.0692
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0668
+    }
+   ],
+   "margin": 0.011,
+   "entropy": 3.5436
+  },
+  {
+   "t": 20.084,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "red",
+   "raw_confidence": 0.2308,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1842,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "red",
+     "p": 0.2308
+    },
+    {
+     "label": "girl",
+     "p": 0.1246
+    },
+    {
+     "label": "rest",
+     "p": 0.0817
+    }
+   ],
+   "margin": 0.1063,
+   "entropy": 3.0645
+  },
+  {
+   "t": 20.42,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.418,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1842,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.418
+    },
+    {
+     "label": "red",
+     "p": 0.1085
+    },
+    {
+     "label": "youplural",
+     "p": 0.0793
+    }
+   ],
+   "margin": 0.3095,
+   "entropy": 2.4928
+  },
+  {
+   "t": 20.752,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.6374,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2368,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.6374
+    },
+    {
+     "label": "youplural",
+     "p": 0.0712
+    },
+    {
+     "label": "boy",
+     "p": 0.0501
+    }
+   ],
+   "margin": 0.5662,
+   "entropy": 1.7616
+  },
+  {
+   "t": 21.088,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "girl",
+   "raw_confidence": 0.697,
+   "streak": 0,
+   "fps": 14.9,
+   "hand_coverage": 0.2895,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.697
+    },
+    {
+     "label": "boy",
+     "p": 0.064
+    },
+    {
+     "label": "youplural",
+     "p": 0.0493
+    }
+   ],
+   "margin": 0.633,
+   "entropy": 1.5325
+  },
+  {
+   "t": 21.42,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5404,
+   "raw_label": "girl",
+   "raw_confidence": 0.5404,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.4211,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.5404
+    },
+    {
+     "label": "boy",
+     "p": 0.0937
+    },
+    {
+     "label": "youplural",
+     "p": 0.0653
+    }
+   ],
+   "margin": 0.4466,
+   "entropy": 2.1073
+  },
+  {
+   "t": 21.756,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4145,
+   "raw_label": "girl",
+   "raw_confidence": 0.2886,
+   "streak": 2,
+   "fps": 14.9,
+   "hand_coverage": 0.5526,
+   "top3": [
+    {
+     "label": "girl",
+     "p": 0.2886
+    },
+    {
+     "label": "youplural",
+     "p": 0.1241
+    },
+    {
+     "label": "summer",
+     "p": 0.0809
+    }
+   ],
+   "margin": 0.1645,
+   "entropy": 2.8304
+  },
+  {
+   "t": 22.088,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2253,
+   "raw_label": "summer",
+   "raw_confidence": 0.1175,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.6316,
+   "top3": [
+    {
+     "label": "summer",
+     "p": 0.1175
+    },
+    {
+     "label": "new",
+     "p": 0.0835
+    },
+    {
+     "label": "fall",
+     "p": 0.0776
+    }
+   ],
+   "margin": 0.0341,
+   "entropy": 3.4139
+  },
+  {
+   "t": 22.421,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1239,
+   "raw_label": "summer",
+   "raw_confidence": 0.1137,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.6842,
+   "top3": [
+    {
+     "label": "summer",
+     "p": 0.1137
+    },
+    {
+     "label": "new",
+     "p": 0.1001
+    },
+    {
+     "label": "shoes",
+     "p": 0.0647
+    }
+   ],
+   "margin": 0.0135,
+   "entropy": 3.4635
+  },
+  {
+   "t": 22.756,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0857,
+   "raw_label": "new",
+   "raw_confidence": 0.087,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.7105,
+   "top3": [
+    {
+     "label": "new",
+     "p": 0.087
+    },
+    {
+     "label": "shoes",
+     "p": 0.0845
+    },
+    {
+     "label": "summer",
+     "p": 0.0712
+    }
+   ],
+   "margin": 0.0025,
+   "entropy": 3.5103
+  },
+  {
+   "t": 23.088,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0759,
+   "raw_label": "shoes",
+   "raw_confidence": 0.0899,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.6579,
+   "top3": [
+    {
+     "label": "shoes",
+     "p": 0.0899
+    },
+    {
+     "label": "rest",
+     "p": 0.0828
+    },
+    {
+     "label": "short",
+     "p": 0.072
+    }
+   ],
+   "margin": 0.0072,
+   "entropy": 3.5371
+  },
+  {
+   "t": 23.424,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0861,
+   "raw_label": "rest",
+   "raw_confidence": 0.1046,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.6579,
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1046
+    },
+    {
+     "label": "fall",
+     "p": 0.0619
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0581
+    }
+   ],
+   "margin": 0.0427,
+   "entropy": 3.5793
+  },
+  {
+   "t": 23.756,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0902,
+   "raw_label": "rest",
+   "raw_confidence": 0.0943,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.5526,
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.0943
+    },
+    {
+     "label": "fall",
+     "p": 0.085
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.058
+    }
+   ],
+   "margin": 0.0092,
+   "entropy": 3.5668
+  },
+  {
+   "t": 24.092,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1003,
+   "raw_label": "rest",
+   "raw_confidence": 0.1104,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.4211,
+   "top3": [
+    {
+     "label": "rest",
+     "p": 0.1104
+    },
+    {
+     "label": "fall",
+     "p": 0.1025
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0493
+    }
+   ],
+   "margin": 0.0079,
+   "entropy": 3.557
+  },
+  {
+   "t": 24.424,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.1101,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2895,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.1101
+    },
+    {
+     "label": "rest",
+     "p": 0.0889
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0678
+    }
+   ],
+   "margin": 0.0212,
+   "entropy": 3.5457
+  },
+  {
+   "t": 24.76,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.0921,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2632,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.0921
+    },
+    {
+     "label": "rest",
+     "p": 0.0672
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0591
+    }
+   ],
+   "margin": 0.025,
+   "entropy": 3.5354
+  },
+  {
+   "t": 25.093,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.4516,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.2632,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.4516
+    },
+    {
+     "label": "fall",
+     "p": 0.0479
+    },
+    {
+     "label": "pen",
+     "p": 0.039
+    }
+   ],
+   "margin": 0.4037,
+   "entropy": 2.6501
+  },
+  {
+   "t": 25.428,
+   "label": null,
+   "display": "...",
+   "confidence": 0.6925,
+   "raw_label": "it",
+   "raw_confidence": 0.6925,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.3684,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.6925
+    },
+    {
+     "label": "fall",
+     "p": 0.0375
+    },
+    {
+     "label": "priest",
+     "p": 0.0231
+    }
+   ],
+   "margin": 0.6551,
+   "entropy": 1.6978
+  },
+  {
+   "t": 25.76,
+   "label": "it",
+   "display": "It",
+   "confidence": 0.7609,
+   "raw_label": "it",
+   "raw_confidence": 0.8292,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.5,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.8292
+    },
+    {
+     "label": "fall",
+     "p": 0.0191
+    },
+    {
+     "label": "bird",
+     "p": 0.0114
+    }
+   ],
+   "margin": 0.8101,
+   "entropy": 1.0634
+  },
+  {
+   "t": 26.096,
+   "label": "it",
+   "display": "It",
+   "confidence": 0.6933,
+   "raw_label": "it",
+   "raw_confidence": 0.6257,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.6316,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.6257
+    },
+    {
+     "label": "priest",
+     "p": 0.0358
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0245
+    }
+   ],
+   "margin": 0.5899,
+   "entropy": 1.9983
+  },
+  {
+   "t": 26.428,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4542,
+   "raw_label": "it",
+   "raw_confidence": 0.2152,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.7632,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2152
+    },
+    {
+     "label": "hello",
+     "p": 0.1066
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0749
+    }
+   ],
+   "margin": 0.1086,
+   "entropy": 3.1521
+  },
+  {
+   "t": 26.764,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2873,
+   "raw_label": "hello",
+   "raw_confidence": 0.3002,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.3002
+    },
+    {
+     "label": "it",
+     "p": 0.1203
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0578
+    }
+   ],
+   "margin": 0.1799,
+   "entropy": 2.9135
+  },
+  {
+   "t": 27.096,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3167,
+   "raw_label": "hello",
+   "raw_confidence": 0.4536,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.4536
+    },
+    {
+     "label": "cellphone",
+     "p": 0.1244
+    },
+    {
+     "label": "it",
+     "p": 0.0695
+    }
+   ],
+   "margin": 0.3293,
+   "entropy": 2.3962
+  },
+  {
+   "t": 27.432,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4822,
+   "raw_label": "hello",
+   "raw_confidence": 0.6478,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.6478
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0666
+    },
+    {
+     "label": "it",
+     "p": 0.0651
+    }
+   ],
+   "margin": 0.5812,
+   "entropy": 1.7532
+  },
+  {
+   "t": 27.764,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5878,
+   "raw_label": "hello",
+   "raw_confidence": 0.6934,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.6934
+    },
+    {
+     "label": "it",
+     "p": 0.0647
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0469
+    }
+   ],
+   "margin": 0.6287,
+   "entropy": 1.5659
+  },
+  {
+   "t": 28.1,
+   "label": "hello",
+   "display": "Hello",
+   "confidence": 0.6461,
+   "raw_label": "hello",
+   "raw_confidence": 0.7044,
+   "streak": 4,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.7044
+    },
+    {
+     "label": "it",
+     "p": 0.0524
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0384
+    }
+   ],
+   "margin": 0.6521,
+   "entropy": 1.5273
+  },
+  {
+   "t": 28.432,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5782,
+   "raw_label": "hello",
+   "raw_confidence": 0.5102,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.5102
+    },
+    {
+     "label": "fall",
+     "p": 0.1358
+    },
+    {
+     "label": "it",
+     "p": 0.0729
+    }
+   ],
+   "margin": 0.3744,
+   "entropy": 2.1227
+  },
+  {
+   "t": 28.768,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4152,
+   "raw_label": "fall",
+   "raw_confidence": 0.2663,
+   "streak": 6,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.2663
+    },
+    {
+     "label": "hello",
+     "p": 0.2523
+    },
+    {
+     "label": "it",
+     "p": 0.1661
+    }
+   ],
+   "margin": 0.0141,
+   "entropy": 2.4744
+  },
+  {
+   "t": 29.1,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3262,
+   "raw_label": "it",
+   "raw_confidence": 0.5329,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.5329
+    },
+    {
+     "label": "youplural",
+     "p": 0.091
+    },
+    {
+     "label": "fall",
+     "p": 0.0878
+    }
+   ],
+   "margin": 0.4419,
+   "entropy": 2.1271
+  },
+  {
+   "t": 29.437,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2129,
+   "raw_label": "youplural",
+   "raw_confidence": 0.3496,
+   "streak": 2,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.3496
+    },
+    {
+     "label": "it",
+     "p": 0.0996
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0784
+    }
+   ],
+   "margin": 0.25,
+   "entropy": 2.7528
+  },
+  {
+   "t": 29.768,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4431,
+   "raw_label": "youplural",
+   "raw_confidence": 0.6868,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.6868
+    },
+    {
+     "label": "red",
+     "p": 0.0341
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0307
+    }
+   ],
+   "margin": 0.6527,
+   "entropy": 1.6613
+  },
+  {
+   "t": 30.104,
+   "label": "youplural",
+   "display": "You (plural)",
+   "confidence": 0.6613,
+   "raw_label": "youplural",
+   "raw_confidence": 0.8795,
+   "streak": 2,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.8795
+    },
+    {
+     "label": "girl",
+     "p": 0.0219
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.0091
+    }
+   ],
+   "margin": 0.8577,
+   "entropy": 0.7619
+  },
+  {
+   "t": 30.436,
+   "label": "youplural",
+   "display": "You (plural)",
+   "confidence": 0.788,
+   "raw_label": "youplural",
+   "raw_confidence": 0.9146,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.9146
+    },
+    {
+     "label": "girl",
+     "p": 0.022
+    },
+    {
+     "label": "bird",
+     "p": 0.0067
+    }
+   ],
+   "margin": 0.8926,
+   "entropy": 0.5571
+  },
+  {
+   "t": 30.768,
+   "label": "youplural",
+   "display": "You (plural)",
+   "confidence": 0.8594,
+   "raw_label": "youplural",
+   "raw_confidence": 0.9308,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.9308
+    },
+    {
+     "label": "girl",
+     "p": 0.0172
+    },
+    {
+     "label": "bird",
+     "p": 0.0059
+    }
+   ],
+   "margin": 0.9136,
+   "entropy": 0.4641
+  },
+  {
+   "t": 31.104,
+   "label": "youplural",
+   "display": "You (plural)",
+   "confidence": 0.8799,
+   "raw_label": "youplural",
+   "raw_confidence": 0.9003,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 0.9474,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.9003
+    },
+    {
+     "label": "girl",
+     "p": 0.0168
+    },
+    {
+     "label": "fall",
+     "p": 0.0133
+    }
+   ],
+   "margin": 0.8835,
+   "entropy": 0.6331
+  },
+  {
+   "t": 31.436,
+   "label": "youplural",
+   "display": "You (plural)",
+   "confidence": 0.7274,
+   "raw_label": "youplural",
+   "raw_confidence": 0.5749,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "youplural",
+     "p": 0.5749
+    },
+    {
+     "label": "girl",
+     "p": 0.0932
+    },
+    {
+     "label": "fall",
+     "p": 0.0776
+    }
+   ],
+   "margin": 0.4816,
+   "entropy": 1.9236
+  },
+  {
+   "t": 31.772,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3992,
+   "raw_label": "paint",
+   "raw_confidence": 0.2431,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.2431
+    },
+    {
+     "label": "fall",
+     "p": 0.1455
+    },
+    {
+     "label": "it",
+     "p": 0.1171
+    }
+   ],
+   "margin": 0.0976,
+   "entropy": 2.7995
+  },
+  {
+   "t": 32.104,
+   "label": null,
+   "display": "...",
+   "confidence": 0.338,
+   "raw_label": "paint",
+   "raw_confidence": 0.55,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.55
+    },
+    {
+     "label": "it",
+     "p": 0.1062
+    },
+    {
+     "label": "fall",
+     "p": 0.0479
+    }
+   ],
+   "margin": 0.4438,
+   "entropy": 2.0337
+  },
+  {
+   "t": 32.44,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5571,
+   "raw_label": "paint",
+   "raw_confidence": 0.7762,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.7762
+    },
+    {
+     "label": "it",
+     "p": 0.0314
+    },
+    {
+     "label": "summer",
+     "p": 0.0285
+    }
+   ],
+   "margin": 0.7448,
+   "entropy": 1.2396
+  },
+  {
+   "t": 32.772,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.7351,
+   "raw_label": "paint",
+   "raw_confidence": 0.9131,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.9131
+    },
+    {
+     "label": "summer",
+     "p": 0.0077
+    },
+    {
+     "label": "loud",
+     "p": 0.0073
+    }
+   ],
+   "margin": 0.9054,
+   "entropy": 0.5908
+  },
+  {
+   "t": 33.108,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.8404,
+   "raw_label": "paint",
+   "raw_confidence": 0.9456,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.9456
+    },
+    {
+     "label": "year",
+     "p": 0.0052
+    },
+    {
+     "label": "summer",
+     "p": 0.0043
+    }
+   ],
+   "margin": 0.9404,
+   "entropy": 0.4007
+  },
+  {
+   "t": 33.44,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.8978,
+   "raw_label": "paint",
+   "raw_confidence": 0.9552,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 0.8684,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.9552
+    },
+    {
+     "label": "year",
+     "p": 0.005
+    },
+    {
+     "label": "loud",
+     "p": 0.0037
+    }
+   ],
+   "margin": 0.9501,
+   "entropy": 0.3387
+  },
+  {
+   "t": 33.776,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.9046,
+   "raw_label": "paint",
+   "raw_confidence": 0.9115,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 0.8947,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.9115
+    },
+    {
+     "label": "window",
+     "p": 0.0109
+    },
+    {
+     "label": "car",
+     "p": 0.0089
+    }
+   ],
+   "margin": 0.9006,
+   "entropy": 0.5974
+  },
+  {
+   "t": 34.108,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.849,
+   "raw_label": "paint",
+   "raw_confidence": 0.7933,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 0.8421,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.7933
+    },
+    {
+     "label": "window",
+     "p": 0.0585
+    },
+    {
+     "label": "loud",
+     "p": 0.0304
+    }
+   ],
+   "margin": 0.7348,
+   "entropy": 1.1094
+  },
+  {
+   "t": 34.444,
+   "label": "paint",
+   "display": "Paint",
+   "confidence": 0.7224,
+   "raw_label": "paint",
+   "raw_confidence": 0.5959,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 0.8158,
+   "top3": [
+    {
+     "label": "paint",
+     "p": 0.5959
+    },
+    {
+     "label": "window",
+     "p": 0.1368
+    },
+    {
+     "label": "loud",
+     "p": 0.0629
+    }
+   ],
+   "margin": 0.4591,
+   "entropy": 1.77
+  },
+  {
+   "t": 34.776,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4094,
+   "raw_label": "window",
+   "raw_confidence": 0.654,
+   "streak": 9,
+   "fps": 15.0,
+   "hand_coverage": 0.7895,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.654
+    },
+    {
+     "label": "paint",
+     "p": 0.0965
+    },
+    {
+     "label": "loud",
+     "p": 0.074
+    }
+   ],
+   "margin": 0.5576,
+   "entropy": 1.5935
+  },
+  {
+   "t": 35.112,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5571,
+   "raw_label": "window",
+   "raw_confidence": 0.7448,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 0.6579,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.7448
+    },
+    {
+     "label": "loud",
+     "p": 0.0548
+    },
+    {
+     "label": "paint",
+     "p": 0.0494
+    }
+   ],
+   "margin": 0.69,
+   "entropy": 1.3247
+  },
+  {
+   "t": 35.444,
+   "label": "window",
+   "display": "Window",
+   "confidence": 0.6625,
+   "raw_label": "window",
+   "raw_confidence": 0.7679,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.5789,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.7679
+    },
+    {
+     "label": "loud",
+     "p": 0.0402
+    },
+    {
+     "label": "bird",
+     "p": 0.0201
+    }
+   ],
+   "margin": 0.7278,
+   "entropy": 1.3012
+  },
+  {
+   "t": 35.78,
+   "label": "window",
+   "display": "Window",
+   "confidence": 0.703,
+   "raw_label": "window",
+   "raw_confidence": 0.7436,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.5,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.7436
+    },
+    {
+     "label": "loud",
+     "p": 0.0336
+    },
+    {
+     "label": "bird",
+     "p": 0.0243
+    }
+   ],
+   "margin": 0.71,
+   "entropy": 1.4296
+  },
+  {
+   "t": 36.112,
+   "label": "window",
+   "display": "Window",
+   "confidence": 0.6511,
+   "raw_label": "window",
+   "raw_confidence": 0.5991,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 0.4474,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.5991
+    },
+    {
+     "label": "cow",
+     "p": 0.0505
+    },
+    {
+     "label": "loud",
+     "p": 0.0494
+    }
+   ],
+   "margin": 0.5486,
+   "entropy": 2.0144
+  },
+  {
+   "t": 36.448,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4997,
+   "raw_label": "window",
+   "raw_confidence": 0.3484,
+   "streak": 5,
+   "fps": 14.9,
+   "hand_coverage": 0.5,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.3484
+    },
+    {
+     "label": "cow",
+     "p": 0.0958
+    },
+    {
+     "label": "loud",
+     "p": 0.0794
+    }
+   ],
+   "margin": 0.2526,
+   "entropy": 2.8037
+  },
+  {
+   "t": 36.78,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3857,
+   "raw_label": "window",
+   "raw_confidence": 0.2717,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 0.5,
+   "top3": [
+    {
+     "label": "window",
+     "p": 0.2717
+    },
+    {
+     "label": "death",
+     "p": 0.0884
+    },
+    {
+     "label": "loud",
+     "p": 0.0661
+    }
+   ],
+   "margin": 0.1833,
+   "entropy": 3.0347
+  },
+  {
+   "t": 37.116,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2278,
+   "raw_label": "death",
+   "raw_confidence": 0.1273,
+   "streak": 7,
+   "fps": 14.9,
+   "hand_coverage": 0.5526,
+   "top3": [
+    {
+     "label": "death",
+     "p": 0.1273
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.089
+    },
+    {
+     "label": "short",
+     "p": 0.0801
+    }
+   ],
+   "margin": 0.0383,
+   "entropy": 3.324
+  },
+  {
+   "t": 37.448,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1179,
+   "raw_label": "bird",
+   "raw_confidence": 0.1449,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 0.6053,
+   "top3": [
+    {
+     "label": "bird",
+     "p": 0.1449
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.1112
+    },
+    {
+     "label": "it",
+     "p": 0.0859
+    }
+   ],
+   "margin": 0.0337,
+   "entropy": 3.2103
+  },
+  {
+   "t": 37.784,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1436,
+   "raw_label": "it",
+   "raw_confidence": 0.2397,
+   "streak": 1,
+   "fps": 14.9,
+   "hand_coverage": 0.6842,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2397
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.1204
+    },
+    {
+     "label": "shoes",
+     "p": 0.0626
+    }
+   ],
+   "margin": 0.1193,
+   "entropy": 3.1272
+  },
+  {
+   "t": 38.116,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2639,
+   "raw_label": "it",
+   "raw_confidence": 0.3843,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 0.8158,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.3843
+    },
+    {
+     "label": "paint",
+     "p": 0.0726
+    },
+    {
+     "label": "bank",
+     "p": 0.0469
+    }
+   ],
+   "margin": 0.3117,
+   "entropy": 2.8005
+  },
+  {
+   "t": 38.448,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5674,
+   "raw_label": "it",
+   "raw_confidence": 0.8708,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 0.8684,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.8708
+    },
+    {
+     "label": "fall",
+     "p": 0.009
+    },
+    {
+     "label": "paint",
+     "p": 0.0086
+    }
+   ],
+   "margin": 0.8618,
+   "entropy": 0.8564
+  },
+  {
+   "t": 38.784,
+   "label": "it",
+   "display": "It",
+   "confidence": 0.7455,
+   "raw_label": "it",
+   "raw_confidence": 0.9236,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.9236
+    },
+    {
+     "label": "fall",
+     "p": 0.0078
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.0043
+    }
+   ],
+   "margin": 0.9158,
+   "entropy": 0.5487
+  },
+  {
+   "t": 39.116,
+   "label": "it",
+   "display": "It",
+   "confidence": 0.841,
+   "raw_label": "it",
+   "raw_confidence": 0.9364,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.9364
+    },
+    {
+     "label": "fall",
+     "p": 0.0058
+    },
+    {
+     "label": "smalllittle",
+     "p": 0.0037
+    }
+   ],
+   "margin": 0.9306,
+   "entropy": 0.4708
+  },
+  {
+   "t": 39.452,
+   "label": "it",
+   "display": "It",
+   "confidence": 0.6453,
+   "raw_label": "it",
+   "raw_confidence": 0.4497,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.4497
+    },
+    {
+     "label": "hello",
+     "p": 0.0547
+    },
+    {
+     "label": "i",
+     "p": 0.0476
+    }
+   ],
+   "margin": 0.395,
+   "entropy": 2.6188
+  },
+  {
+   "t": 39.784,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3747,
+   "raw_label": "black",
+   "raw_confidence": 0.2542,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.2542
+    },
+    {
+     "label": "it",
+     "p": 0.104
+    },
+    {
+     "label": "hello",
+     "p": 0.0666
+    }
+   ],
+   "margin": 0.1502,
+   "entropy": 3.1318
+  },
+  {
+   "t": 40.12,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3327,
+   "raw_label": "black",
+   "raw_confidence": 0.5322,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.5322
+    },
+    {
+     "label": "boy",
+     "p": 0.0708
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0381
+    }
+   ],
+   "margin": 0.4614,
+   "entropy": 2.276
+  },
+  {
+   "t": 40.452,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4903,
+   "raw_label": "black",
+   "raw_confidence": 0.6479,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6479
+    },
+    {
+     "label": "boy",
+     "p": 0.0796
+    },
+    {
+     "label": "cellphone",
+     "p": 0.03
+    }
+   ],
+   "margin": 0.5682,
+   "entropy": 1.773
+  },
+  {
+   "t": 40.788,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5825,
+   "raw_label": "black",
+   "raw_confidence": 0.6748,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6748
+    },
+    {
+     "label": "boy",
+     "p": 0.0864
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0256
+    }
+   ],
+   "margin": 0.5884,
+   "entropy": 1.6324
+  },
+  {
+   "t": 41.12,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.6102,
+   "raw_label": "black",
+   "raw_confidence": 0.6378,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6378
+    },
+    {
+     "label": "boy",
+     "p": 0.1034
+    },
+    {
+     "label": "window",
+     "p": 0.0225
+    }
+   ],
+   "margin": 0.5344,
+   "entropy": 1.7553
+  },
+  {
+   "t": 41.456,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5644,
+   "raw_label": "black",
+   "raw_confidence": 0.5187,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.5187
+    },
+    {
+     "label": "boy",
+     "p": 0.1464
+    },
+    {
+     "label": "priest",
+     "p": 0.0311
+    }
+   ],
+   "margin": 0.3723,
+   "entropy": 2.122
+  },
+  {
+   "t": 41.788,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5409,
+   "raw_label": "black",
+   "raw_confidence": 0.5173,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.5173
+    },
+    {
+     "label": "boy",
+     "p": 0.0789
+    },
+    {
+     "label": "priest",
+     "p": 0.0512
+    }
+   ],
+   "margin": 0.4384,
+   "entropy": 2.2625
+  },
+  {
+   "t": 42.124,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5213,
+   "raw_label": "black",
+   "raw_confidence": 0.5017,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.5017
+    },
+    {
+     "label": "girl",
+     "p": 0.0611
+    },
+    {
+     "label": "boy",
+     "p": 0.0545
+    }
+   ],
+   "margin": 0.4406,
+   "entropy": 2.3265
+  },
+  {
+   "t": 42.456,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4654,
+   "raw_label": "black",
+   "raw_confidence": 0.4095,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.4095
+    },
+    {
+     "label": "hello",
+     "p": 0.0792
+    },
+    {
+     "label": "girl",
+     "p": 0.0699
+    }
+   ],
+   "margin": 0.3303,
+   "entropy": 2.6006
+  },
+  {
+   "t": 42.792,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3127,
+   "raw_label": "black",
+   "raw_confidence": 0.1601,
+   "streak": 9,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.1601
+    },
+    {
+     "label": "hello",
+     "p": 0.1473
+    },
+    {
+     "label": "girl",
+     "p": 0.107
+    }
+   ],
+   "margin": 0.0128,
+   "entropy": 3.0666
+  },
+  {
+   "t": 43.124,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2235,
+   "raw_label": "hello",
+   "raw_confidence": 0.2358,
+   "streak": 10,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.2358
+    },
+    {
+     "label": "black",
+     "p": 0.1343
+    },
+    {
+     "label": "it",
+     "p": 0.0804
+    }
+   ],
+   "margin": 0.1015,
+   "entropy": 2.9412
+  },
+  {
+   "t": 43.46,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2946,
+   "raw_label": "black",
+   "raw_confidence": 0.3658,
+   "streak": 11,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.3658
+    },
+    {
+     "label": "hello",
+     "p": 0.1351
+    },
+    {
+     "label": "priest",
+     "p": 0.0788
+    }
+   ],
+   "margin": 0.2307,
+   "entropy": 2.6834
+  },
+  {
+   "t": 43.792,
+   "label": null,
+   "display": "...",
+   "confidence": 0.499,
+   "raw_label": "black",
+   "raw_confidence": 0.7034,
+   "streak": 12,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.7034
+    },
+    {
+     "label": "it",
+     "p": 0.0256
+    },
+    {
+     "label": "boy",
+     "p": 0.0231
+    }
+   ],
+   "margin": 0.6778,
+   "entropy": 1.6533
+  },
+  {
+   "t": 44.128,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.6878,
+   "raw_label": "black",
+   "raw_confidence": 0.8765,
+   "streak": 13,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.8765
+    },
+    {
+     "label": "boy",
+     "p": 0.0185
+    },
+    {
+     "label": "window",
+     "p": 0.008
+    }
+   ],
+   "margin": 0.8581,
+   "entropy": 0.7986
+  },
+  {
+   "t": 44.46,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7843,
+   "raw_label": "black",
+   "raw_confidence": 0.8808,
+   "streak": 14,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.8808
+    },
+    {
+     "label": "boy",
+     "p": 0.023
+    },
+    {
+     "label": "window",
+     "p": 0.0085
+    }
+   ],
+   "margin": 0.8578,
+   "entropy": 0.7612
+  },
+  {
+   "t": 44.796,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.8104,
+   "raw_label": "black",
+   "raw_confidence": 0.8366,
+   "streak": 15,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.8366
+    },
+    {
+     "label": "boy",
+     "p": 0.039
+    },
+    {
+     "label": "window",
+     "p": 0.0119
+    }
+   ],
+   "margin": 0.7976,
+   "entropy": 0.9652
+  },
+  {
+   "t": 45.128,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.8077,
+   "raw_label": "black",
+   "raw_confidence": 0.805,
+   "streak": 16,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.805
+    },
+    {
+     "label": "boy",
+     "p": 0.0237
+    },
+    {
+     "label": "priest",
+     "p": 0.0217
+    }
+   ],
+   "margin": 0.7813,
+   "entropy": 1.1451
+  },
+  {
+   "t": 45.464,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7695,
+   "raw_label": "black",
+   "raw_confidence": 0.7313,
+   "streak": 17,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.7313
+    },
+    {
+     "label": "priest",
+     "p": 0.0361
+    },
+    {
+     "label": "boy",
+     "p": 0.0225
+    }
+   ],
+   "margin": 0.6952,
+   "entropy": 1.4843
+  },
+  {
+   "t": 45.796,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7018,
+   "raw_label": "black",
+   "raw_confidence": 0.6341,
+   "streak": 18,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6341
+    },
+    {
+     "label": "priest",
+     "p": 0.0528
+    },
+    {
+     "label": "girl",
+     "p": 0.0342
+    }
+   ],
+   "margin": 0.5814,
+   "entropy": 1.8788
+  },
+  {
+   "t": 46.132,
+   "label": null,
+   "display": "...",
+   "confidence": 0.553,
+   "raw_label": "black",
+   "raw_confidence": 0.4042,
+   "streak": 19,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.4042
+    },
+    {
+     "label": "priest",
+     "p": 0.0757
+    },
+    {
+     "label": "summer",
+     "p": 0.0755
+    }
+   ],
+   "margin": 0.3285,
+   "entropy": 2.6342
+  },
+  {
+   "t": 46.464,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3444,
+   "raw_label": "black",
+   "raw_confidence": 0.1359,
+   "streak": 20,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.1359
+    },
+    {
+     "label": "it",
+     "p": 0.1197
+    },
+    {
+     "label": "summer",
+     "p": 0.0994
+    }
+   ],
+   "margin": 0.0161,
+   "entropy": 3.2084
+  },
+  {
+   "t": 46.796,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2042,
+   "raw_label": "it",
+   "raw_confidence": 0.3418,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.3418
+    },
+    {
+     "label": "fall",
+     "p": 0.0856
+    },
+    {
+     "label": "summer",
+     "p": 0.0555
+    }
+   ],
+   "margin": 0.2562,
+   "entropy": 2.8616
+  },
+  {
+   "t": 47.132,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3241,
+   "raw_label": "it",
+   "raw_confidence": 0.4441,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.4441
+    },
+    {
+     "label": "fall",
+     "p": 0.2617
+    },
+    {
+     "label": "hello",
+     "p": 0.0371
+    }
+   ],
+   "margin": 0.1824,
+   "entropy": 2.0852
+  },
+  {
+   "t": 47.464,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4415,
+   "raw_label": "it",
+   "raw_confidence": 0.5589,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.5589
+    },
+    {
+     "label": "hello",
+     "p": 0.0554
+    },
+    {
+     "label": "goodmorning",
+     "p": 0.035
+    }
+   ],
+   "margin": 0.5035,
+   "entropy": 2.2103
+  },
+  {
+   "t": 47.8,
+   "label": null,
+   "display": "...",
+   "confidence": 0.286,
+   "raw_label": "black",
+   "raw_confidence": 0.2568,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.2568
+    },
+    {
+     "label": "it",
+     "p": 0.1305
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0552
+    }
+   ],
+   "margin": 0.1263,
+   "entropy": 3.0718
+  },
+  {
+   "t": 48.132,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4186,
+   "raw_label": "black",
+   "raw_confidence": 0.6814,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6814
+    },
+    {
+     "label": "boy",
+     "p": 0.0388
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0329
+    }
+   ],
+   "margin": 0.6426,
+   "entropy": 1.7258
+  },
+  {
+   "t": 48.468,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.6133,
+   "raw_label": "black",
+   "raw_confidence": 0.808,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.808
+    },
+    {
+     "label": "boy",
+     "p": 0.0423
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0157
+    }
+   ],
+   "margin": 0.7657,
+   "entropy": 1.1124
+  },
+  {
+   "t": 48.8,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7297,
+   "raw_label": "black",
+   "raw_confidence": 0.846,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.846
+    },
+    {
+     "label": "boy",
+     "p": 0.0336
+    },
+    {
+     "label": "cellphone",
+     "p": 0.0111
+    }
+   ],
+   "margin": 0.8124,
+   "entropy": 0.9241
+  },
+  {
+   "t": 49.136,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7732,
+   "raw_label": "black",
+   "raw_confidence": 0.8168,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.8168
+    },
+    {
+     "label": "boy",
+     "p": 0.0455
+    },
+    {
+     "label": "fan",
+     "p": 0.015
+    }
+   ],
+   "margin": 0.7713,
+   "entropy": 1.0495
+  },
+  {
+   "t": 49.468,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.759,
+   "raw_label": "black",
+   "raw_confidence": 0.7448,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.7448
+    },
+    {
+     "label": "boy",
+     "p": 0.0368
+    },
+    {
+     "label": "priest",
+     "p": 0.0341
+    }
+   ],
+   "margin": 0.7079,
+   "entropy": 1.387
+  },
+  {
+   "t": 49.804,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.7254,
+   "raw_label": "black",
+   "raw_confidence": 0.6918,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.6918
+    },
+    {
+     "label": "priest",
+     "p": 0.0508
+    },
+    {
+     "label": "boy",
+     "p": 0.0261
+    }
+   ],
+   "margin": 0.641,
+   "entropy": 1.6302
+  },
+  {
+   "t": 50.136,
+   "label": "black",
+   "display": "Black",
+   "confidence": 0.6842,
+   "raw_label": "black",
+   "raw_confidence": 0.643,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.643
+    },
+    {
+     "label": "priest",
+     "p": 0.057
+    },
+    {
+     "label": "summer",
+     "p": 0.037
+    }
+   ],
+   "margin": 0.586,
+   "entropy": 1.8269
+  },
+  {
+   "t": 50.472,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5683,
+   "raw_label": "black",
+   "raw_confidence": 0.4523,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.4523
+    },
+    {
+     "label": "priest",
+     "p": 0.0851
+    },
+    {
+     "label": "summer",
+     "p": 0.0755
+    }
+   ],
+   "margin": 0.3672,
+   "entropy": 2.4609
+  },
+  {
+   "t": 50.804,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3725,
+   "raw_label": "black",
+   "raw_confidence": 0.1767,
+   "streak": 9,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.1767
+    },
+    {
+     "label": "it",
+     "p": 0.1016
+    },
+    {
+     "label": "priest",
+     "p": 0.0978
+    }
+   ],
+   "margin": 0.0751,
+   "entropy": 3.1422
+  },
+  {
+   "t": 51.14,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2068,
+   "raw_label": "it",
+   "raw_confidence": 0.2904,
+   "streak": 10,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2904
+    },
+    {
+     "label": "summer",
+     "p": 0.0808
+    },
+    {
+     "label": "fall",
+     "p": 0.0649
+    }
+   ],
+   "margin": 0.2096,
+   "entropy": 2.9999
+  },
+  {
+   "t": 51.472,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3624,
+   "raw_label": "it",
+   "raw_confidence": 0.5515,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.5515
+    },
+    {
+     "label": "fall",
+     "p": 0.1054
+    },
+    {
+     "label": "hello",
+     "p": 0.0455
+    }
+   ],
+   "margin": 0.4461,
+   "entropy": 2.0963
+  },
+  {
+   "t": 51.808,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4506,
+   "raw_label": "it",
+   "raw_confidence": 0.5388,
+   "streak": 2,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.5388
+    },
+    {
+     "label": "hello",
+     "p": 0.0705
+    },
+    {
+     "label": "black",
+     "p": 0.0317
+    }
+   ],
+   "margin": 0.4684,
+   "entropy": 2.2729
+  },
+  {
+   "t": 52.14,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3027,
+   "raw_label": "it",
+   "raw_confidence": 0.1548,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1548
+    },
+    {
+     "label": "black",
+     "p": 0.1511
+    },
+    {
+     "label": "hello",
+     "p": 0.1471
+    }
+   ],
+   "margin": 0.0037,
+   "entropy": 3.148
+  },
+  {
+   "t": 52.476,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1794,
+   "raw_label": "black",
+   "raw_confidence": 0.2207,
+   "streak": 4,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "black",
+     "p": 0.2207
+    },
+    {
+     "label": "hello",
+     "p": 0.1891
+    },
+    {
+     "label": "it",
+     "p": 0.056
+    }
+   ],
+   "margin": 0.0316,
+   "entropy": 3.0517
+  },
+  {
+   "t": 52.808,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1865,
+   "raw_label": "hello",
+   "raw_confidence": 0.2283,
+   "streak": 1,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.2283
+    },
+    {
+     "label": "black",
+     "p": 0.198
+    },
+    {
+     "label": "window",
+     "p": 0.0568
+    }
+   ],
+   "margin": 0.0303,
+   "entropy": 3.007
+  },
+  {
+   "t": 53.144,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2133,
+   "raw_label": "hello",
+   "raw_confidence": 0.24,
+   "streak": 2,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.24
+    },
+    {
+     "label": "black",
+     "p": 0.1699
+    },
+    {
+     "label": "window",
+     "p": 0.0658
+    }
+   ],
+   "margin": 0.0701,
+   "entropy": 3.0166
+  },
+  {
+   "t": 53.476,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2165,
+   "raw_label": "hello",
+   "raw_confidence": 0.2197,
+   "streak": 3,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.2197
+    },
+    {
+     "label": "black",
+     "p": 0.1388
+    },
+    {
+     "label": "window",
+     "p": 0.0721
+    }
+   ],
+   "margin": 0.081,
+   "entropy": 3.1129
+  },
+  {
+   "t": 53.812,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1927,
+   "raw_label": "hello",
+   "raw_confidence": 0.169,
+   "streak": 4,
+   "fps": 14.9,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.169
+    },
+    {
+     "label": "black",
+     "p": 0.1061
+    },
+    {
+     "label": "window",
+     "p": 0.079
+    }
+   ],
+   "margin": 0.0629,
+   "entropy": 3.2739
+  },
+  {
+   "t": 54.144,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1727,
+   "raw_label": "hello",
+   "raw_confidence": 0.1527,
+   "streak": 5,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1527
+    },
+    {
+     "label": "window",
+     "p": 0.0909
+    },
+    {
+     "label": "black",
+     "p": 0.0874
+    }
+   ],
+   "margin": 0.0618,
+   "entropy": 3.3105
+  },
+  {
+   "t": 54.476,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1696,
+   "raw_label": "hello",
+   "raw_confidence": 0.1665,
+   "streak": 6,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1665
+    },
+    {
+     "label": "window",
+     "p": 0.0878
+    },
+    {
+     "label": "black",
+     "p": 0.0769
+    }
+   ],
+   "margin": 0.0787,
+   "entropy": 3.3007
+  },
+  {
+   "t": 54.812,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1682,
+   "raw_label": "hello",
+   "raw_confidence": 0.1668,
+   "streak": 7,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1668
+    },
+    {
+     "label": "window",
+     "p": 0.0855
+    },
+    {
+     "label": "black",
+     "p": 0.0687
+    }
+   ],
+   "margin": 0.0813,
+   "entropy": 3.3136
+  },
+  {
+   "t": 55.144,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1632,
+   "raw_label": "hello",
+   "raw_confidence": 0.1583,
+   "streak": 8,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1583
+    },
+    {
+     "label": "window",
+     "p": 0.0795
+    },
+    {
+     "label": "black",
+     "p": 0.0646
+    }
+   ],
+   "margin": 0.0787,
+   "entropy": 3.3431
+  },
+  {
+   "t": 55.48,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1608,
+   "raw_label": "hello",
+   "raw_confidence": 0.1584,
+   "streak": 9,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1584
+    },
+    {
+     "label": "window",
+     "p": 0.0773
+    },
+    {
+     "label": "new",
+     "p": 0.0585
+    }
+   ],
+   "margin": 0.0811,
+   "entropy": 3.3495
+  },
+  {
+   "t": 55.812,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1588,
+   "raw_label": "hello",
+   "raw_confidence": 0.1568,
+   "streak": 10,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1568
+    },
+    {
+     "label": "window",
+     "p": 0.0744
+    },
+    {
+     "label": "new",
+     "p": 0.063
+    }
+   ],
+   "margin": 0.0824,
+   "entropy": 3.3571
+  },
+  {
+   "t": 56.148,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1568,
+   "raw_label": "hello",
+   "raw_confidence": 0.1548,
+   "streak": 11,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1548
+    },
+    {
+     "label": "window",
+     "p": 0.0722
+    },
+    {
+     "label": "new",
+     "p": 0.069
+    }
+   ],
+   "margin": 0.0826,
+   "entropy": 3.3619
+  },
+  {
+   "t": 56.48,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1525,
+   "raw_label": "hello",
+   "raw_confidence": 0.1482,
+   "streak": 12,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1482
+    },
+    {
+     "label": "new",
+     "p": 0.0732
+    },
+    {
+     "label": "window",
+     "p": 0.0688
+    }
+   ],
+   "margin": 0.075,
+   "entropy": 3.3742
+  },
+  {
+   "t": 56.816,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1463,
+   "raw_label": "hello",
+   "raw_confidence": 0.14,
+   "streak": 13,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.14
+    },
+    {
+     "label": "new",
+     "p": 0.0781
+    },
+    {
+     "label": "window",
+     "p": 0.0662
+    }
+   ],
+   "margin": 0.0619,
+   "entropy": 3.3862
+  },
+  {
+   "t": 57.148,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1373,
+   "raw_label": "hello",
+   "raw_confidence": 0.1282,
+   "streak": 14,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1282
+    },
+    {
+     "label": "new",
+     "p": 0.0837
+    },
+    {
+     "label": "happy",
+     "p": 0.0661
+    }
+   ],
+   "margin": 0.0446,
+   "entropy": 3.4009
+  },
+  {
+   "t": 57.484,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1308,
+   "raw_label": "hello",
+   "raw_confidence": 0.1244,
+   "streak": 15,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1244
+    },
+    {
+     "label": "new",
+     "p": 0.0851
+    },
+    {
+     "label": "happy",
+     "p": 0.0668
+    }
+   ],
+   "margin": 0.0393,
+   "entropy": 3.4047
+  },
+  {
+   "t": 57.816,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1278,
+   "raw_label": "hello",
+   "raw_confidence": 0.1247,
+   "streak": 16,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1247
+    },
+    {
+     "label": "new",
+     "p": 0.0851
+    },
+    {
+     "label": "happy",
+     "p": 0.0668
+    }
+   ],
+   "margin": 0.0396,
+   "entropy": 3.4051
+  },
+  {
+   "t": 58.152,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1265,
+   "raw_label": "hello",
+   "raw_confidence": 0.1253,
+   "streak": 17,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1253
+    },
+    {
+     "label": "new",
+     "p": 0.0843
+    },
+    {
+     "label": "happy",
+     "p": 0.0659
+    }
+   ],
+   "margin": 0.041,
+   "entropy": 3.4052
+  },
+  {
+   "t": 58.484,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1278,
+   "raw_label": "hello",
+   "raw_confidence": 0.129,
+   "streak": 18,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.129
+    },
+    {
+     "label": "new",
+     "p": 0.0843
+    },
+    {
+     "label": "happy",
+     "p": 0.0658
+    }
+   ],
+   "margin": 0.0447,
+   "entropy": 3.4014
+  },
+  {
+   "t": 58.82,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1317,
+   "raw_label": "hello",
+   "raw_confidence": 0.1356,
+   "streak": 19,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1356
+    },
+    {
+     "label": "new",
+     "p": 0.0827
+    },
+    {
+     "label": "happy",
+     "p": 0.065
+    }
+   ],
+   "margin": 0.0529,
+   "entropy": 3.3937
+  },
+  {
+   "t": 59.152,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1369,
+   "raw_label": "hello",
+   "raw_confidence": 0.1421,
+   "streak": 20,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1421
+    },
+    {
+     "label": "new",
+     "p": 0.079
+    },
+    {
+     "label": "happy",
+     "p": 0.0645
+    }
+   ],
+   "margin": 0.063,
+   "entropy": 3.39
+  },
+  {
+   "t": 59.488,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1472,
+   "raw_label": "hello",
+   "raw_confidence": 0.1576,
+   "streak": 21,
+   "fps": 15.0,
+   "hand_coverage": 1.0,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1576
+    },
+    {
+     "label": "new",
+     "p": 0.0869
+    },
+    {
+     "label": "happy",
+     "p": 0.0618
+    }
+   ],
+   "margin": 0.0707,
+   "entropy": 3.348
+  },
+  {
+   "t": 59.82,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1566,
+   "raw_label": "hello",
+   "raw_confidence": 0.1659,
+   "streak": 22,
+   "fps": 15.0,
+   "hand_coverage": 0.8684,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1659
+    },
+    {
+     "label": "new",
+     "p": 0.0822
+    },
+    {
+     "label": "boy",
+     "p": 0.0778
+    }
+   ],
+   "margin": 0.0837,
+   "entropy": 3.306
+  },
+  {
+   "t": 60.156,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1596,
+   "raw_label": "hello",
+   "raw_confidence": 0.1626,
+   "streak": 23,
+   "fps": 15.0,
+   "hand_coverage": 0.7368,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1626
+    },
+    {
+     "label": "new",
+     "p": 0.0774
+    },
+    {
+     "label": "girl",
+     "p": 0.076
+    }
+   ],
+   "margin": 0.0852,
+   "entropy": 3.3179
+  },
+  {
+   "t": 60.488,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1567,
+   "raw_label": "hello",
+   "raw_confidence": 0.1538,
+   "streak": 24,
+   "fps": 15.0,
+   "hand_coverage": 0.6053,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1538
+    },
+    {
+     "label": "new",
+     "p": 0.0844
+    },
+    {
+     "label": "girl",
+     "p": 0.0726
+    }
+   ],
+   "margin": 0.0694,
+   "entropy": 3.3378
+  },
+  {
+   "t": 60.824,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1469,
+   "raw_label": "hello",
+   "raw_confidence": 0.1371,
+   "streak": 25,
+   "fps": 14.9,
+   "hand_coverage": 0.4737,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1371
+    },
+    {
+     "label": "new",
+     "p": 0.0866
+    },
+    {
+     "label": "happy",
+     "p": 0.0647
+    }
+   ],
+   "margin": 0.0505,
+   "entropy": 3.3665
+  },
+  {
+   "t": 61.156,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1271,
+   "raw_label": "hello",
+   "raw_confidence": 0.1074,
+   "streak": 26,
+   "fps": 15.0,
+   "hand_coverage": 0.3421,
+   "top3": [
+    {
+     "label": "hello",
+     "p": 0.1074
+    },
+    {
+     "label": "new",
+     "p": 0.0731
+    },
+    {
+     "label": "bird",
+     "p": 0.0664
+    }
+   ],
+   "margin": 0.0343,
+   "entropy": 3.3954
+  },
+  {
+   "t": 61.492,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.0993,
+   "streak": 0,
+   "fps": 14.9,
+   "hand_coverage": 0.2105,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.0993
+    },
+    {
+     "label": "it",
+     "p": 0.0909
+    },
+    {
+     "label": "bird",
+     "p": 0.0712
+    }
+   ],
+   "margin": 0.0084,
+   "entropy": 3.3733
+  },
+  {
+   "t": 61.824,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "fall",
+   "raw_confidence": 0.1419,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0789,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "fall",
+     "p": 0.1419
+    },
+    {
+     "label": "it",
+     "p": 0.1416
+    },
+    {
+     "label": "bird",
+     "p": 0.0876
+    }
+   ],
+   "margin": 0.0003,
+   "entropy": 3.2322
+  },
+  {
+   "t": 62.156,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.3326,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.3326
+    },
+    {
+     "label": "fall",
+     "p": 0.1264
+    },
+    {
+     "label": "priest",
+     "p": 0.0374
+    }
+   ],
+   "margin": 0.2062,
+   "entropy": 2.9096
+  },
+  {
+   "t": 62.492,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.2567,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2567
+    },
+    {
+     "label": "fall",
+     "p": 0.1468
+    },
+    {
+     "label": "rest",
+     "p": 0.039
+    }
+   ],
+   "margin": 0.1099,
+   "entropy": 3.1027
+  },
+  {
+   "t": 62.824,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.2005,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.0526,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2005
+    },
+    {
+     "label": "fall",
+     "p": 0.1384
+    },
+    {
+     "label": "rest",
+     "p": 0.0612
+    }
+   ],
+   "margin": 0.0621,
+   "entropy": 3.2489
+  },
+  {
+   "t": 63.16,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1808,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1053,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1808
+    },
+    {
+     "label": "fall",
+     "p": 0.1208
+    },
+    {
+     "label": "rest",
+     "p": 0.0642
+    }
+   ],
+   "margin": 0.06,
+   "entropy": 3.3182
+  },
+  {
+   "t": 63.492,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.183,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.183
+    },
+    {
+     "label": "fall",
+     "p": 0.1109
+    },
+    {
+     "label": "rest",
+     "p": 0.0599
+    }
+   ],
+   "margin": 0.0722,
+   "entropy": 3.3359
+  },
+  {
+   "t": 63.828,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.191,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.191
+    },
+    {
+     "label": "fall",
+     "p": 0.1089
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0561
+    }
+   ],
+   "margin": 0.0821,
+   "entropy": 3.3288
+  },
+  {
+   "t": 64.16,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1965,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1965
+    },
+    {
+     "label": "fall",
+     "p": 0.1062
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0542
+    }
+   ],
+   "margin": 0.0903,
+   "entropy": 3.324
+  },
+  {
+   "t": 64.496,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1954,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1954
+    },
+    {
+     "label": "fall",
+     "p": 0.103
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0543
+    }
+   ],
+   "margin": 0.0924,
+   "entropy": 3.3341
+  },
+  {
+   "t": 64.828,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1938,
+   "streak": 0,
+   "fps": 15.0,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1938
+    },
+    {
+     "label": "fall",
+     "p": 0.0969
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.0536
+    }
+   ],
+   "margin": 0.0969,
+   "entropy": 3.3354
+  },
+  {
+   "t": 65.164,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.2175,
+   "streak": 0,
+   "fps": 15.5,
+   "hand_coverage": 0.1316,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.2175
+    },
+    {
+     "label": "fall",
+     "p": 0.0958
+    },
+    {
+     "label": "bird",
+     "p": 0.051
+    }
+   ],
+   "margin": 0.1217,
+   "entropy": 3.2688
+  },
+  {
+   "t": 65.496,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1943,
+   "streak": 0,
+   "fps": 15.3,
+   "hand_coverage": 0.0526,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1943
+    },
+    {
+     "label": "fall",
+     "p": 0.0984
+    },
+    {
+     "label": "bird",
+     "p": 0.0569
+    }
+   ],
+   "margin": 0.0959,
+   "entropy": 3.2994
+  },
+  {
+   "t": 65.832,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1566,
+   "streak": 0,
+   "fps": 15.1,
+   "hand_coverage": 0.0263,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1566
+    },
+    {
+     "label": "fall",
+     "p": 0.0943
+    },
+    {
+     "label": "bird",
+     "p": 0.0692
+    }
+   ],
+   "margin": 0.0623,
+   "entropy": 3.3553
+  },
+  {
+   "t": 66.164,
+   "label": null,
+   "display": "Hands out of frame",
+   "confidence": 0.0,
+   "raw_label": "it",
+   "raw_confidence": 0.1214,
+   "streak": 0,
+   "fps": 15.1,
+   "hand_coverage": 0.0,
+   "blocked": true,
+   "reason": "low_hand_coverage",
+   "top3": [
+    {
+     "label": "it",
+     "p": 0.1214
+    },
+    {
+     "label": "fall",
+     "p": 0.0921
+    },
+    {
+     "label": "storeorshop",
+     "p": 0.086
+    }
+   ],
+   "margin": 0.0293,
+   "entropy": 3.3926
+  }
+ ]
+}

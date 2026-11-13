@@ -12,6 +12,38 @@ import numpy as np
 from .keypoints import FrameRaw, assemble_features, resample_sequence
 
 
+def hand_coverage(frames: list[FrameRaw]) -> float:
+    """Fraction of frames with at least one hand detected."""
+    if not frames:
+        return 0.0
+    present = sum(
+        frame.left_hand is not None or frame.right_hand is not None for frame in frames
+    )
+    return present / len(frames)
+
+
+def wrist_out_of_frame(frames: list[FrameRaw], margin: float = 0.02) -> bool:
+    """True if a pose wrist is missing or sits on/outside the frame edge.
+
+    In live takes the dominant failure is not a weak model but hands that are
+    physically outside the camera view. The pose model still extrapolates a
+    wrist beyond the image, so this is detectable from the last pose frame.
+    """
+    for frame in reversed(frames):
+        if frame.pose is None or len(frame.pose) < 17:
+            continue
+        for index in (15, 16):
+            wrist = frame.pose[index]
+            if not (
+                margin <= wrist.x <= 1.0 - margin
+                and margin <= wrist.y <= 1.0 - margin
+            ):
+                return True
+        return False
+    return True
+
+
+
 class TimedFrameBuffer:
     """Keep only the frames inside the last ``window_seconds``."""
 
@@ -139,6 +171,115 @@ class ProbabilitySmoother:
 
 
 @dataclass
+class Decision:
+    """One gated decision for the demo overlay and the session log."""
+
+    index: int | None
+    confidence: float
+    raw_index: int
+    raw_confidence: float
+    streak: int
+    hand_coverage: float
+    blocked: bool = False
+    suppressed: bool = False
+    reason: str = ""
+
+
+class DecisionGate:
+    """EMA smoothing + streak + threshold, plus a hand-evidence gate.
+
+    The gate exists because a window built from mostly missing hands is unlike
+    anything in the training set. Rather than emit a low-confidence word from
+    such a window, the demo should ask the user to move the hands into view.
+    """
+
+    def __init__(
+        self,
+        *,
+        alpha: float = 0.5,
+        min_streak: int = 3,
+        threshold: float = 0.6,
+        min_hand_coverage: float = 0.0,
+        reset_after_missing_seconds: float = 0.8,
+        suppress_indices: set[int] | None = None,
+    ):
+        self.smoother = ProbabilitySmoother(
+            alpha=alpha, min_streak=min_streak, threshold=threshold
+        )
+        self.min_hand_coverage = float(min_hand_coverage)
+        self.reset_after_missing_seconds = float(reset_after_missing_seconds)
+        self.suppress_indices = set(suppress_indices or ())
+        self.last_evidence_time: float | None = None
+        self.blocked_count = 0
+        self.suppressed_count = 0
+
+    def reset(self) -> None:
+        self.smoother.reset()
+        self.last_evidence_time = None
+
+    def update(
+        self,
+        probabilities: np.ndarray,
+        *,
+        coverage: float,
+        timestamp: float,
+    ) -> Decision:
+        probs = np.asarray(probabilities, dtype=np.float32).reshape(-1)
+        probs = probs / max(float(probs.sum()), 1e-12)
+        raw_index = int(np.argmax(probs))
+        raw_confidence = float(probs[raw_index])
+
+        if coverage < self.min_hand_coverage:
+            self.blocked_count += 1
+            if (
+                self.last_evidence_time is None
+                or timestamp - self.last_evidence_time
+                >= self.reset_after_missing_seconds
+            ):
+                self.smoother.reset()
+            return Decision(
+                index=None,
+                confidence=0.0,
+                raw_index=raw_index,
+                raw_confidence=raw_confidence,
+                streak=0,
+                hand_coverage=float(coverage),
+                blocked=True,
+                reason="low_hand_coverage",
+            )
+
+        self.last_evidence_time = timestamp
+        prediction = self.smoother.update(probs)
+        if (
+            prediction.index is not None
+            and prediction.index in self.suppress_indices
+        ):
+            # The model committed this label but the demo is configured not to
+            # show it. Keep the smoother/streak untouched: suppression is a
+            # presentation choice, not missing evidence, so it must not block
+            # or reset the next real word.
+            self.suppressed_count += 1
+            return Decision(
+                index=None,
+                confidence=prediction.confidence,
+                raw_index=prediction.raw_index,
+                raw_confidence=prediction.raw_confidence,
+                streak=prediction.streak,
+                hand_coverage=float(coverage),
+                suppressed=True,
+                reason="suppressed_label",
+            )
+        return Decision(
+            index=prediction.index,
+            confidence=prediction.confidence,
+            raw_index=prediction.raw_index,
+            raw_confidence=prediction.raw_confidence,
+            streak=prediction.streak,
+            hand_coverage=float(coverage),
+        )
+
+
+@dataclass
 class DemoStats:
     """Counters for the end-of-session failure analysis."""
 
@@ -148,6 +289,8 @@ class DemoStats:
     inferences: int = 0
     low_confidence: int = 0
     rest_predictions: int = 0
+    blocked_inferences: int = 0
+    suppressed_inferences: int = 0
     label_switches: int = 0
     last_label: str | None = None
     label_counts: dict[str, int] = field(default_factory=dict)
@@ -173,8 +316,19 @@ class DemoStats:
         fps: float,
         rest_label: str | None,
         threshold: float,
+        hand_coverage: float | None = None,
+        blocked: bool = False,
+        suppressed: bool = False,
+        reason: str = "",
+        top3: list[dict] | None = None,
+        margin: float | None = None,
+        entropy: float | None = None,
     ) -> None:
         self.inferences += 1
+        if blocked:
+            self.blocked_inferences += 1
+        if suppressed:
+            self.suppressed_inferences += 1
         if confidence < threshold:
             self.low_confidence += 1
         if label == rest_label:
@@ -182,20 +336,38 @@ class DemoStats:
         if label != self.last_label:
             self.label_switches += 1
             self.last_label = label
-        key = display if label is not None else "(below threshold)"
+        if suppressed:
+            key = "(suppressed)"
+        elif label is not None:
+            key = display
+        else:
+            key = "(below threshold)"
         self.label_counts[key] = self.label_counts.get(key, 0) + 1
-        self.timeline.append(
-            {
-                "t": round(float(timestamp), 3),
-                "label": label,
-                "display": display,
-                "confidence": round(float(confidence), 4),
-                "raw_label": raw_label,
-                "raw_confidence": round(float(raw_confidence), 4),
-                "streak": int(streak),
-                "fps": round(float(fps), 1),
-            }
-        )
+        entry = {
+            "t": round(float(timestamp), 3),
+            "label": label,
+            "display": display,
+            "confidence": round(float(confidence), 4),
+            "raw_label": raw_label,
+            "raw_confidence": round(float(raw_confidence), 4),
+            "streak": int(streak),
+            "fps": round(float(fps), 1),
+        }
+        if hand_coverage is not None:
+            entry["hand_coverage"] = round(float(hand_coverage), 4)
+        if blocked:
+            entry["blocked"] = True
+            entry["reason"] = reason
+        if suppressed:
+            entry["suppressed"] = True
+            entry["reason"] = reason
+        if top3:
+            entry["top3"] = top3
+        if margin is not None:
+            entry["margin"] = round(float(margin), 4)
+        if entropy is not None:
+            entry["entropy"] = round(float(entropy), 4)
+        self.timeline.append(entry)
 
     def summary(self, duration: float) -> dict:
         return {
@@ -205,6 +377,8 @@ class DemoStats:
             "average_fps": round(self.frames / duration, 1) if duration else 0.0,
             "frames_without_hands": self.frames_without_hands,
             "frames_without_pose": self.frames_without_pose,
+            "blocked_inferences": self.blocked_inferences,
+            "suppressed_inferences": self.suppressed_inferences,
             "low_confidence_inferences": self.low_confidence,
             "rest_predictions": self.rest_predictions,
             "label_switches": self.label_switches,

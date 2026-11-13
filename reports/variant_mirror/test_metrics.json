@@ -1,0 +1,71 @@
+{
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/mirror.pt",
+ "checkpoint_epoch": 22,
+ "split": "test",
+ "clips": 192,
+ "classes": 51,
+ "accuracy": 0.8906,
+ "top3_accuracy": 0.9688,
+ "macro_f1": 0.8693,
+ "published_accuracy": 0.945,
+ "published_gap": 0.0544,
+ "published_caveat": "The published INCLUDE-50 94.5% result uses a pretrained CNN feature extractor plus an encoder. This project uses MediaPipe keypoints only, so the comparison is not like-for-like.",
+ "rest_check": {
+  "examples": 300,
+  "predicted_rest_rate": 0.9466666666666667,
+  "mean_max_probability": 0.33639460802078247,
+  "note": "Synthetic rest built from training poses, not real webcam no-sign footage. Treat as a sanity check only."
+ },
+ "most_confused": [
+  {
+   "true": "goodmorning",
+   "predicted": "good",
+   "count": 4
+  },
+  {
+   "true": "cellphone",
+   "predicted": "black",
+   "count": 2
+  },
+  {
+   "true": "dog",
+   "predicted": "death",
+   "count": 2
+  },
+  {
+   "true": "fan",
+   "predicted": "black",
+   "count": 2
+  },
+  {
+   "true": "boy",
+   "predicted": "good",
+   "count": 1
+  },
+  {
+   "true": "boy",
+   "predicted": "youplural",
+   "count": 1
+  },
+  {
+   "true": "brother",
+   "predicted": "death",
+   "count": 1
+  },
+  {
+   "true": "girl",
+   "predicted": "boy",
+   "count": 1
+  },
+  {
+   "true": "girl",
+   "predicted": "red",
+   "count": 1
+  },
+  {
+   "true": "hello",
+   "predicted": "girl",
+   "count": 1
+  }
+ ]
+}

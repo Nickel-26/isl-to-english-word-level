@@ -1,0 +1,1580 @@
+{
+ "created_at": "2026-11-13T18:03:43",
+ "checkpoint": "models/checkpoints/drop40.pt",
+ "epoch": 52,
+ "clips_dir": "eval_vids",
+ "settings": {
+  "window_seconds": 2.5,
+  "start_after_seconds": 2.0,
+  "stride_seconds": 0.33,
+  "alpha": 0.5,
+  "min_streak": 2,
+  "threshold": 0.3,
+  "min_hand_coverage": 0.0,
+  "reset_after_missing_seconds": 0.8
+ },
+ "clips": [
+  {
+   "clip": "black.mp4",
+   "target": "black",
+   "fps": 15.14,
+   "duration_seconds": 2.91,
+   "frames": 44,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.2955,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.0,
+   "right_hand_rate": 0.2955,
+   "wrist_in_frame_rate": 0.2273,
+   "clip_mode": {
+    "top1": "fan",
+    "top1_p": 0.7783,
+    "top3": [
+     {
+      "label": "fan",
+      "p": 0.7783
+     },
+     {
+      "label": "black",
+      "p": 0.0373
+     },
+     {
+      "label": "new",
+      "p": 0.0155
+     }
+    ],
+    "margin": 0.741,
+    "entropy": 1.2653,
+    "rest_p": 0.0031
+   },
+   "effective_start_seconds": 1.42,
+   "stream": {
+    "inferences": 5,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 4,
+    "coverage": 0.8,
+    "committed_correct": 0,
+    "committed_precision": 0.0,
+    "settled_label": "fan",
+    "settled_correct": false,
+    "raw_settled_label": "fan",
+    "raw_settled_correct": false,
+    "label_counts": {
+     "fan": 4
+    },
+    "mean_window_hand_rate": 0.3954,
+    "inference_detail": [
+     {
+      "t": 1.453,
+      "raw_label": "fan",
+      "raw_p": 0.7779,
+      "window_hand_rate": 0.4348
+     },
+     {
+      "t": 1.783,
+      "raw_label": "fan",
+      "raw_p": 0.651,
+      "window_hand_rate": 0.4643
+     },
+     {
+      "t": 2.113,
+      "raw_label": "fan",
+      "raw_p": 0.8105,
+      "window_hand_rate": 0.3939
+     },
+     {
+      "t": 2.443,
+      "raw_label": "fan",
+      "raw_p": 0.8375,
+      "window_hand_rate": 0.3421
+     },
+     {
+      "t": 2.773,
+      "raw_label": "fan",
+      "raw_p": 0.8232,
+      "window_hand_rate": 0.3421
+     }
+    ]
+   }
+  },
+  {
+   "clip": "brother.mp4",
+   "target": "brother",
+   "fps": 15.11,
+   "duration_seconds": 3.77,
+   "frames": 57,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.2982,
+   "both_hands_rate": 0.0175,
+   "left_hand_rate": 0.0175,
+   "right_hand_rate": 0.2982,
+   "wrist_in_frame_rate": 0.193,
+   "clip_mode": {
+    "top1": "boy",
+    "top1_p": 0.2643,
+    "top3": [
+     {
+      "label": "boy",
+      "p": 0.2643
+     },
+     {
+      "label": "cellphone",
+      "p": 0.1507
+     },
+     {
+      "label": "fall",
+      "p": 0.111
+     }
+    ],
+    "margin": 0.1136,
+    "entropy": 2.8293,
+    "rest_p": 0.0099
+   },
+   "effective_start_seconds": 1.854,
+   "stream": {
+    "inferences": 6,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 3,
+    "coverage": 0.5,
+    "committed_correct": 0,
+    "committed_precision": 0.0,
+    "settled_label": "boy",
+    "settled_correct": false,
+    "raw_settled_label": "boy",
+    "raw_settled_correct": false,
+    "label_counts": {
+     "boy": 3
+    },
+    "mean_window_hand_rate": 0.431,
+    "inference_detail": [
+     {
+      "t": 1.854,
+      "raw_label": "cellphone",
+      "raw_p": 0.4134,
+      "window_hand_rate": 0.5862
+     },
+     {
+      "t": 2.185,
+      "raw_label": "boy",
+      "raw_p": 0.5032,
+      "window_hand_rate": 0.5
+     },
+     {
+      "t": 2.516,
+      "raw_label": "boy",
+      "raw_p": 0.4443,
+      "window_hand_rate": 0.4474
+     },
+     {
+      "t": 2.847,
+      "raw_label": "boy",
+      "raw_p": 0.3608,
+      "window_hand_rate": 0.4474
+     },
+     {
+      "t": 3.178,
+      "raw_label": "boy",
+      "raw_p": 0.2994,
+      "window_hand_rate": 0.3684
+     },
+     {
+      "t": 3.509,
+      "raw_label": "summer",
+      "raw_p": 0.215,
+      "window_hand_rate": 0.2368
+     }
+    ]
+   }
+  },
+  {
+   "clip": "cell_phone.mp4",
+   "target": "cellphone",
+   "fps": 15.24,
+   "duration_seconds": 1.84,
+   "frames": 28,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.4286,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.0,
+   "right_hand_rate": 0.4286,
+   "wrist_in_frame_rate": 0.3036,
+   "clip_mode": {
+    "top1": "cellphone",
+    "top1_p": 0.9179,
+    "top3": [
+     {
+      "label": "cellphone",
+      "p": 0.9179
+     },
+     {
+      "label": "loud",
+      "p": 0.0084
+     },
+     {
+      "label": "fan",
+      "p": 0.0075
+     }
+    ],
+    "margin": 0.9095,
+    "entropy": 0.5617,
+    "rest_p": 0.002
+   },
+   "effective_start_seconds": 0.886,
+   "stream": {
+    "inferences": 3,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 2,
+    "coverage": 0.6667,
+    "committed_correct": 2,
+    "committed_precision": 1.0,
+    "settled_label": "cellphone",
+    "settled_correct": true,
+    "raw_settled_label": "cellphone",
+    "raw_settled_correct": true,
+    "label_counts": {
+     "cellphone": 2
+    },
+    "mean_window_hand_rate": 0.5164,
+    "inference_detail": [
+     {
+      "t": 0.919,
+      "raw_label": "cellphone",
+      "raw_p": 0.5883,
+      "window_hand_rate": 0.5333
+     },
+     {
+      "t": 1.312,
+      "raw_label": "cellphone",
+      "raw_p": 0.7294,
+      "window_hand_rate": 0.5714
+     },
+     {
+      "t": 1.706,
+      "raw_label": "cellphone",
+      "raw_p": 0.9127,
+      "window_hand_rate": 0.4444
+     }
+    ]
+   }
+  },
+  {
+   "clip": "cow.mp4",
+   "target": "cow",
+   "fps": 15.08,
+   "duration_seconds": 4.64,
+   "frames": 70,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.4714,
+   "both_hands_rate": 0.4571,
+   "left_hand_rate": 0.4714,
+   "right_hand_rate": 0.4571,
+   "wrist_in_frame_rate": 0.5286,
+   "clip_mode": {
+    "top1": "cow",
+    "top1_p": 0.9213,
+    "top3": [
+     {
+      "label": "cow",
+      "p": 0.9213
+     },
+     {
+      "label": "loud",
+      "p": 0.0083
+     },
+     {
+      "label": "window",
+      "p": 0.0034
+     }
+    ],
+    "margin": 0.913,
+    "entropy": 0.5637,
+    "rest_p": 0.0002
+   },
+   "effective_start_seconds": 2.0,
+   "stream": {
+    "inferences": 8,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 7,
+    "coverage": 0.875,
+    "committed_correct": 7,
+    "committed_precision": 1.0,
+    "settled_label": "cow",
+    "settled_correct": true,
+    "raw_settled_label": "cow",
+    "raw_settled_correct": true,
+    "label_counts": {
+     "cow": 7
+    },
+    "mean_window_hand_rate": 0.6713,
+    "inference_detail": [
+     {
+      "t": 2.055,
+      "raw_label": "cow",
+      "raw_p": 0.7307,
+      "window_hand_rate": 0.7188
+     },
+     {
+      "t": 2.387,
+      "raw_label": "cow",
+      "raw_p": 0.7322,
+      "window_hand_rate": 0.7568
+     },
+     {
+      "t": 2.718,
+      "raw_label": "cow",
+      "raw_p": 0.6988,
+      "window_hand_rate": 0.8684
+     },
+     {
+      "t": 3.05,
+      "raw_label": "cow",
+      "raw_p": 0.7761,
+      "window_hand_rate": 0.8684
+     },
+     {
+      "t": 3.382,
+      "raw_label": "cow",
+      "raw_p": 0.8352,
+      "window_hand_rate": 0.7368
+     },
+     {
+      "t": 3.713,
+      "raw_label": "cow",
+      "raw_p": 0.8704,
+      "window_hand_rate": 0.6053
+     },
+     {
+      "t": 4.045,
+      "raw_label": "cow",
+      "raw_p": 0.8872,
+      "window_hand_rate": 0.4737
+     },
+     {
+      "t": 4.376,
+      "raw_label": "cow",
+      "raw_p": 0.8611,
+      "window_hand_rate": 0.3421
+     }
+    ]
+   }
+  },
+  {
+   "clip": "fan.mp4",
+   "target": "fan",
+   "fps": 15.1,
+   "duration_seconds": 4.17,
+   "frames": 63,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.5556,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.5556,
+   "right_hand_rate": 0.0,
+   "wrist_in_frame_rate": 0.2937,
+   "clip_mode": {
+    "top1": "paint",
+    "top1_p": 0.2212,
+    "top3": [
+     {
+      "label": "paint",
+      "p": 0.2212
+     },
+     {
+      "label": "bird",
+      "p": 0.0755
+     },
+     {
+      "label": "red",
+      "p": 0.0559
+     }
+    ],
+    "margin": 0.1457,
+    "entropy": 3.3145,
+    "rest_p": 0.0392
+   },
+   "effective_start_seconds": 2.0,
+   "stream": {
+    "inferences": 7,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 2,
+    "coverage": 0.2857,
+    "committed_correct": 0,
+    "committed_precision": 0.0,
+    "settled_label": "paint",
+    "settled_correct": false,
+    "raw_settled_label": "paint",
+    "raw_settled_correct": false,
+    "label_counts": {
+     "paint": 2
+    },
+    "mean_window_hand_rate": 0.7119,
+    "inference_detail": [
+     {
+      "t": 2.054,
+      "raw_label": "paint",
+      "raw_p": 0.1243,
+      "window_hand_rate": 0.4688
+     },
+     {
+      "t": 2.385,
+      "raw_label": "paint",
+      "raw_p": 0.1439,
+      "window_hand_rate": 0.5405
+     },
+     {
+      "t": 2.716,
+      "raw_label": "paint",
+      "raw_p": 0.1872,
+      "window_hand_rate": 0.6579
+     },
+     {
+      "t": 3.047,
+      "raw_label": "paint",
+      "raw_p": 0.2319,
+      "window_hand_rate": 0.7895
+     },
+     {
+      "t": 3.378,
+      "raw_label": "paint",
+      "raw_p": 0.2801,
+      "window_hand_rate": 0.9211
+     },
+     {
+      "t": 3.71,
+      "raw_label": "paint",
+      "raw_p": 0.3634,
+      "window_hand_rate": 0.8684
+     },
+     {
+      "t": 4.041,
+      "raw_label": "paint",
+      "raw_p": 0.359,
+      "window_hand_rate": 0.7368
+     }
+    ]
+   }
+  },
+  {
+   "clip": "priest.mp4",
+   "target": "priest",
+   "fps": 15.11,
+   "duration_seconds": 3.84,
+   "frames": 58,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.3448,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.3448,
+   "right_hand_rate": 0.0,
+   "wrist_in_frame_rate": 0.2328,
+   "clip_mode": {
+    "top1": "paint",
+    "top1_p": 0.1222,
+    "top3": [
+     {
+      "label": "paint",
+      "p": 0.1222
+     },
+     {
+      "label": "rest",
+      "p": 0.1151
+     },
+     {
+      "label": "window",
+      "p": 0.0521
+     }
+    ],
+    "margin": 0.0071,
+    "entropy": 3.5115,
+    "rest_p": 0.1151
+   },
+   "effective_start_seconds": 1.886,
+   "stream": {
+    "inferences": 6,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 1,
+    "coverage": 0.1667,
+    "committed_correct": 0,
+    "committed_precision": 0.0,
+    "settled_label": "paint",
+    "settled_correct": false,
+    "raw_settled_label": "paint",
+    "raw_settled_correct": false,
+    "label_counts": {
+     "paint": 1
+    },
+    "mean_window_hand_rate": 0.3183,
+    "inference_detail": [
+     {
+      "t": 1.919,
+      "raw_label": "rest",
+      "raw_p": 0.1537,
+      "window_hand_rate": 0.4333
+     },
+     {
+      "t": 2.249,
+      "raw_label": "rest",
+      "raw_p": 0.1517,
+      "window_hand_rate": 0.3714
+     },
+     {
+      "t": 2.58,
+      "raw_label": "paint",
+      "raw_p": 0.1405,
+      "window_hand_rate": 0.3684
+     },
+     {
+      "t": 2.911,
+      "raw_label": "paint",
+      "raw_p": 0.1984,
+      "window_hand_rate": 0.2368
+     },
+     {
+      "t": 3.242,
+      "raw_label": "paint",
+      "raw_p": 0.2527,
+      "window_hand_rate": 0.2105
+     },
+     {
+      "t": 3.573,
+      "raw_label": "paint",
+      "raw_p": 0.4061,
+      "window_hand_rate": 0.2895
+     }
+    ]
+   }
+  },
+  {
+   "clip": "quiet.mp4",
+   "target": "quiet",
+   "fps": 15.21,
+   "duration_seconds": 2.17,
+   "frames": 33,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.3636,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.0,
+   "right_hand_rate": 0.3636,
+   "wrist_in_frame_rate": 0.2727,
+   "clip_mode": {
+    "top1": "quiet",
+    "top1_p": 0.8417,
+    "top3": [
+     {
+      "label": "quiet",
+      "p": 0.8417
+     },
+     {
+      "label": "white",
+      "p": 0.0419
+     },
+     {
+      "label": "dry",
+      "p": 0.0083
+     }
+    ],
+    "margin": 0.7998,
+    "entropy": 0.9372,
+    "rest_p": 0.0037
+   },
+   "effective_start_seconds": 1.052,
+   "stream": {
+    "inferences": 3,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 1,
+    "coverage": 0.3333,
+    "committed_correct": 1,
+    "committed_precision": 1.0,
+    "settled_label": "quiet",
+    "settled_correct": true,
+    "raw_settled_label": "quiet",
+    "raw_settled_correct": true,
+    "label_counts": {
+     "quiet": 1
+    },
+    "mean_window_hand_rate": 0.3954,
+    "inference_detail": [
+     {
+      "t": 1.052,
+      "raw_label": "rest",
+      "raw_p": 0.1168,
+      "window_hand_rate": 0.2941
+     },
+     {
+      "t": 1.446,
+      "raw_label": "quiet",
+      "raw_p": 0.5548,
+      "window_hand_rate": 0.4783
+     },
+     {
+      "t": 1.841,
+      "raw_label": "quiet",
+      "raw_p": 0.808,
+      "window_hand_rate": 0.4138
+     }
+    ]
+   }
+  },
+  {
+   "clip": "red.mp4",
+   "target": "red",
+   "fps": 15.12,
+   "duration_seconds": 3.37,
+   "frames": 51,
+   "pose_rate": 1.0,
+   "any_hand_rate": 0.2353,
+   "both_hands_rate": 0.0,
+   "left_hand_rate": 0.0,
+   "right_hand_rate": 0.2353,
+   "wrist_in_frame_rate": 0.1471,
+   "clip_mode": {
+    "top1": "red",
+    "top1_p": 0.8859,
+    "top3": [
+     {
+      "label": "red",
+      "p": 0.8859
+     },
+     {
+      "label": "white",
+      "p": 0.0211
+     },
+     {
+      "label": "cellphone",
+      "p": 0.0136
+     }
+    ],
+    "margin": 0.8648,
+    "entropy": 0.7263,
+    "rest_p": 0.0009
+   },
+   "effective_start_seconds": 1.654,
+   "stream": {
+    "inferences": 6,
+    "blocked": 0,
+    "blocked_rate": 0.0,
+    "committed": 5,
+    "coverage": 0.8333,
+    "committed_correct": 5,
+    "committed_precision": 1.0,
+    "settled_label": "red",
+    "settled_correct": true,
+    "raw_settled_label": "red",
+    "raw_settled_correct": true,
+    "label_counts": {
+     "red": 5
+    },
+    "mean_window_hand_rate": 0.3485,
+    "inference_detail": [
+     {
+      "t": 1.654,
+      "raw_label": "red",
+      "raw_p": 0.6934,
+      "window_hand_rate": 0.4231
+     },
+     {
+      "t": 1.984,
+      "raw_label": "red",
+      "raw_p": 0.9009,
+      "window_hand_rate": 0.3871
+     },
+     {
+      "t": 2.315,
+      "raw_label": "red",
+      "raw_p": 0.9269,
+      "window_hand_rate": 0.3333
+     },
+     {
+      "t": 2.646,
+      "raw_label": "red",
+      "raw_p": 0.9305,
+      "window_hand_rate": 0.3158
+     },
+     {
+      "t": 2.976,
+      "raw_label": "red",
+      "raw_p": 0.8997,
+      "window_hand_rate": 0.3158
+     },
+     {
+      "t": 3.307,
+      "raw_label": "red",
+      "raw_p": 0.6428,
+      "window_hand_rate": 0.3158
+     }
+    ]
+   }
+  }
+ ],
+ "clip_accuracy": {
+  "n": 8,
+  "top1": 0.5,
+  "top3": 0.625,
+  "errors": [
+   {
+    "target": "black",
+    "pred": "fan",
+    "p": 0.7783
+   },
+   {
+    "target": "brother",
+    "pred": "boy",
+    "p": 0.2643
+   },
+   {
+    "target": "fan",
+    "pred": "paint",
+    "p": 0.2212
+   },
+   {
+    "target": "priest",
+    "pred": "paint",
+    "p": 0.1222
+   }
+  ]
+ },
+ "stream_score": {
+  "n": 8,
+  "settled_top1": 0.5,
+  "raw_settled_top1": 0.5,
+  "committed_total": 25,
+  "committed_correct": 15,
+  "committed_precision": 0.6,
+  "coverage": 0.5682,
+  "blocked_rate": 0.0,
+  "mean_any_hand_rate": 0.3741,
+  "mean_window_hand_rate": 0.4735
+ },
+ "sweep": [
+  {
+   "threshold": 0.4,
+   "min_streak": 2,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.5,
+   "committed": 20,
+   "committed_correct": 15,
+   "committed_precision": 0.75,
+   "coverage": 0.4545,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 2,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.5,
+   "committed": 20,
+   "committed_correct": 15,
+   "committed_precision": 0.75,
+   "coverage": 0.4545,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 2,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.5,
+   "committed": 20,
+   "committed_correct": 15,
+   "committed_precision": 0.75,
+   "coverage": 0.4545,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 2,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.375,
+   "committed": 11,
+   "committed_correct": 9,
+   "committed_precision": 0.8182,
+   "coverage": 0.25,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 2,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 3,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 3,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 3,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 3,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 3,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 4,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 4,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 4,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 4,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.4,
+   "min_streak": 4,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 3,
+   "committed_correct": 3,
+   "committed_precision": 1.0,
+   "coverage": 0.0682,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 2,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.5,
+   "committed": 19,
+   "committed_correct": 15,
+   "committed_precision": 0.7895,
+   "coverage": 0.4318,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 2,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.5,
+   "committed": 19,
+   "committed_correct": 15,
+   "committed_precision": 0.7895,
+   "coverage": 0.4318,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 2,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.5,
+   "committed": 19,
+   "committed_correct": 15,
+   "committed_precision": 0.7895,
+   "coverage": 0.4318,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 2,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.375,
+   "committed": 10,
+   "committed_correct": 9,
+   "committed_precision": 0.9,
+   "coverage": 0.2273,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 2,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 3,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 3,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 3,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 3,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 3,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 4,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 4,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 4,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 4,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.5,
+   "min_streak": 4,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 3,
+   "committed_correct": 3,
+   "committed_precision": 1.0,
+   "coverage": 0.0682,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 2,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 18,
+   "committed_correct": 14,
+   "committed_precision": 0.7778,
+   "coverage": 0.4091,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 2,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 18,
+   "committed_correct": 14,
+   "committed_precision": 0.7778,
+   "coverage": 0.4091,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 2,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.5,
+   "committed": 19,
+   "committed_correct": 15,
+   "committed_precision": 0.7895,
+   "coverage": 0.4318,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 2,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.375,
+   "committed": 10,
+   "committed_correct": 9,
+   "committed_precision": 0.9,
+   "coverage": 0.2273,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 2,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 3,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 3,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 3,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 3,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 3,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 4,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 4,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 4,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 4,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.6,
+   "min_streak": 4,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 3,
+   "committed_correct": 3,
+   "committed_precision": 1.0,
+   "coverage": 0.0682,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 2,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 17,
+   "committed_correct": 13,
+   "committed_precision": 0.7647,
+   "coverage": 0.3864,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 2,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 17,
+   "committed_correct": 13,
+   "committed_precision": 0.7647,
+   "coverage": 0.3864,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 2,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.375,
+   "committed": 17,
+   "committed_correct": 13,
+   "committed_precision": 0.7647,
+   "coverage": 0.3864,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 2,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 7,
+   "committed_precision": 0.875,
+   "coverage": 0.1818,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 2,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 5,
+   "committed_correct": 5,
+   "committed_precision": 1.0,
+   "coverage": 0.1136,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 3,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 3,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 3,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.375,
+   "committed": 14,
+   "committed_correct": 11,
+   "committed_precision": 0.7857,
+   "coverage": 0.3182,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 3,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.25,
+   "committed": 6,
+   "committed_correct": 6,
+   "committed_precision": 1.0,
+   "coverage": 0.1364,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 3,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 4,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 4,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 4,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 10,
+   "committed_correct": 8,
+   "committed_precision": 0.8,
+   "coverage": 0.2273,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 4,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 4,
+   "committed_correct": 4,
+   "committed_precision": 1.0,
+   "coverage": 0.0909,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.7,
+   "min_streak": 4,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 3,
+   "committed_correct": 3,
+   "committed_precision": 1.0,
+   "coverage": 0.0682,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 2,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 2,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 2,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 2,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 2,
+   "committed_correct": 2,
+   "committed_precision": 1.0,
+   "coverage": 0.0455,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 2,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 1,
+   "committed_correct": 1,
+   "committed_precision": 1.0,
+   "coverage": 0.0227,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 3,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 3,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 3,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 8,
+   "committed_correct": 6,
+   "committed_precision": 0.75,
+   "coverage": 0.1818,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 3,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 2,
+   "committed_correct": 2,
+   "committed_precision": 1.0,
+   "coverage": 0.0455,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 3,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 1,
+   "committed_correct": 1,
+   "committed_precision": 1.0,
+   "coverage": 0.0227,
+   "blocked_rate": 0.6364
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 4,
+   "min_hand_coverage": 0.0,
+   "settled_top1": 0.25,
+   "committed": 7,
+   "committed_correct": 5,
+   "committed_precision": 0.7143,
+   "coverage": 0.1591,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 4,
+   "min_hand_coverage": 0.2,
+   "settled_top1": 0.25,
+   "committed": 7,
+   "committed_correct": 5,
+   "committed_precision": 0.7143,
+   "coverage": 0.1591,
+   "blocked_rate": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 4,
+   "min_hand_coverage": 0.3,
+   "settled_top1": 0.25,
+   "committed": 7,
+   "committed_correct": 5,
+   "committed_precision": 0.7143,
+   "coverage": 0.1591,
+   "blocked_rate": 0.1136
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 4,
+   "min_hand_coverage": 0.4,
+   "settled_top1": 0.125,
+   "committed": 2,
+   "committed_correct": 2,
+   "committed_precision": 1.0,
+   "coverage": 0.0455,
+   "blocked_rate": 0.3864
+  },
+  {
+   "threshold": 0.8,
+   "min_streak": 4,
+   "min_hand_coverage": 0.5,
+   "settled_top1": 0.125,
+   "committed": 1,
+   "committed_correct": 1,
+   "committed_precision": 1.0,
+   "coverage": 0.0227,
+   "blocked_rate": 0.6364
+  }
+ ]
+}

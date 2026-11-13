@@ -1,0 +1,6328 @@
+{
+ "created_at": "2026-11-13T15:33:53",
+ "checkpoint": "/home/pranay/Pranay/Coding/ivp/models/checkpoints/include50_best.pt",
+ "source": "0",
+ "device": "cuda",
+ "settings": {
+  "window_seconds": 2.5,
+  "start_after_seconds": 2.0,
+  "threshold": 0.15,
+  "alpha": 0.5,
+  "min_streak": 2,
+  "infer_every_seconds": 0.33,
+  "mirror": false
+ },
+ "summary": {
+  "duration_seconds": 221.96,
+  "frames": 4166,
+  "inferences": 628,
+  "average_fps": 18.8,
+  "frames_without_hands": 2650,
+  "frames_without_pose": 600,
+  "low_confidence_inferences": 160,
+  "rest_predictions": 58,
+  "label_switches": 130,
+  "label_time": {
+   "(below threshold)": 204,
+   "Hat": 98,
+   "Cell phone": 73,
+   "No sign": 58,
+   "Bird": 42,
+   "Fan": 22,
+   "Boy": 21,
+   "Fall": 17,
+   "Loud": 16,
+   "Red": 15,
+   "Election": 12,
+   "Cow": 11,
+   "Quiet": 10,
+   "Priest": 8,
+   "Shoes": 6,
+   "House": 6,
+   "T-shirt": 6,
+   "Big / Large": 3
+  }
+ },
+ "timeline": [
+  {
+   "t": 2.905,
+   "label": null,
+   "display": "...",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 1,
+   "fps": 13.8
+  },
+  {
+   "t": 3.241,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 2,
+   "fps": 16.2
+  },
+  {
+   "t": 4.709,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 3,
+   "fps": 15.1
+  },
+  {
+   "t": 5.041,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 4,
+   "fps": 15.1
+  },
+  {
+   "t": 5.377,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 5.709,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 6,
+   "fps": 15.1
+  },
+  {
+   "t": 6.045,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 7,
+   "fps": 15.0
+  },
+  {
+   "t": 6.377,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 8,
+   "fps": 15.0
+  },
+  {
+   "t": 6.713,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 9,
+   "fps": 15.0
+  },
+  {
+   "t": 7.045,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 10,
+   "fps": 15.0
+  },
+  {
+   "t": 7.381,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 11,
+   "fps": 15.0
+  },
+  {
+   "t": 7.713,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 12,
+   "fps": 15.0
+  },
+  {
+   "t": 8.049,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 13,
+   "fps": 15.0
+  },
+  {
+   "t": 8.381,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 14,
+   "fps": 15.0
+  },
+  {
+   "t": 8.717,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 15,
+   "fps": 15.0
+  },
+  {
+   "t": 9.049,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 16,
+   "fps": 15.0
+  },
+  {
+   "t": 9.385,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 17,
+   "fps": 15.0
+  },
+  {
+   "t": 9.717,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 18,
+   "fps": 15.0
+  },
+  {
+   "t": 10.053,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 19,
+   "fps": 15.0
+  },
+  {
+   "t": 10.385,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 20,
+   "fps": 15.0
+  },
+  {
+   "t": 10.721,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 21,
+   "fps": 15.0
+  },
+  {
+   "t": 11.053,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 22,
+   "fps": 15.0
+  },
+  {
+   "t": 11.389,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 23,
+   "fps": 14.9
+  },
+  {
+   "t": 11.721,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 24,
+   "fps": 15.0
+  },
+  {
+   "t": 12.057,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 25,
+   "fps": 14.9
+  },
+  {
+   "t": 12.389,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 26,
+   "fps": 15.0
+  },
+  {
+   "t": 12.721,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 27,
+   "fps": 15.0
+  },
+  {
+   "t": 13.057,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 28,
+   "fps": 15.0
+  },
+  {
+   "t": 13.389,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 29,
+   "fps": 15.0
+  },
+  {
+   "t": 13.725,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 30,
+   "fps": 15.0
+  },
+  {
+   "t": 14.057,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 31,
+   "fps": 15.0
+  },
+  {
+   "t": 14.393,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 32,
+   "fps": 15.0
+  },
+  {
+   "t": 14.725,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 33,
+   "fps": 15.0
+  },
+  {
+   "t": 15.061,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 34,
+   "fps": 15.0
+  },
+  {
+   "t": 15.393,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 35,
+   "fps": 15.0
+  },
+  {
+   "t": 15.729,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 36,
+   "fps": 15.0
+  },
+  {
+   "t": 16.061,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 37,
+   "fps": 15.0
+  },
+  {
+   "t": 16.397,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 38,
+   "fps": 15.0
+  },
+  {
+   "t": 16.729,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 39,
+   "fps": 15.0
+  },
+  {
+   "t": 17.065,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 40,
+   "fps": 15.0
+  },
+  {
+   "t": 17.397,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 41,
+   "fps": 15.0
+  },
+  {
+   "t": 17.733,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 42,
+   "fps": 15.0
+  },
+  {
+   "t": 18.065,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 43,
+   "fps": 15.0
+  },
+  {
+   "t": 18.401,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 44,
+   "fps": 15.0
+  },
+  {
+   "t": 18.733,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 45,
+   "fps": 15.0
+  },
+  {
+   "t": 19.069,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 46,
+   "fps": 15.0
+  },
+  {
+   "t": 19.401,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 47,
+   "fps": 15.0
+  },
+  {
+   "t": 19.737,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 48,
+   "fps": 14.9
+  },
+  {
+   "t": 20.069,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 49,
+   "fps": 15.0
+  },
+  {
+   "t": 20.405,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 50,
+   "fps": 14.9
+  },
+  {
+   "t": 20.737,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 51,
+   "fps": 15.0
+  },
+  {
+   "t": 21.069,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 52,
+   "fps": 15.0
+  },
+  {
+   "t": 21.405,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7018,
+   "raw_label": "hat",
+   "raw_confidence": 0.7846,
+   "streak": 53,
+   "fps": 15.0
+  },
+  {
+   "t": 21.737,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7503,
+   "raw_label": "hat",
+   "raw_confidence": 0.7989,
+   "streak": 54,
+   "fps": 15.0
+  },
+  {
+   "t": 22.073,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7752,
+   "raw_label": "hat",
+   "raw_confidence": 0.8,
+   "streak": 55,
+   "fps": 15.0
+  },
+  {
+   "t": 22.405,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7813,
+   "raw_label": "hat",
+   "raw_confidence": 0.7874,
+   "streak": 56,
+   "fps": 15.0
+  },
+  {
+   "t": 22.741,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7863,
+   "raw_label": "hat",
+   "raw_confidence": 0.7913,
+   "streak": 57,
+   "fps": 15.0
+  },
+  {
+   "t": 23.073,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7831,
+   "raw_label": "hat",
+   "raw_confidence": 0.7799,
+   "streak": 58,
+   "fps": 15.0
+  },
+  {
+   "t": 23.409,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7605,
+   "raw_label": "hat",
+   "raw_confidence": 0.738,
+   "streak": 59,
+   "fps": 15.0
+  },
+  {
+   "t": 23.761,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.7203,
+   "raw_label": "hat",
+   "raw_confidence": 0.6801,
+   "streak": 60,
+   "fps": 16.3
+  },
+  {
+   "t": 24.109,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6696,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 61,
+   "fps": 18.3
+  },
+  {
+   "t": 24.46,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6443,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 62,
+   "fps": 24.1
+  },
+  {
+   "t": 24.797,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6316,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 63,
+   "fps": 27.8
+  },
+  {
+   "t": 25.129,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6253,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 64,
+   "fps": 29.4
+  },
+  {
+   "t": 25.464,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6221,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 65,
+   "fps": 29.9
+  },
+  {
+   "t": 25.802,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6205,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 66,
+   "fps": 30.2
+  },
+  {
+   "t": 26.133,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6197,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 67,
+   "fps": 30.2
+  },
+  {
+   "t": 26.465,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6193,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 68,
+   "fps": 30.3
+  },
+  {
+   "t": 26.8,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6192,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 69,
+   "fps": 30.1
+  },
+  {
+   "t": 27.137,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.6191,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 70,
+   "fps": 29.9
+  },
+  {
+   "t": 27.469,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 71,
+   "fps": 30.1
+  },
+  {
+   "t": 27.805,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 72,
+   "fps": 29.9
+  },
+  {
+   "t": 28.138,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 73,
+   "fps": 30.1
+  },
+  {
+   "t": 28.473,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 74,
+   "fps": 30.1
+  },
+  {
+   "t": 28.808,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 75,
+   "fps": 29.9
+  },
+  {
+   "t": 29.148,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 76,
+   "fps": 29.5
+  },
+  {
+   "t": 29.509,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 77,
+   "fps": 30.1
+  },
+  {
+   "t": 29.845,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 78,
+   "fps": 29.9
+  },
+  {
+   "t": 30.177,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 79,
+   "fps": 26.1
+  },
+  {
+   "t": 30.513,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 80,
+   "fps": 21.5
+  },
+  {
+   "t": 30.845,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 81,
+   "fps": 18.9
+  },
+  {
+   "t": 31.181,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 82,
+   "fps": 17.2
+  },
+  {
+   "t": 31.513,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 83,
+   "fps": 16.3
+  },
+  {
+   "t": 31.849,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 84,
+   "fps": 15.7
+  },
+  {
+   "t": 32.181,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 85,
+   "fps": 15.5
+  },
+  {
+   "t": 32.517,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 86,
+   "fps": 15.2
+  },
+  {
+   "t": 32.849,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 87,
+   "fps": 15.2
+  },
+  {
+   "t": 33.185,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 88,
+   "fps": 15.0
+  },
+  {
+   "t": 33.517,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 89,
+   "fps": 15.0
+  },
+  {
+   "t": 33.853,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 90,
+   "fps": 15.0
+  },
+  {
+   "t": 34.185,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 91,
+   "fps": 15.0
+  },
+  {
+   "t": 34.553,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 92,
+   "fps": 15.9
+  },
+  {
+   "t": 34.905,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 93,
+   "fps": 18.0
+  },
+  {
+   "t": 35.253,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.619,
+   "raw_label": "hat",
+   "raw_confidence": 0.619,
+   "streak": 94,
+   "fps": 19.1
+  },
+  {
+   "t": 35.607,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.543,
+   "raw_label": "hat",
+   "raw_confidence": 0.467,
+   "streak": 95,
+   "fps": 19.5
+  },
+  {
+   "t": 35.957,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.4581,
+   "raw_label": "hat",
+   "raw_confidence": 0.3733,
+   "streak": 96,
+   "fps": 19.7
+  },
+  {
+   "t": 36.309,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.3696,
+   "raw_label": "hat",
+   "raw_confidence": 0.2811,
+   "streak": 97,
+   "fps": 19.8
+  },
+  {
+   "t": 36.673,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.2801,
+   "raw_label": "hat",
+   "raw_confidence": 0.1905,
+   "streak": 98,
+   "fps": 19.5
+  },
+  {
+   "t": 37.009,
+   "label": "hat",
+   "display": "Hat",
+   "confidence": 0.2386,
+   "raw_label": "hat",
+   "raw_confidence": 0.1972,
+   "streak": 99,
+   "fps": 17.6
+  },
+  {
+   "t": 37.341,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1695,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2056,
+   "streak": 1,
+   "fps": 16.6
+  },
+  {
+   "t": 37.677,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1588,
+   "raw_label": "quiet",
+   "raw_confidence": 0.148,
+   "streak": 2,
+   "fps": 15.9
+  },
+  {
+   "t": 38.009,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1538,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1488,
+   "streak": 3,
+   "fps": 15.5
+  },
+  {
+   "t": 38.345,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1264,
+   "raw_label": "rest",
+   "raw_confidence": 0.0992,
+   "streak": 4,
+   "fps": 15.3
+  },
+  {
+   "t": 38.709,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0998,
+   "raw_label": "paint",
+   "raw_confidence": 0.1432,
+   "streak": 1,
+   "fps": 17.5
+  },
+  {
+   "t": 39.061,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1274,
+   "raw_label": "paint",
+   "raw_confidence": 0.155,
+   "streak": 2,
+   "fps": 18.8
+  },
+  {
+   "t": 39.413,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1155,
+   "raw_label": "paint",
+   "raw_confidence": 0.1035,
+   "streak": 3,
+   "fps": 18.0
+  },
+  {
+   "t": 39.745,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0992,
+   "raw_label": "rest",
+   "raw_confidence": 0.1143,
+   "streak": 4,
+   "fps": 16.8
+  },
+  {
+   "t": 40.081,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0964,
+   "raw_label": "paint",
+   "raw_confidence": 0.0937,
+   "streak": 5,
+   "fps": 16.0
+  },
+  {
+   "t": 40.413,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1052,
+   "raw_label": "paint",
+   "raw_confidence": 0.1139,
+   "streak": 6,
+   "fps": 15.6
+  },
+  {
+   "t": 40.749,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0951,
+   "raw_label": "paint",
+   "raw_confidence": 0.0851,
+   "streak": 7,
+   "fps": 15.3
+  },
+  {
+   "t": 41.081,
+   "label": null,
+   "display": "...",
+   "confidence": 0.101,
+   "raw_label": "rest",
+   "raw_confidence": 0.1439,
+   "streak": 1,
+   "fps": 15.2
+  },
+  {
+   "t": 41.417,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1193,
+   "raw_label": "rest",
+   "raw_confidence": 0.1377,
+   "streak": 2,
+   "fps": 15.1
+  },
+  {
+   "t": 41.749,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1304,
+   "raw_label": "rest",
+   "raw_confidence": 0.1414,
+   "streak": 3,
+   "fps": 15.1
+  },
+  {
+   "t": 42.085,
+   "label": null,
+   "display": "...",
+   "confidence": 0.14,
+   "raw_label": "rest",
+   "raw_confidence": 0.1497,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 42.417,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1499,
+   "raw_label": "rest",
+   "raw_confidence": 0.1598,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 42.753,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1385,
+   "raw_label": "rest",
+   "raw_confidence": 0.127,
+   "streak": 6,
+   "fps": 15.0
+  },
+  {
+   "t": 43.085,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1075,
+   "raw_label": "paint",
+   "raw_confidence": 0.1231,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 43.421,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0985,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.171,
+   "streak": 1,
+   "fps": 16.6
+  },
+  {
+   "t": 43.774,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1705,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2424,
+   "streak": 2,
+   "fps": 18.2
+  },
+  {
+   "t": 44.121,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2026,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2348,
+   "streak": 3,
+   "fps": 19.2
+  },
+  {
+   "t": 44.473,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2096,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2166,
+   "streak": 4,
+   "fps": 19.6
+  },
+  {
+   "t": 44.82,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2042,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1988,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 45.173,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.17,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1359,
+   "streak": 6,
+   "fps": 19.9
+  },
+  {
+   "t": 45.525,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1329,
+   "raw_label": "red",
+   "raw_confidence": 0.1087,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 45.872,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1264,
+   "raw_label": "boy",
+   "raw_confidence": 0.1331,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 46.225,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1381,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1499,
+   "streak": 9,
+   "fps": 20.1
+  },
+  {
+   "t": 46.577,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.157,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1758,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 46.925,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1707,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1845,
+   "streak": 11,
+   "fps": 20.1
+  },
+  {
+   "t": 47.277,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1844,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1981,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 47.629,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1954,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2063,
+   "streak": 13,
+   "fps": 20.0
+  },
+  {
+   "t": 47.981,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1959,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2404,
+   "streak": 14,
+   "fps": 19.9
+  },
+  {
+   "t": 48.329,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1778,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1641,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 48.681,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1711,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1645,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 49.033,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1453,
+   "raw_label": "red",
+   "raw_confidence": 0.17,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 49.381,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1184,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.1405,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 49.733,
+   "label": null,
+   "display": "...",
+   "confidence": 0.154,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2196,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 50.084,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1765,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.199,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 50.433,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1961,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2157,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 50.785,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1972,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1984,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 51.137,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1811,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1649,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 51.485,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1502,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1192,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 51.837,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1714,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2314,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 52.189,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1752,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1791,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 52.541,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1696,
+   "raw_label": "red",
+   "raw_confidence": 0.2024,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 52.889,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2082,
+   "raw_label": "red",
+   "raw_confidence": 0.2468,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 53.241,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2196,
+   "raw_label": "red",
+   "raw_confidence": 0.231,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 53.593,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.1647,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.1239,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 53.943,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0906,
+   "raw_label": "rest",
+   "raw_confidence": 0.1321,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 54.293,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0709,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1155,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 54.645,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1028,
+   "raw_label": "goodmorning",
+   "raw_confidence": 0.1424,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 54.993,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0954,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.1235,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 55.345,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1098,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.129,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 55.697,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1181,
+   "raw_label": "quiet",
+   "raw_confidence": 0.154,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 56.045,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1489,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1797,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 56.397,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1326,
+   "raw_label": "red",
+   "raw_confidence": 0.1864,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 56.749,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1485,
+   "raw_label": "fall",
+   "raw_confidence": 0.1985,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 57.101,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0851,
+   "raw_label": "rest",
+   "raw_confidence": 0.1394,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 57.449,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1117,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1534,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 57.801,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1449,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1781,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 58.153,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1528,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1608,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 58.501,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1615,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2488,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 58.853,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.2108,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2601,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 59.205,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1674,
+   "raw_label": "red",
+   "raw_confidence": 0.1883,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 59.553,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2054,
+   "raw_label": "red",
+   "raw_confidence": 0.2511,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 59.905,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.1827,
+   "raw_label": "red",
+   "raw_confidence": 0.16,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 60.257,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1273,
+   "raw_label": "fall",
+   "raw_confidence": 0.196,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 60.605,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1292,
+   "raw_label": "rest",
+   "raw_confidence": 0.2462,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 60.957,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1905,
+   "raw_label": "rest",
+   "raw_confidence": 0.2519,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 61.309,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2234,
+   "raw_label": "rest",
+   "raw_confidence": 0.2563,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 61.657,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2387,
+   "raw_label": "rest",
+   "raw_confidence": 0.254,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 62.009,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2476,
+   "raw_label": "rest",
+   "raw_confidence": 0.2565,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 62.361,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2502,
+   "raw_label": "rest",
+   "raw_confidence": 0.2527,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 62.713,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2504,
+   "raw_label": "rest",
+   "raw_confidence": 0.2506,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 63.061,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1861,
+   "raw_label": "rest",
+   "raw_confidence": 0.1218,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 63.413,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1437,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2205,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 63.765,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2152,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2868,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 64.113,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2415,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2678,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 64.465,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2427,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2439,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 64.817,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2128,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1829,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 65.165,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1648,
+   "raw_label": "boy",
+   "raw_confidence": 0.1708,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 65.517,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1507,
+   "raw_label": "father",
+   "raw_confidence": 0.1923,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 65.869,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1766,
+   "raw_label": "red",
+   "raw_confidence": 0.2292,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 66.217,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2033,
+   "raw_label": "red",
+   "raw_confidence": 0.23,
+   "streak": 2,
+   "fps": 20.2
+  },
+  {
+   "t": 66.569,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2507,
+   "raw_label": "red",
+   "raw_confidence": 0.2981,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 66.921,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2503,
+   "raw_label": "red",
+   "raw_confidence": 0.2498,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 67.273,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.185,
+   "raw_label": "red",
+   "raw_confidence": 0.1197,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 67.621,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1035,
+   "raw_label": "rest",
+   "raw_confidence": 0.1242,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 67.973,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1229,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1867,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 68.325,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1556,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1883,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 68.674,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1853,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.215,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 69.025,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1707,
+   "raw_label": "red",
+   "raw_confidence": 0.2248,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 69.377,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.1912,
+   "raw_label": "red",
+   "raw_confidence": 0.2117,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 69.725,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2142,
+   "raw_label": "red",
+   "raw_confidence": 0.2372,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 70.076,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2458,
+   "raw_label": "red",
+   "raw_confidence": 0.2773,
+   "streak": 4,
+   "fps": 20.2
+  },
+  {
+   "t": 70.429,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.187,
+   "raw_label": "red",
+   "raw_confidence": 0.1283,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 70.776,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1015,
+   "raw_label": "rest",
+   "raw_confidence": 0.1414,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 71.129,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1153,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1723,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 71.481,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1827,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2501,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 71.833,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2115,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2403,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 72.181,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1865,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1615,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 72.532,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1511,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1717,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 72.885,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1425,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1518,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 73.233,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1334,
+   "raw_label": "red",
+   "raw_confidence": 0.1421,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 73.585,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0948,
+   "raw_label": "fall",
+   "raw_confidence": 0.087,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 73.937,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0819,
+   "raw_label": "fall",
+   "raw_confidence": 0.1036,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 74.285,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0866,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1242,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 74.637,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0986,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1106,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 74.99,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1187,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1387,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 75.337,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1198,
+   "raw_label": "shoes",
+   "raw_confidence": 0.121,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 75.689,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1206,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1214,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 76.041,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1355,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1503,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 76.393,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.1553,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1751,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 76.74,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.1683,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1814,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 77.093,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.1651,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1618,
+   "streak": 9,
+   "fps": 20.1
+  },
+  {
+   "t": 77.445,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1437,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1222,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 77.793,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1285,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1133,
+   "streak": 11,
+   "fps": 20.1
+  },
+  {
+   "t": 78.145,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1141,
+   "raw_label": "shoes",
+   "raw_confidence": 0.0998,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 78.497,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0997,
+   "raw_label": "new",
+   "raw_confidence": 0.0864,
+   "streak": 13,
+   "fps": 19.9
+  },
+  {
+   "t": 78.844,
+   "label": null,
+   "display": "...",
+   "confidence": 0.092,
+   "raw_label": "new",
+   "raw_confidence": 0.0918,
+   "streak": 14,
+   "fps": 20.1
+  },
+  {
+   "t": 79.197,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0916,
+   "raw_label": "shoes",
+   "raw_confidence": 0.0912,
+   "streak": 15,
+   "fps": 20.0
+  },
+  {
+   "t": 79.549,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0931,
+   "raw_label": "shoes",
+   "raw_confidence": 0.0946,
+   "streak": 16,
+   "fps": 19.9
+  },
+  {
+   "t": 79.897,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0957,
+   "raw_label": "shoes",
+   "raw_confidence": 0.0983,
+   "streak": 17,
+   "fps": 20.1
+  },
+  {
+   "t": 80.249,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1009,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1062,
+   "streak": 18,
+   "fps": 20.0
+  },
+  {
+   "t": 80.601,
+   "label": null,
+   "display": "...",
+   "confidence": 0.107,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1131,
+   "streak": 19,
+   "fps": 20.0
+  },
+  {
+   "t": 80.949,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1137,
+   "raw_label": "bird",
+   "raw_confidence": 0.1877,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 81.301,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2406,
+   "raw_label": "bird",
+   "raw_confidence": 0.3675,
+   "streak": 2,
+   "fps": 20.2
+  },
+  {
+   "t": 81.653,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.3021,
+   "raw_label": "bird",
+   "raw_confidence": 0.3637,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 82.006,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.3156,
+   "raw_label": "bird",
+   "raw_confidence": 0.329,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 82.353,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2957,
+   "raw_label": "bird",
+   "raw_confidence": 0.2759,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 82.705,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2295,
+   "raw_label": "bird",
+   "raw_confidence": 0.1634,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 83.057,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2002,
+   "raw_label": "bird",
+   "raw_confidence": 0.1709,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 83.405,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.1723,
+   "raw_label": "bird",
+   "raw_confidence": 0.1444,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 83.757,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1478,
+   "raw_label": "bird",
+   "raw_confidence": 0.1232,
+   "streak": 9,
+   "fps": 20.0
+  },
+  {
+   "t": 84.109,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1324,
+   "raw_label": "paint",
+   "raw_confidence": 0.1565,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 84.457,
+   "label": null,
+   "display": "...",
+   "confidence": 0.124,
+   "raw_label": "paint",
+   "raw_confidence": 0.1157,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 84.808,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1025,
+   "raw_label": "bird",
+   "raw_confidence": 0.0934,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 85.161,
+   "label": null,
+   "display": "...",
+   "confidence": 0.087,
+   "raw_label": "bird",
+   "raw_confidence": 0.0721,
+   "streak": 4,
+   "fps": 18.6
+  },
+  {
+   "t": 85.509,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1031,
+   "raw_label": "rest",
+   "raw_confidence": 0.1556,
+   "streak": 1,
+   "fps": 18.4
+  },
+  {
+   "t": 85.86,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1311,
+   "raw_label": "rest",
+   "raw_confidence": 0.1591,
+   "streak": 2,
+   "fps": 19.2
+  },
+  {
+   "t": 86.213,
+   "label": null,
+   "display": "...",
+   "confidence": 0.091,
+   "raw_label": "paint",
+   "raw_confidence": 0.1179,
+   "streak": 3,
+   "fps": 19.6
+  },
+  {
+   "t": 86.561,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1076,
+   "raw_label": "bird",
+   "raw_confidence": 0.1547,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 86.913,
+   "label": null,
+   "display": "...",
+   "confidence": 0.144,
+   "raw_label": "bird",
+   "raw_confidence": 0.1804,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 87.265,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2077,
+   "raw_label": "bird",
+   "raw_confidence": 0.2714,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 87.617,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.1964,
+   "raw_label": "bird",
+   "raw_confidence": 0.1852,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 87.965,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.1523,
+   "raw_label": "house",
+   "raw_confidence": 0.1184,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 88.317,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1147,
+   "raw_label": "house",
+   "raw_confidence": 0.0933,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 88.669,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1239,
+   "raw_label": "happy",
+   "raw_confidence": 0.1795,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 89.02,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0976,
+   "raw_label": "shoes",
+   "raw_confidence": 0.109,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 89.369,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1057,
+   "raw_label": "house",
+   "raw_confidence": 0.1138,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 89.721,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1138,
+   "raw_label": "house",
+   "raw_confidence": 0.1219,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 90.069,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1205,
+   "raw_label": "house",
+   "raw_confidence": 0.1272,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 90.421,
+   "label": null,
+   "display": "...",
+   "confidence": 0.128,
+   "raw_label": "house",
+   "raw_confidence": 0.1355,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 90.773,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1281,
+   "raw_label": "house",
+   "raw_confidence": 0.1282,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 91.121,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1359,
+   "raw_label": "house",
+   "raw_confidence": 0.1437,
+   "streak": 7,
+   "fps": 20.1
+  },
+  {
+   "t": 91.473,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1461,
+   "raw_label": "house",
+   "raw_confidence": 0.1562,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 91.825,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.157,
+   "raw_label": "house",
+   "raw_confidence": 0.1678,
+   "streak": 9,
+   "fps": 20.0
+  },
+  {
+   "t": 92.177,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.1637,
+   "raw_label": "house",
+   "raw_confidence": 0.1705,
+   "streak": 10,
+   "fps": 19.9
+  },
+  {
+   "t": 92.525,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.1657,
+   "raw_label": "house",
+   "raw_confidence": 0.1678,
+   "streak": 11,
+   "fps": 20.1
+  },
+  {
+   "t": 92.876,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.1654,
+   "raw_label": "house",
+   "raw_confidence": 0.1651,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 93.229,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.1605,
+   "raw_label": "house",
+   "raw_confidence": 0.1556,
+   "streak": 13,
+   "fps": 20.0
+  },
+  {
+   "t": 93.577,
+   "label": "house",
+   "display": "House",
+   "confidence": 0.1538,
+   "raw_label": "house",
+   "raw_confidence": 0.1471,
+   "streak": 14,
+   "fps": 20.1
+  },
+  {
+   "t": 93.929,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1439,
+   "raw_label": "house",
+   "raw_confidence": 0.134,
+   "streak": 15,
+   "fps": 20.0
+  },
+  {
+   "t": 94.281,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1334,
+   "raw_label": "house",
+   "raw_confidence": 0.1229,
+   "streak": 16,
+   "fps": 20.0
+  },
+  {
+   "t": 94.631,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1243,
+   "raw_label": "house",
+   "raw_confidence": 0.1151,
+   "streak": 17,
+   "fps": 20.0
+  },
+  {
+   "t": 94.981,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1189,
+   "raw_label": "house",
+   "raw_confidence": 0.1136,
+   "streak": 18,
+   "fps": 20.0
+  },
+  {
+   "t": 95.333,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1161,
+   "raw_label": "house",
+   "raw_confidence": 0.1132,
+   "streak": 19,
+   "fps": 20.0
+  },
+  {
+   "t": 95.681,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1156,
+   "raw_label": "house",
+   "raw_confidence": 0.1151,
+   "streak": 20,
+   "fps": 20.1
+  },
+  {
+   "t": 96.033,
+   "label": null,
+   "display": "...",
+   "confidence": 0.117,
+   "raw_label": "house",
+   "raw_confidence": 0.1185,
+   "streak": 21,
+   "fps": 20.0
+  },
+  {
+   "t": 96.385,
+   "label": null,
+   "display": "...",
+   "confidence": 0.126,
+   "raw_label": "house",
+   "raw_confidence": 0.135,
+   "streak": 22,
+   "fps": 20.0
+  },
+  {
+   "t": 96.737,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1373,
+   "raw_label": "house",
+   "raw_confidence": 0.1487,
+   "streak": 23,
+   "fps": 19.9
+  },
+  {
+   "t": 97.086,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1309,
+   "raw_label": "bird",
+   "raw_confidence": 0.2108,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 97.437,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2562,
+   "raw_label": "bird",
+   "raw_confidence": 0.3816,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 97.789,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.3711,
+   "raw_label": "bird",
+   "raw_confidence": 0.4859,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 98.137,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.4417,
+   "raw_label": "bird",
+   "raw_confidence": 0.5122,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 98.489,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.4255,
+   "raw_label": "bird",
+   "raw_confidence": 0.4094,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 98.841,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.3039,
+   "raw_label": "bird",
+   "raw_confidence": 0.1823,
+   "streak": 6,
+   "fps": 19.9
+  },
+  {
+   "t": 99.189,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.4371,
+   "raw_label": "bird",
+   "raw_confidence": 0.5704,
+   "streak": 7,
+   "fps": 20.1
+  },
+  {
+   "t": 99.541,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.5556,
+   "raw_label": "bird",
+   "raw_confidence": 0.674,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 99.902,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.6659,
+   "raw_label": "bird",
+   "raw_confidence": 0.7763,
+   "streak": 9,
+   "fps": 19.7
+  },
+  {
+   "t": 100.24,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7234,
+   "raw_label": "bird",
+   "raw_confidence": 0.7809,
+   "streak": 10,
+   "fps": 20.2
+  },
+  {
+   "t": 100.593,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7533,
+   "raw_label": "bird",
+   "raw_confidence": 0.7832,
+   "streak": 11,
+   "fps": 20.1
+  },
+  {
+   "t": 100.945,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.749,
+   "raw_label": "bird",
+   "raw_confidence": 0.7447,
+   "streak": 12,
+   "fps": 20.2
+  },
+  {
+   "t": 101.297,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7017,
+   "raw_label": "bird",
+   "raw_confidence": 0.6544,
+   "streak": 13,
+   "fps": 20.1
+  },
+  {
+   "t": 101.645,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.6879,
+   "raw_label": "bird",
+   "raw_confidence": 0.6741,
+   "streak": 14,
+   "fps": 20.2
+  },
+  {
+   "t": 101.997,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7449,
+   "raw_label": "bird",
+   "raw_confidence": 0.8019,
+   "streak": 15,
+   "fps": 20.0
+  },
+  {
+   "t": 102.349,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.6639,
+   "raw_label": "bird",
+   "raw_confidence": 0.5829,
+   "streak": 16,
+   "fps": 20.0
+  },
+  {
+   "t": 102.697,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.5724,
+   "raw_label": "bird",
+   "raw_confidence": 0.4809,
+   "streak": 17,
+   "fps": 20.1
+  },
+  {
+   "t": 103.049,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.403,
+   "raw_label": "loud",
+   "raw_confidence": 0.564,
+   "streak": 18,
+   "fps": 20.0
+  },
+  {
+   "t": 103.401,
+   "label": null,
+   "display": "...",
+   "confidence": 0.5745,
+   "raw_label": "loud",
+   "raw_confidence": 0.8065,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 103.749,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.7455,
+   "raw_label": "loud",
+   "raw_confidence": 0.9166,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 104.101,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.8453,
+   "raw_label": "loud",
+   "raw_confidence": 0.9451,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 104.453,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.8994,
+   "raw_label": "loud",
+   "raw_confidence": 0.9534,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 104.801,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.9294,
+   "raw_label": "loud",
+   "raw_confidence": 0.9594,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 105.154,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.9406,
+   "raw_label": "loud",
+   "raw_confidence": 0.9517,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 105.505,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.9389,
+   "raw_label": "loud",
+   "raw_confidence": 0.9373,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 105.857,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.8802,
+   "raw_label": "loud",
+   "raw_confidence": 0.8214,
+   "streak": 8,
+   "fps": 19.9
+  },
+  {
+   "t": 106.205,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.7705,
+   "raw_label": "loud",
+   "raw_confidence": 0.6609,
+   "streak": 9,
+   "fps": 20.0
+  },
+  {
+   "t": 106.557,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.5374,
+   "raw_label": "cow",
+   "raw_confidence": 0.3575,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 106.909,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4955,
+   "raw_label": "cow",
+   "raw_confidence": 0.781,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 107.257,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.669,
+   "raw_label": "cow",
+   "raw_confidence": 0.8425,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 107.609,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.7624,
+   "raw_label": "cow",
+   "raw_confidence": 0.8559,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 107.976,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.802,
+   "raw_label": "cow",
+   "raw_confidence": 0.8415,
+   "streak": 4,
+   "fps": 19.4
+  },
+  {
+   "t": 108.308,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.8619,
+   "raw_label": "cow",
+   "raw_confidence": 0.9218,
+   "streak": 5,
+   "fps": 20.3
+  },
+  {
+   "t": 108.661,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.8973,
+   "raw_label": "cow",
+   "raw_confidence": 0.9326,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 109.013,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.9179,
+   "raw_label": "cow",
+   "raw_confidence": 0.9386,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 109.361,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.9186,
+   "raw_label": "cow",
+   "raw_confidence": 0.9192,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 109.713,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.8845,
+   "raw_label": "cow",
+   "raw_confidence": 0.8505,
+   "streak": 9,
+   "fps": 20.0
+  },
+  {
+   "t": 110.065,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.7815,
+   "raw_label": "cow",
+   "raw_confidence": 0.6785,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 110.413,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.4618,
+   "raw_label": "fall",
+   "raw_confidence": 0.1534,
+   "streak": 11,
+   "fps": 20.1
+  },
+  {
+   "t": 110.765,
+   "label": "cow",
+   "display": "Cow",
+   "confidence": 0.2342,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2051,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 111.117,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2114,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3192,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 111.469,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2984,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3853,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 111.817,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3092,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3199,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 112.169,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2992,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2891,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 112.521,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.232,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1648,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 112.869,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1334,
+   "raw_label": "red",
+   "raw_confidence": 0.1489,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 113.221,
+   "label": null,
+   "display": "...",
+   "confidence": 0.102,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.1119,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 113.573,
+   "label": null,
+   "display": "...",
+   "confidence": 0.09,
+   "raw_label": "rest",
+   "raw_confidence": 0.173,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 113.921,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2009,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3324,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 114.273,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3794,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5578,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 114.625,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.4948,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.6102,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 114.973,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.4945,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.4943,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 115.325,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.442,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3895,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 115.677,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3436,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2452,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 116.029,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2082,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.1246,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 116.377,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1237,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.115,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 116.729,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1087,
+   "raw_label": "fall",
+   "raw_confidence": 0.1348,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 117.081,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1086,
+   "raw_label": "rest",
+   "raw_confidence": 0.2097,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 117.429,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1655,
+   "raw_label": "rest",
+   "raw_confidence": 0.2223,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 117.78,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1946,
+   "raw_label": "rest",
+   "raw_confidence": 0.2238,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 118.133,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2018,
+   "raw_label": "rest",
+   "raw_confidence": 0.2089,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 118.481,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.203,
+   "raw_label": "rest",
+   "raw_confidence": 0.2041,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 118.833,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2012,
+   "raw_label": "rest",
+   "raw_confidence": 0.1994,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 119.185,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1914,
+   "raw_label": "rest",
+   "raw_confidence": 0.1816,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 119.533,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1886,
+   "raw_label": "rest",
+   "raw_confidence": 0.1859,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 119.885,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1821,
+   "raw_label": "rest",
+   "raw_confidence": 0.1755,
+   "streak": 9,
+   "fps": 20.1
+  },
+  {
+   "t": 120.237,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1903,
+   "raw_label": "rest",
+   "raw_confidence": 0.1985,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 120.59,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1987,
+   "raw_label": "rest",
+   "raw_confidence": 0.207,
+   "streak": 11,
+   "fps": 19.9
+  },
+  {
+   "t": 120.937,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2044,
+   "raw_label": "rest",
+   "raw_confidence": 0.2101,
+   "streak": 12,
+   "fps": 20.1
+  },
+  {
+   "t": 121.289,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2023,
+   "raw_label": "rest",
+   "raw_confidence": 0.2003,
+   "streak": 13,
+   "fps": 20.0
+  },
+  {
+   "t": 121.641,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1993,
+   "raw_label": "rest",
+   "raw_confidence": 0.1964,
+   "streak": 14,
+   "fps": 19.9
+  },
+  {
+   "t": 121.989,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1931,
+   "raw_label": "rest",
+   "raw_confidence": 0.1869,
+   "streak": 15,
+   "fps": 20.5
+  },
+  {
+   "t": 122.341,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1851,
+   "raw_label": "rest",
+   "raw_confidence": 0.177,
+   "streak": 16,
+   "fps": 20.2
+  },
+  {
+   "t": 122.693,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1823,
+   "raw_label": "rest",
+   "raw_confidence": 0.1795,
+   "streak": 17,
+   "fps": 20.0
+  },
+  {
+   "t": 123.041,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1763,
+   "raw_label": "rest",
+   "raw_confidence": 0.1703,
+   "streak": 18,
+   "fps": 20.1
+  },
+  {
+   "t": 123.393,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1747,
+   "raw_label": "rest",
+   "raw_confidence": 0.1731,
+   "streak": 19,
+   "fps": 20.0
+  },
+  {
+   "t": 123.745,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1755,
+   "raw_label": "rest",
+   "raw_confidence": 0.1764,
+   "streak": 20,
+   "fps": 20.0
+  },
+  {
+   "t": 124.093,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1816,
+   "raw_label": "rest",
+   "raw_confidence": 0.1876,
+   "streak": 21,
+   "fps": 20.1
+  },
+  {
+   "t": 124.445,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1893,
+   "raw_label": "rest",
+   "raw_confidence": 0.197,
+   "streak": 22,
+   "fps": 20.1
+  },
+  {
+   "t": 124.797,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1977,
+   "raw_label": "rest",
+   "raw_confidence": 0.2061,
+   "streak": 23,
+   "fps": 20.0
+  },
+  {
+   "t": 125.145,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2052,
+   "raw_label": "rest",
+   "raw_confidence": 0.2128,
+   "streak": 24,
+   "fps": 20.1
+  },
+  {
+   "t": 125.497,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2082,
+   "raw_label": "rest",
+   "raw_confidence": 0.2111,
+   "streak": 25,
+   "fps": 20.0
+  },
+  {
+   "t": 125.849,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2054,
+   "raw_label": "rest",
+   "raw_confidence": 0.2026,
+   "streak": 26,
+   "fps": 20.0
+  },
+  {
+   "t": 126.201,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2016,
+   "raw_label": "rest",
+   "raw_confidence": 0.1979,
+   "streak": 27,
+   "fps": 19.9
+  },
+  {
+   "t": 126.549,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1962,
+   "raw_label": "rest",
+   "raw_confidence": 0.1908,
+   "streak": 28,
+   "fps": 20.0
+  },
+  {
+   "t": 126.901,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1912,
+   "raw_label": "rest",
+   "raw_confidence": 0.1863,
+   "streak": 29,
+   "fps": 20.0
+  },
+  {
+   "t": 127.253,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1905,
+   "raw_label": "rest",
+   "raw_confidence": 0.1897,
+   "streak": 30,
+   "fps": 19.9
+  },
+  {
+   "t": 127.601,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1961,
+   "raw_label": "rest",
+   "raw_confidence": 0.2016,
+   "streak": 31,
+   "fps": 20.1
+  },
+  {
+   "t": 127.953,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1128,
+   "raw_label": "it",
+   "raw_confidence": 0.0661,
+   "streak": 32,
+   "fps": 20.0
+  },
+  {
+   "t": 128.305,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0689,
+   "raw_label": "hello",
+   "raw_confidence": 0.1001,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 128.653,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1235,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2023,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 129.005,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1811,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2386,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 129.357,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1916,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2022,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 129.705,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2438,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2959,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 130.057,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2617,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2795,
+   "streak": 5,
+   "fps": 20.2
+  },
+  {
+   "t": 130.409,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3067,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3518,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 130.761,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2893,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2719,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 131.109,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.195,
+   "raw_label": "boy",
+   "raw_confidence": 0.231,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 131.461,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2316,
+   "raw_label": "boy",
+   "raw_confidence": 0.3107,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 131.813,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2738,
+   "raw_label": "boy",
+   "raw_confidence": 0.3161,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 132.161,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2508,
+   "raw_label": "boy",
+   "raw_confidence": 0.2277,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 132.513,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2663,
+   "raw_label": "boy",
+   "raw_confidence": 0.2818,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 132.865,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2081,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1563,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 133.213,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2007,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3092,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 133.565,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3718,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5428,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 133.917,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.4807,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5895,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 134.265,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.509,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5373,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 134.617,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.4166,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3242,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 134.969,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2945,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1724,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 135.321,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2083,
+   "raw_label": "boy",
+   "raw_confidence": 0.2872,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 135.669,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2009,
+   "raw_label": "boy",
+   "raw_confidence": 0.1935,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 136.021,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.1818,
+   "raw_label": "father",
+   "raw_confidence": 0.1847,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 136.373,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.1659,
+   "raw_label": "boy",
+   "raw_confidence": 0.1499,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 136.721,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.1911,
+   "raw_label": "boy",
+   "raw_confidence": 0.2163,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 137.073,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2011,
+   "raw_label": "boy",
+   "raw_confidence": 0.2112,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 137.425,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2643,
+   "raw_label": "boy",
+   "raw_confidence": 0.3275,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 137.773,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.1514,
+   "raw_label": "red",
+   "raw_confidence": 0.1841,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 138.125,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2044,
+   "raw_label": "red",
+   "raw_confidence": 0.2848,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 138.477,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2677,
+   "raw_label": "red",
+   "raw_confidence": 0.3311,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 138.825,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.2454,
+   "raw_label": "red",
+   "raw_confidence": 0.2231,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 139.177,
+   "label": "red",
+   "display": "Red",
+   "confidence": 0.206,
+   "raw_label": "red",
+   "raw_confidence": 0.1666,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 139.529,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1435,
+   "raw_label": "year",
+   "raw_confidence": 0.1213,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 139.881,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0917,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.0871,
+   "streak": 6,
+   "fps": 19.9
+  },
+  {
+   "t": 140.229,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1715,
+   "raw_label": "boy",
+   "raw_confidence": 0.2796,
+   "streak": 1,
+   "fps": 20.2
+  },
+  {
+   "t": 140.581,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2583,
+   "raw_label": "boy",
+   "raw_confidence": 0.345,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 140.937,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.353,
+   "raw_label": "boy",
+   "raw_confidence": 0.4477,
+   "streak": 3,
+   "fps": 19.8
+  },
+  {
+   "t": 141.281,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.3315,
+   "raw_label": "boy",
+   "raw_confidence": 0.31,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 141.633,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2381,
+   "raw_label": "boy",
+   "raw_confidence": 0.1447,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 141.985,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1399,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.0793,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 142.333,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1138,
+   "raw_label": "boy",
+   "raw_confidence": 0.0876,
+   "streak": 7,
+   "fps": 20.1
+  },
+  {
+   "t": 142.685,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.1735,
+   "raw_label": "boy",
+   "raw_confidence": 0.2333,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 143.037,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2609,
+   "raw_label": "boy",
+   "raw_confidence": 0.3483,
+   "streak": 9,
+   "fps": 19.9
+  },
+  {
+   "t": 143.385,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.3104,
+   "raw_label": "boy",
+   "raw_confidence": 0.36,
+   "streak": 10,
+   "fps": 20.1
+  },
+  {
+   "t": 143.737,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.356,
+   "raw_label": "boy",
+   "raw_confidence": 0.4015,
+   "streak": 11,
+   "fps": 20.0
+  },
+  {
+   "t": 144.089,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.3477,
+   "raw_label": "boy",
+   "raw_confidence": 0.3394,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 144.437,
+   "label": "boy",
+   "display": "Boy",
+   "confidence": 0.2159,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1075,
+   "streak": 13,
+   "fps": 20.1
+  },
+  {
+   "t": 144.789,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1339,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1404,
+   "streak": 14,
+   "fps": 20.0
+  },
+  {
+   "t": 145.141,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1852,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2704,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 145.493,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2008,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2164,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 145.841,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.185,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2132,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 146.193,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1968,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2668,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 146.545,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1929,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1891,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 146.893,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1799,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1669,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 147.245,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1421,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.146,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 147.597,
+   "label": null,
+   "display": "...",
+   "confidence": 0.133,
+   "raw_label": "trainticket",
+   "raw_confidence": 0.133,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 147.945,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1075,
+   "raw_label": "rest",
+   "raw_confidence": 0.2103,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 148.297,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1536,
+   "raw_label": "rest",
+   "raw_confidence": 0.1997,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 148.649,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1754,
+   "raw_label": "rest",
+   "raw_confidence": 0.1972,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 148.997,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1938,
+   "raw_label": "rest",
+   "raw_confidence": 0.2122,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 149.349,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1445,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1447,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 149.701,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1714,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2584,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 150.053,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2012,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.231,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 150.401,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2082,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2152,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 150.753,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1899,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1962,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 151.105,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1588,
+   "raw_label": "quiet",
+   "raw_confidence": 0.16,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 151.453,
+   "label": null,
+   "display": "...",
+   "confidence": 0.155,
+   "raw_label": "red",
+   "raw_confidence": 0.1929,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 151.805,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1194,
+   "raw_label": "fall",
+   "raw_confidence": 0.1299,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 152.157,
+   "label": null,
+   "display": "...",
+   "confidence": 0.074,
+   "raw_label": "rest",
+   "raw_confidence": 0.1397,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 152.505,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1369,
+   "raw_label": "rest",
+   "raw_confidence": 0.2005,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 152.857,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1681,
+   "raw_label": "rest",
+   "raw_confidence": 0.1994,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 153.209,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1084,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1749,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 153.557,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2318,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3641,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 153.908,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.368,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5043,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 154.261,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.5224,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.6768,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 154.613,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.5971,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.6718,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 154.961,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.5671,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5372,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 155.313,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3825,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1979,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 155.665,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2244,
+   "raw_label": "black",
+   "raw_confidence": 0.0983,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 156.013,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1236,
+   "raw_label": "priest",
+   "raw_confidence": 0.0892,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 156.365,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0859,
+   "raw_label": "rest",
+   "raw_confidence": 0.1635,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 156.717,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1367,
+   "raw_label": "rest",
+   "raw_confidence": 0.1874,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 157.065,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1619,
+   "raw_label": "rest",
+   "raw_confidence": 0.1872,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 157.417,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1747,
+   "raw_label": "rest",
+   "raw_confidence": 0.1875,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 157.769,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1808,
+   "raw_label": "rest",
+   "raw_confidence": 0.1868,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 158.117,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1866,
+   "raw_label": "rest",
+   "raw_confidence": 0.1925,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 158.469,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1434,
+   "raw_label": "rest",
+   "raw_confidence": 0.1001,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 158.821,
+   "label": null,
+   "display": "...",
+   "confidence": 0.189,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3214,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 159.173,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3664,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5438,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 159.521,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.5223,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.6782,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 159.873,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.6185,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.7147,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 160.225,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.7148,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.811,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 160.573,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.4653,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2159,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 160.925,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2899,
+   "raw_label": "loud",
+   "raw_confidence": 0.2778,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 161.277,
+   "label": null,
+   "display": "...",
+   "confidence": 0.3763,
+   "raw_label": "loud",
+   "raw_confidence": 0.5995,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 161.625,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.5995,
+   "raw_label": "loud",
+   "raw_confidence": 0.8227,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 161.977,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.754,
+   "raw_label": "loud",
+   "raw_confidence": 0.9084,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 162.329,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.7847,
+   "raw_label": "loud",
+   "raw_confidence": 0.8154,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 162.677,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.7752,
+   "raw_label": "loud",
+   "raw_confidence": 0.7657,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 163.029,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.6914,
+   "raw_label": "loud",
+   "raw_confidence": 0.6076,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 163.381,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.498,
+   "raw_label": "loud",
+   "raw_confidence": 0.3047,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 163.729,
+   "label": "loud",
+   "display": "Loud",
+   "confidence": 0.283,
+   "raw_label": "fan",
+   "raw_confidence": 0.3044,
+   "streak": 8,
+   "fps": 20.1
+  },
+  {
+   "t": 164.081,
+   "label": null,
+   "display": "...",
+   "confidence": 0.44,
+   "raw_label": "fan",
+   "raw_confidence": 0.6962,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 164.433,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.5906,
+   "raw_label": "fan",
+   "raw_confidence": 0.7412,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 164.785,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.6769,
+   "raw_label": "fan",
+   "raw_confidence": 0.7632,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 165.133,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7207,
+   "raw_label": "fan",
+   "raw_confidence": 0.7646,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 165.485,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7411,
+   "raw_label": "fan",
+   "raw_confidence": 0.7614,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 165.837,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.75,
+   "raw_label": "fan",
+   "raw_confidence": 0.759,
+   "streak": 6,
+   "fps": 19.9
+  },
+  {
+   "t": 166.185,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7548,
+   "raw_label": "fan",
+   "raw_confidence": 0.7595,
+   "streak": 7,
+   "fps": 20.1
+  },
+  {
+   "t": 166.537,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.753,
+   "raw_label": "fan",
+   "raw_confidence": 0.7512,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 166.889,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7472,
+   "raw_label": "fan",
+   "raw_confidence": 0.7415,
+   "streak": 9,
+   "fps": 19.9
+  },
+  {
+   "t": 167.237,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7496,
+   "raw_label": "fan",
+   "raw_confidence": 0.752,
+   "streak": 10,
+   "fps": 20.1
+  },
+  {
+   "t": 167.589,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7592,
+   "raw_label": "fan",
+   "raw_confidence": 0.7688,
+   "streak": 11,
+   "fps": 20.0
+  },
+  {
+   "t": 167.941,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7551,
+   "raw_label": "fan",
+   "raw_confidence": 0.751,
+   "streak": 12,
+   "fps": 20.0
+  },
+  {
+   "t": 168.289,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.772,
+   "raw_label": "fan",
+   "raw_confidence": 0.789,
+   "streak": 13,
+   "fps": 20.1
+  },
+  {
+   "t": 168.641,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7772,
+   "raw_label": "fan",
+   "raw_confidence": 0.7824,
+   "streak": 14,
+   "fps": 20.0
+  },
+  {
+   "t": 168.993,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.7421,
+   "raw_label": "fan",
+   "raw_confidence": 0.707,
+   "streak": 15,
+   "fps": 20.0
+  },
+  {
+   "t": 169.345,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.6518,
+   "raw_label": "fan",
+   "raw_confidence": 0.5615,
+   "streak": 16,
+   "fps": 19.9
+  },
+  {
+   "t": 169.693,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.4526,
+   "raw_label": "fan",
+   "raw_confidence": 0.2533,
+   "streak": 17,
+   "fps": 20.0
+  },
+  {
+   "t": 170.045,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.2679,
+   "raw_label": "fan",
+   "raw_confidence": 0.0831,
+   "streak": 18,
+   "fps": 20.0
+  },
+  {
+   "t": 170.397,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1398,
+   "raw_label": "it",
+   "raw_confidence": 0.1476,
+   "streak": 19,
+   "fps": 19.9
+  },
+  {
+   "t": 170.745,
+   "label": null,
+   "display": "...",
+   "confidence": 0.098,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.1862,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 171.097,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.2953,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.4927,
+   "streak": 2,
+   "fps": 20.2
+  },
+  {
+   "t": 171.449,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.3414,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.3876,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 171.797,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.4234,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.5054,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 172.149,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.3467,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.27,
+   "streak": 5,
+   "fps": 20.2
+  },
+  {
+   "t": 172.501,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.3496,
+   "raw_label": "tshirt",
+   "raw_confidence": 0.3524,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 172.849,
+   "label": "tshirt",
+   "display": "T-shirt",
+   "confidence": 0.2089,
+   "raw_label": "election",
+   "raw_confidence": 0.2717,
+   "streak": 7,
+   "fps": 20.1
+  },
+  {
+   "t": 173.201,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1878,
+   "raw_label": "election",
+   "raw_confidence": 0.195,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 173.553,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.1697,
+   "raw_label": "election",
+   "raw_confidence": 0.1516,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 173.905,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0995,
+   "raw_label": "rest",
+   "raw_confidence": 0.1887,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 174.253,
+   "label": null,
+   "display": "...",
+   "confidence": 0.144,
+   "raw_label": "rest",
+   "raw_confidence": 0.1885,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 174.605,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1666,
+   "raw_label": "rest",
+   "raw_confidence": 0.1891,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 174.957,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1764,
+   "raw_label": "rest",
+   "raw_confidence": 0.1862,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 175.305,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1828,
+   "raw_label": "rest",
+   "raw_confidence": 0.1893,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 175.657,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1199,
+   "raw_label": "biglarge",
+   "raw_confidence": 0.1181,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 176.009,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1403,
+   "raw_label": "biglarge",
+   "raw_confidence": 0.2153,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 176.357,
+   "label": "biglarge",
+   "display": "Big / Large",
+   "confidence": 0.213,
+   "raw_label": "biglarge",
+   "raw_confidence": 0.2856,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 176.709,
+   "label": "biglarge",
+   "display": "Big / Large",
+   "confidence": 0.1892,
+   "raw_label": "biglarge",
+   "raw_confidence": 0.1655,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 177.061,
+   "label": "biglarge",
+   "display": "Big / Large",
+   "confidence": 0.1736,
+   "raw_label": "shoes",
+   "raw_confidence": 0.2027,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 177.409,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2243,
+   "raw_label": "shoes",
+   "raw_confidence": 0.3019,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 177.762,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.2222,
+   "raw_label": "election",
+   "raw_confidence": 0.2691,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 178.113,
+   "label": null,
+   "display": "...",
+   "confidence": 0.4031,
+   "raw_label": "election",
+   "raw_confidence": 0.5941,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 178.466,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.5366,
+   "raw_label": "election",
+   "raw_confidence": 0.6701,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 178.816,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.5537,
+   "raw_label": "election",
+   "raw_confidence": 0.5709,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 179.165,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.5874,
+   "raw_label": "election",
+   "raw_confidence": 0.6212,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 179.517,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.6409,
+   "raw_label": "election",
+   "raw_confidence": 0.6944,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 179.865,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.723,
+   "raw_label": "election",
+   "raw_confidence": 0.805,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 180.217,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.7658,
+   "raw_label": "election",
+   "raw_confidence": 0.8086,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 180.569,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.7785,
+   "raw_label": "election",
+   "raw_confidence": 0.7912,
+   "streak": 8,
+   "fps": 19.9
+  },
+  {
+   "t": 180.917,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.7917,
+   "raw_label": "election",
+   "raw_confidence": 0.805,
+   "streak": 9,
+   "fps": 20.1
+  },
+  {
+   "t": 181.269,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.7731,
+   "raw_label": "election",
+   "raw_confidence": 0.7545,
+   "streak": 10,
+   "fps": 20.0
+  },
+  {
+   "t": 181.621,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.5533,
+   "raw_label": "election",
+   "raw_confidence": 0.3335,
+   "streak": 11,
+   "fps": 20.0
+  },
+  {
+   "t": 181.969,
+   "label": "election",
+   "display": "Election",
+   "confidence": 0.3217,
+   "raw_label": "biglarge",
+   "raw_confidence": 0.2883,
+   "streak": 12,
+   "fps": 20.1
+  },
+  {
+   "t": 182.321,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2428,
+   "raw_label": "shoes",
+   "raw_confidence": 0.3003,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 182.673,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.2841,
+   "raw_label": "shoes",
+   "raw_confidence": 0.3253,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 183.021,
+   "label": "shoes",
+   "display": "Shoes",
+   "confidence": 0.2474,
+   "raw_label": "bird",
+   "raw_confidence": 0.2209,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 183.373,
+   "label": null,
+   "display": "...",
+   "confidence": 0.26,
+   "raw_label": "bird",
+   "raw_confidence": 0.3658,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 183.725,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2171,
+   "raw_label": "happy",
+   "raw_confidence": 0.1751,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 184.077,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2246,
+   "raw_label": "bird",
+   "raw_confidence": 0.2321,
+   "streak": 3,
+   "fps": 19.9
+  },
+  {
+   "t": 184.425,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1202,
+   "raw_label": "rest",
+   "raw_confidence": 0.2121,
+   "streak": 4,
+   "fps": 20.1
+  },
+  {
+   "t": 184.777,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1676,
+   "raw_label": "rest",
+   "raw_confidence": 0.2192,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 185.129,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1966,
+   "raw_label": "rest",
+   "raw_confidence": 0.2256,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 185.477,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2139,
+   "raw_label": "rest",
+   "raw_confidence": 0.2313,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 185.829,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1395,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.093,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 186.181,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1035,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1516,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 186.529,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1418,
+   "raw_label": "fan",
+   "raw_confidence": 0.2319,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 186.881,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2417,
+   "raw_label": "fan",
+   "raw_confidence": 0.3454,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 187.233,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.3791,
+   "raw_label": "fan",
+   "raw_confidence": 0.5164,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 187.581,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.4927,
+   "raw_label": "fan",
+   "raw_confidence": 0.6063,
+   "streak": 3,
+   "fps": 20.1
+  },
+  {
+   "t": 187.933,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.526,
+   "raw_label": "fan",
+   "raw_confidence": 0.5592,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 188.285,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.3757,
+   "raw_label": "fan",
+   "raw_confidence": 0.2254,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 188.637,
+   "label": "fan",
+   "display": "Fan",
+   "confidence": 0.2308,
+   "raw_label": "fan",
+   "raw_confidence": 0.0859,
+   "streak": 6,
+   "fps": 19.9
+  },
+  {
+   "t": 188.985,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1257,
+   "raw_label": "fall",
+   "raw_confidence": 0.0874,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 189.337,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1011,
+   "raw_label": "rest",
+   "raw_confidence": 0.1916,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 189.689,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1497,
+   "raw_label": "rest",
+   "raw_confidence": 0.1984,
+   "streak": 2,
+   "fps": 19.9
+  },
+  {
+   "t": 190.037,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1772,
+   "raw_label": "rest",
+   "raw_confidence": 0.2047,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 190.389,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1918,
+   "raw_label": "rest",
+   "raw_confidence": 0.2064,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 190.741,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2016,
+   "raw_label": "rest",
+   "raw_confidence": 0.2114,
+   "streak": 5,
+   "fps": 19.9
+  },
+  {
+   "t": 191.089,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.2078,
+   "raw_label": "rest",
+   "raw_confidence": 0.214,
+   "streak": 6,
+   "fps": 20.1
+  },
+  {
+   "t": 191.441,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1648,
+   "raw_label": "rest",
+   "raw_confidence": 0.1219,
+   "streak": 7,
+   "fps": 20.0
+  },
+  {
+   "t": 191.793,
+   "label": null,
+   "display": "...",
+   "confidence": 0.127,
+   "raw_label": "priest",
+   "raw_confidence": 0.0982,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 192.141,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1963,
+   "raw_label": "priest",
+   "raw_confidence": 0.3332,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 192.493,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.3736,
+   "raw_label": "priest",
+   "raw_confidence": 0.5509,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 192.845,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.5312,
+   "raw_label": "priest",
+   "raw_confidence": 0.6887,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 193.197,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.5982,
+   "raw_label": "priest",
+   "raw_confidence": 0.6653,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 193.545,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.507,
+   "raw_label": "priest",
+   "raw_confidence": 0.4158,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 193.897,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.4128,
+   "raw_label": "priest",
+   "raw_confidence": 0.3186,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 194.249,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.3603,
+   "raw_label": "priest",
+   "raw_confidence": 0.3077,
+   "streak": 7,
+   "fps": 19.9
+  },
+  {
+   "t": 194.597,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.3268,
+   "raw_label": "priest",
+   "raw_confidence": 0.2933,
+   "streak": 8,
+   "fps": 20.0
+  },
+  {
+   "t": 194.949,
+   "label": "priest",
+   "display": "Priest",
+   "confidence": 0.2439,
+   "raw_label": "black",
+   "raw_confidence": 0.1739,
+   "streak": 9,
+   "fps": 20.0
+  },
+  {
+   "t": 195.301,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1812,
+   "raw_label": "black",
+   "raw_confidence": 0.2424,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 195.649,
+   "label": null,
+   "display": "...",
+   "confidence": 0.132,
+   "raw_label": "fan",
+   "raw_confidence": 0.146,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 196.001,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1139,
+   "raw_label": "black",
+   "raw_confidence": 0.0957,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 196.353,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0988,
+   "raw_label": "fall",
+   "raw_confidence": 0.1614,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 196.701,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0945,
+   "raw_label": "rest",
+   "raw_confidence": 0.1727,
+   "streak": 1,
+   "fps": 20.1
+  },
+  {
+   "t": 197.053,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1351,
+   "raw_label": "rest",
+   "raw_confidence": 0.1757,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 197.405,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1546,
+   "raw_label": "rest",
+   "raw_confidence": 0.174,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 197.757,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1646,
+   "raw_label": "rest",
+   "raw_confidence": 0.1746,
+   "streak": 4,
+   "fps": 19.9
+  },
+  {
+   "t": 198.105,
+   "label": "rest",
+   "display": "No sign",
+   "confidence": 0.1677,
+   "raw_label": "rest",
+   "raw_confidence": 0.1708,
+   "streak": 5,
+   "fps": 20.0
+  },
+  {
+   "t": 198.457,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1247,
+   "raw_label": "rest",
+   "raw_confidence": 0.0817,
+   "streak": 6,
+   "fps": 20.0
+  },
+  {
+   "t": 198.809,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1927,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.3477,
+   "streak": 1,
+   "fps": 19.9
+  },
+  {
+   "t": 199.157,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3525,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.5122,
+   "streak": 2,
+   "fps": 20.1
+  },
+  {
+   "t": 199.509,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.3106,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2688,
+   "streak": 3,
+   "fps": 20.0
+  },
+  {
+   "t": 199.861,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2482,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1857,
+   "streak": 4,
+   "fps": 20.0
+  },
+  {
+   "t": 200.209,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1731,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1848,
+   "streak": 5,
+   "fps": 20.1
+  },
+  {
+   "t": 200.561,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1638,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2038,
+   "streak": 1,
+   "fps": 20.0
+  },
+  {
+   "t": 200.913,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.2046,
+   "raw_label": "quiet",
+   "raw_confidence": 0.2455,
+   "streak": 2,
+   "fps": 20.0
+  },
+  {
+   "t": 201.281,
+   "label": "quiet",
+   "display": "Quiet",
+   "confidence": 0.1666,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1285,
+   "streak": 3,
+   "fps": 18.2
+  },
+  {
+   "t": 201.613,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1165,
+   "raw_label": "election",
+   "raw_confidence": 0.1162,
+   "streak": 4,
+   "fps": 16.9
+  },
+  {
+   "t": 201.949,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0956,
+   "raw_label": "election",
+   "raw_confidence": 0.1104,
+   "streak": 1,
+   "fps": 16.1
+  },
+  {
+   "t": 202.281,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0738,
+   "raw_label": "it",
+   "raw_confidence": 0.1165,
+   "streak": 1,
+   "fps": 15.7
+  },
+  {
+   "t": 202.613,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0683,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1205,
+   "streak": 1,
+   "fps": 15.4
+  },
+  {
+   "t": 202.949,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1061,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1439,
+   "streak": 2,
+   "fps": 15.2
+  },
+  {
+   "t": 203.281,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2366,
+   "raw_label": "fall",
+   "raw_confidence": 0.3807,
+   "streak": 1,
+   "fps": 15.2
+  },
+  {
+   "t": 203.617,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3268,
+   "raw_label": "fall",
+   "raw_confidence": 0.417,
+   "streak": 2,
+   "fps": 15.1
+  },
+  {
+   "t": 203.949,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3118,
+   "raw_label": "fall",
+   "raw_confidence": 0.2968,
+   "streak": 3,
+   "fps": 15.1
+  },
+  {
+   "t": 204.285,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3266,
+   "raw_label": "fall",
+   "raw_confidence": 0.3413,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 204.617,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3445,
+   "raw_label": "fall",
+   "raw_confidence": 0.3625,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 204.953,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2791,
+   "raw_label": "fall",
+   "raw_confidence": 0.2137,
+   "streak": 6,
+   "fps": 15.0
+  },
+  {
+   "t": 205.285,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.195,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1423,
+   "streak": 7,
+   "fps": 15.0
+  },
+  {
+   "t": 205.621,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1393,
+   "raw_label": "bird",
+   "raw_confidence": 0.1209,
+   "streak": 8,
+   "fps": 15.0
+  },
+  {
+   "t": 205.953,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1276,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2361,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 206.289,
+   "label": null,
+   "display": "...",
+   "confidence": 0.143,
+   "raw_label": "fall",
+   "raw_confidence": 0.1991,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 206.621,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2789,
+   "raw_label": "fall",
+   "raw_confidence": 0.4149,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 206.957,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3452,
+   "raw_label": "fall",
+   "raw_confidence": 0.4114,
+   "streak": 3,
+   "fps": 15.0
+  },
+  {
+   "t": 207.289,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3465,
+   "raw_label": "fall",
+   "raw_confidence": 0.3478,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 207.625,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.3054,
+   "raw_label": "fall",
+   "raw_confidence": 0.2643,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 207.957,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2959,
+   "raw_label": "fall",
+   "raw_confidence": 0.2864,
+   "streak": 6,
+   "fps": 15.0
+  },
+  {
+   "t": 208.293,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2806,
+   "raw_label": "fall",
+   "raw_confidence": 0.2653,
+   "streak": 7,
+   "fps": 15.0
+  },
+  {
+   "t": 208.625,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.1559,
+   "raw_label": "long",
+   "raw_confidence": 0.1645,
+   "streak": 8,
+   "fps": 15.0
+  },
+  {
+   "t": 208.961,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1077,
+   "raw_label": "bird",
+   "raw_confidence": 0.1456,
+   "streak": 9,
+   "fps": 14.9
+  },
+  {
+   "t": 209.293,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1197,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.1351,
+   "streak": 10,
+   "fps": 15.0
+  },
+  {
+   "t": 209.629,
+   "label": null,
+   "display": "...",
+   "confidence": 0.202,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2994,
+   "streak": 1,
+   "fps": 14.9
+  },
+  {
+   "t": 209.961,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.2329,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.2638,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 210.293,
+   "label": "cellphone",
+   "display": "Cell phone",
+   "confidence": 0.1917,
+   "raw_label": "quiet",
+   "raw_confidence": 0.1705,
+   "streak": 3,
+   "fps": 15.0
+  },
+  {
+   "t": 210.629,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1313,
+   "raw_label": "fall",
+   "raw_confidence": 0.1464,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 210.961,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1017,
+   "raw_label": "bird",
+   "raw_confidence": 0.1445,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 211.297,
+   "label": null,
+   "display": "...",
+   "confidence": 0.142,
+   "raw_label": "bird",
+   "raw_confidence": 0.1877,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 211.629,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.202,
+   "raw_label": "bird",
+   "raw_confidence": 0.2621,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 211.965,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1753,
+   "raw_label": "cellphone",
+   "raw_confidence": 0.283,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 212.297,
+   "label": null,
+   "display": "...",
+   "confidence": 0.2054,
+   "raw_label": "fall",
+   "raw_confidence": 0.2753,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 212.633,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2376,
+   "raw_label": "fall",
+   "raw_confidence": 0.2697,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 212.965,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2243,
+   "raw_label": "fall",
+   "raw_confidence": 0.2111,
+   "streak": 3,
+   "fps": 15.0
+  },
+  {
+   "t": 213.301,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2226,
+   "raw_label": "fall",
+   "raw_confidence": 0.2209,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 213.633,
+   "label": "fall",
+   "display": "Fall",
+   "confidence": 0.2087,
+   "raw_label": "fall",
+   "raw_confidence": 0.1947,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 213.969,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1701,
+   "raw_label": "bird",
+   "raw_confidence": 0.2954,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 214.301,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.3742,
+   "raw_label": "bird",
+   "raw_confidence": 0.5782,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 214.637,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.5528,
+   "raw_label": "bird",
+   "raw_confidence": 0.7315,
+   "streak": 3,
+   "fps": 15.0
+  },
+  {
+   "t": 214.969,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.6403,
+   "raw_label": "bird",
+   "raw_confidence": 0.7278,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 215.305,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7218,
+   "raw_label": "bird",
+   "raw_confidence": 0.8032,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 215.637,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.768,
+   "raw_label": "bird",
+   "raw_confidence": 0.8142,
+   "streak": 6,
+   "fps": 15.0
+  },
+  {
+   "t": 215.973,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7641,
+   "raw_label": "bird",
+   "raw_confidence": 0.7602,
+   "streak": 7,
+   "fps": 14.9
+  },
+  {
+   "t": 216.305,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.7022,
+   "raw_label": "bird",
+   "raw_confidence": 0.6402,
+   "streak": 8,
+   "fps": 15.0
+  },
+  {
+   "t": 216.641,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.6633,
+   "raw_label": "bird",
+   "raw_confidence": 0.6245,
+   "streak": 9,
+   "fps": 15.0
+  },
+  {
+   "t": 216.973,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.5592,
+   "raw_label": "bird",
+   "raw_confidence": 0.455,
+   "streak": 10,
+   "fps": 15.0
+  },
+  {
+   "t": 217.309,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.4297,
+   "raw_label": "bird",
+   "raw_confidence": 0.3002,
+   "streak": 11,
+   "fps": 14.9
+  },
+  {
+   "t": 217.641,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.2653,
+   "raw_label": "shoes",
+   "raw_confidence": 0.1038,
+   "streak": 12,
+   "fps": 15.0
+  },
+  {
+   "t": 217.977,
+   "label": "bird",
+   "display": "Bird",
+   "confidence": 0.1641,
+   "raw_label": "it",
+   "raw_confidence": 0.1492,
+   "streak": 13,
+   "fps": 14.9
+  },
+  {
+   "t": 218.309,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1304,
+   "raw_label": "it",
+   "raw_confidence": 0.1483,
+   "streak": 1,
+   "fps": 15.0
+  },
+  {
+   "t": 218.641,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1318,
+   "raw_label": "it",
+   "raw_confidence": 0.1332,
+   "streak": 2,
+   "fps": 15.0
+  },
+  {
+   "t": 218.977,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1266,
+   "raw_label": "it",
+   "raw_confidence": 0.1215,
+   "streak": 3,
+   "fps": 15.0
+  },
+  {
+   "t": 219.309,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1201,
+   "raw_label": "it",
+   "raw_confidence": 0.1135,
+   "streak": 4,
+   "fps": 15.0
+  },
+  {
+   "t": 219.645,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1083,
+   "raw_label": "it",
+   "raw_confidence": 0.0966,
+   "streak": 5,
+   "fps": 15.0
+  },
+  {
+   "t": 219.977,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1036,
+   "raw_label": "it",
+   "raw_confidence": 0.0988,
+   "streak": 6,
+   "fps": 15.0
+  },
+  {
+   "t": 220.313,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1052,
+   "raw_label": "it",
+   "raw_confidence": 0.1069,
+   "streak": 7,
+   "fps": 15.0
+  },
+  {
+   "t": 220.645,
+   "label": null,
+   "display": "...",
+   "confidence": 0.1026,
+   "raw_label": "paint",
+   "raw_confidence": 0.1113,
+   "streak": 8,
+   "fps": 15.0
+  },
+  {
+   "t": 220.981,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0948,
+   "raw_label": "it",
+   "raw_confidence": 0.087,
+   "streak": 9,
+   "fps": 15.0
+  },
+  {
+   "t": 221.313,
+   "label": null,
+   "display": "...",
+   "confidence": 0.0934,
+   "raw_label": "it",
+   "raw_confidence": 0.092,
+   "streak": 10,
+   "fps": 15.0
+  }
+ ]
+}

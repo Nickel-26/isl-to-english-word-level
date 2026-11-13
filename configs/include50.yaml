@@ -142,6 +142,19 @@ augment:
   time_shift: 2
   scale: [0.9, 1.15]
   speed: [0.8, 1.25]
+  # Webcam-robust augmentation. Hand dropout reproduces MediaPipe losing a
+  # hand for several consecutive frames in live video. Mirror augmentation was
+  # tested and rejected: it teaches handedness invariance but cost ~7 pp of
+  # official test accuracy and did not improve the labelled live takes.
+  mirror: 0.0
+  # Mirror only sequences that use a single hand. Tested at 0.5 and 0.75 and
+  # rejected: test top-1 fell to 97.40% / 95.83% (vs 97.92%) and each variant
+  # settled only 2 of 8 labelled live takes. Kept at 0.0, like global mirror.
+  mirror_one_handed: 0.0
+  hand_dropout: 0.4
+  hand_dropout_span: 8
+  noise_std: 0.0
+  translate: 0.0
 
 model:
   type: bigru              # bigru | transformer
@@ -179,7 +192,17 @@ demo:
   window_seconds: 2.5      # matches the ~2.7 s dataset clips
   start_after_seconds: 2.0 # wait for a near-full window before predicting
   infer_every_seconds: 0.33
-  confidence_threshold: 0.15
+  confidence_threshold: 0.6    # selected on the labelled live takes (precision 78.95%)
   smoothing_alpha: 0.5
   min_streak: 2
+  # Windows built from mostly-missing hands are unlike any training clip.
+  # Below this coverage the demo says "hands out of frame" instead of guessing.
+  min_hand_coverage: 0.3
+  reset_after_missing_seconds: 0.8
+  # Committed labels the demo hides (display "...") without changing the model
+  # or checkpoint. The demo previously over-predicted `it` on webcam input
+  # (60-94% confidence, hands in frame) even though the test split is 9/9
+  # correct. Suppression is a presentation decision, not a model fix; it
+  # affects the demo and caption script only.
+  suppress_labels: [it]
   show_fps: true

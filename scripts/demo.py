@@ -36,10 +36,12 @@ from _bootstrap import ROOT, add_config_args
 from isl.config import ConfigError, load_config
 from isl.keypoints import Landmarkers, detect_frame
 from isl.live import (
+    DecisionGate,
     DemoStats,
-    ProbabilitySmoother,
     TimedFrameBuffer,
     buffer_to_sequence,
+    hand_coverage,
+    wrist_out_of_frame,
 )
 from isl.model import load_checkpoint_model
 
@@ -58,6 +60,12 @@ def main() -> int:
     parser.add_argument("--threshold", type=float, default=None)
     parser.add_argument("--alpha", type=float, default=None)
     parser.add_argument("--min-streak", type=int, default=None)
+    parser.add_argument(
+        "--min-hand-coverage",
+        type=float,
+        default=None,
+        help="Minimum fraction of window frames with a detected hand before committing",
+    )
     parser.add_argument("--min-frames", type=int, default=8)
     parser.add_argument(
         "--start-after",
@@ -114,6 +122,11 @@ def main() -> int:
             if args.min_streak is not None
             else cfg.get("demo.min_streak", 3)
         )
+        min_hand_coverage = float(
+            args.min_hand_coverage
+            if args.min_hand_coverage is not None
+            else cfg.get("demo.min_hand_coverage", 0.0)
+        )
         start_after = float(
             args.start_after
             if args.start_after is not None
@@ -128,6 +141,10 @@ def main() -> int:
 
         rest_index = labels.index(cfg.rest_label) if cfg.rest_label in labels else None
         rest_display = cfg.display(cfg.rest_label) if rest_index is not None else "No sign"
+        suppress_labels = cfg.suppress_labels
+        suppress_indices = {
+            labels.index(label) for label in suppress_labels if label in labels
+        }
 
         source = parse_source(
             args.source
@@ -144,8 +161,15 @@ def main() -> int:
 
         landmarkers = Landmarkers.from_config(cfg)
         buffer = TimedFrameBuffer(window_seconds)
-        smoother = ProbabilitySmoother(
-            alpha=alpha, min_streak=min_streak, threshold=threshold
+        gate = DecisionGate(
+            alpha=alpha,
+            min_streak=min_streak,
+            threshold=threshold,
+            min_hand_coverage=min_hand_coverage,
+            reset_after_missing_seconds=float(
+                cfg.get("demo.reset_after_missing_seconds", 0.8)
+            ),
+            suppress_indices=suppress_indices,
         )
         stats = DemoStats()
 
@@ -155,6 +179,7 @@ def main() -> int:
         last_ts = -1
         last_inference = -1e9
         predicted_display = "..."
+        display_active = False
         confidence = 0.0
         fps = 0.0
         last_frame_time = started
@@ -164,7 +189,10 @@ def main() -> int:
         print(f"device     : {device}")
         print(f"window     : {window_seconds:.1f} s (first prediction after "
               f"{start_after:.1f} s) | threshold {threshold:.2f} | "
-              f"alpha {alpha:.2f} | min streak {min_streak}")
+              f"alpha {alpha:.2f} | min streak {min_streak} | "
+              f"min hand coverage {min_hand_coverage:.2f}")
+        if suppress_labels:
+            print(f"suppressed : {', '.join(suppress_labels)} (model still predicts, demo hides)")
         print("Press q or Esc to quit." if not args.headless else "Headless mode.")
 
         try:
@@ -230,43 +258,72 @@ def main() -> int:
                     with torch.no_grad():
                         probs = torch.softmax(model(tensor), dim=1)[0].cpu().numpy()
 
-                    smoothed = smoother.update(probs)
-                    raw_display = cfg.display(labels[smoothed.raw_index])
-                    confidence = smoothed.confidence
-                    if smoothed.index is None:
+                    window_frames = buffer.frames()
+                    coverage = hand_coverage(window_frames)
+                    decision = gate.update(
+                        probs, coverage=coverage, timestamp=stream_time
+                    )
+                    raw_display = cfg.display(labels[decision.raw_index])
+                    confidence = decision.confidence
+                    order = np.argsort(probs)[::-1]
+                    top3 = [
+                        {
+                            "label": labels[int(i)],
+                            "p": round(float(probs[int(i)]), 4),
+                        }
+                        for i in order[:3]
+                    ]
+                    margin = float(probs[order[0]] - probs[order[1]])
+                    entropy = float(-(probs * np.log(probs + 1e-12)).sum())
+
+                    if decision.blocked:
+                        predicted_display = "Hands out of frame"
+                    elif decision.suppressed:
                         predicted_display = "..."
-                    elif smoothed.index == rest_index:
+                    elif decision.index is None:
+                        predicted_display = "..."
+                    elif decision.index == rest_index:
                         predicted_display = rest_display
                     else:
-                        predicted_display = cfg.display(labels[smoothed.index])
+                        predicted_display = cfg.display(labels[decision.index])
+                    display_active = decision.index is not None
 
                     stats.observe_prediction(
                         timestamp=stream_time,
                         label=(
                             None
-                            if smoothed.index is None
-                            else labels[smoothed.index]
+                            if decision.index is None
+                            else labels[decision.index]
                         ),
                         display=predicted_display,
-                        confidence=smoothed.confidence,
-                        raw_label=labels[smoothed.raw_index],
-                        raw_confidence=smoothed.raw_confidence,
-                        streak=smoothed.streak,
+                        confidence=decision.confidence,
+                        raw_label=labels[decision.raw_index],
+                        raw_confidence=decision.raw_confidence,
+                        streak=decision.streak,
                         fps=fps,
                         rest_label=cfg.rest_label if rest_index is not None else None,
                         threshold=threshold,
+                        hand_coverage=coverage,
+                        blocked=decision.blocked,
+                        suppressed=decision.suppressed,
+                        reason=decision.reason,
+                        top3=top3,
+                        margin=margin,
+                        entropy=entropy,
                     )
 
                     if args.headless:
                         print(
-                            f"{stream_time:6.2f}s  {predicted_display:<18} "
-                            f"conf {smoothed.confidence:.3f}  "
-                            f"raw {raw_display:<18} {smoothed.raw_confidence:.3f}  "
-                            f"fps {fps:5.1f}"
+                            f"{stream_time:6.2f}s  {predicted_display:<22} "
+                            f"conf {decision.confidence:.3f}  "
+                            f"raw {raw_display:<18} {decision.raw_confidence:.3f}  "
+                            f"hands {coverage:.2f}  fps {fps:5.1f}"
                         )
 
                 if not args.headless:
-                    colour = (60, 200, 60) if confidence >= threshold else (120, 120, 120)
+                    colour = (
+                        (60, 200, 60) if display_active else (120, 120, 120)
+                    )
                     cv2.putText(
                         frame,
                         predicted_display,
@@ -277,9 +334,14 @@ def main() -> int:
                         3,
                         cv2.LINE_AA,
                     )
+                    framing = (
+                        "hands out of frame - step back"
+                        if wrist_out_of_frame(buffer.frames())
+                        else f"conf {confidence:.2f}  streak {gate.smoother.streak}"
+                    )
                     cv2.putText(
                         frame,
-                        f"conf {confidence:.2f}  streak {smoother.streak}",
+                        framing,
                         (18, 80),
                         cv2.FONT_HERSHEY_SIMPLEX,
                         0.6,
@@ -318,6 +380,8 @@ def main() -> int:
         print(f"Frames with no hands : {summary['frames_without_hands']}")
         print(f"Low-confidence       : {summary['low_confidence_inferences']} "
               f"of {summary['inferences']} inferences")
+        print(f"Suppressed commits   : {summary['suppressed_inferences']}"
+              + (f" ({', '.join(suppress_labels)})" if suppress_labels else ""))
         print(f"Label switches       : {summary['label_switches']}")
         if summary["label_time"]:
             print("Labels seen          :")
@@ -342,8 +406,13 @@ def main() -> int:
                         "threshold": threshold,
                         "alpha": alpha,
                         "min_streak": min_streak,
+                        "min_hand_coverage": min_hand_coverage,
+                        "reset_after_missing_seconds": float(
+                            cfg.get("demo.reset_after_missing_seconds", 0.8)
+                        ),
                         "infer_every_seconds": infer_every,
                         "mirror": args.mirror,
+                        "suppress_labels": suppress_labels,
                     },
                     "summary": summary,
                     "timeline": stats.timeline,

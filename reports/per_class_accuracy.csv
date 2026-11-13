@@ -1,9 +1,8 @@
 label,display,recall,support,correct
-boy,Boy,0.5,4,2
 biglarge,Big / Large,0.75,4,3
-cellphone,Cell phone,0.75,4,3
+boy,Boy,0.75,4,3
 brother,Brother,0.8,5,4
-short,Short,0.8333,6,5
+hot,Hot,0.8333,6,5
 bird,Bird,1.0,1,1
 house,House,1.0,1,1
 priest,Priest,1.0,1,1
@@ -31,6 +30,7 @@ tshirt,T-shirt,1.0,3,3
 window,Window,1.0,3,3
 youplural,You (plural),1.0,3,3
 car,Car,1.0,4,4
+cellphone,Cell phone,1.0,4,4
 goodmorning,Good morning,1.0,4,4
 shoes,Shoes,1.0,4,4
 smalllittle,Small / Little,1.0,4,4
@@ -39,9 +39,9 @@ black,Black,1.0,5,5
 death,Death,1.0,5,5
 bank,Bank,1.0,6,6
 hat,Hat,1.0,6,6
-hot,Hot,1.0,6,6
 long,Long,1.0,6,6
 loud,Loud,1.0,6,6
+short,Short,1.0,6,6
 dog,Dog,1.0,7,7
 hello,Hello,1.0,7,7
 thankyou,Thank you,1.0,7,7
