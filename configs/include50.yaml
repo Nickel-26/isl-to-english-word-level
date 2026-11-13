@@ -1,0 +1,185 @@
+# =============================================================================
+# INCLUDE-50 config — the SINGLE source of truth for the sign list.
+#
+# Everything else (number of classes, label order, model output size,
+# evaluation tables, demo display names) is derived from `dataset.signs`.
+# To switch to the full 263-sign INCLUDE set later, replace `signs`, the three
+# split files, `project.name`, and re-run scripts/index_archives.py.
+# =============================================================================
+
+project:
+  name: include50
+  seed: 42
+
+dataset:
+  # Videos are laid out as: <raw_dir>/<Category>/<NN. Sign>/<video>.MOV
+  raw_dir: data/raw
+  splits_dir: data/splits
+  downloads_dir: data/downloads
+  manifests_dir: data/manifests
+
+  split_files:
+    train: include50_train.txt
+    val: include50_val.txt
+    test: include50_test.txt
+
+  # Official split files, mirrored in the AI4Bharat inference repository.
+  # (The Google Drive link in the Zenodo record is dead as of 2026-11-12.)
+  split_source:
+    base_url: https://raw.githubusercontent.com/AI4Bharat/INCLUDE-MS-Teams-Integration/main/src/inference/INCLUDE/train_test_paths
+    expected_counts: {train: 689, val: 77, test: 192}
+
+  zenodo_record: 4010759
+  # Empty list = index the Zenodo record automatically and select only the
+  # archive parts that contain at least one of the signs below.
+  # scripts/index_archives.py writes data/manifests/archive_index.json.
+  archives: []
+
+  # Keep exactly the videos named in the split files (no extra clips).
+  extract_only_listed: true
+  keep_archives: false
+  verify_md5: true
+  index_workers: 2
+
+  # How to get the files. "remote" reads only the needed members out of each
+  # remote ZIP with HTTP ranges (about 1/3 of the bandwidth); "archive"
+  # downloads whole ZIPs and extracts them (fallback).
+  download_mode: remote
+  download_connections: 16
+
+  # How a folder like "54. Cell phone" becomes a config label.
+  # strip_nonalpha_lower: keep letters only, lowercase -> "cellphone"
+  label_rule: strip_nonalpha_lower
+
+  # ---------------------------------------------------------------------------
+  # THE SIGN LIST. Order defines class indices; `rest` is always appended last.
+  # `label` must match the normalised dataset folder name exactly.
+  # ---------------------------------------------------------------------------
+  signs:
+    - {label: bank,        display: "Bank"}
+    - {label: biglarge,    display: "Big / Large"}
+    - {label: bird,        display: "Bird"}
+    - {label: black,       display: "Black"}
+    - {label: boy,         display: "Boy"}
+    - {label: brother,     display: "Brother"}
+    - {label: car,         display: "Car"}
+    - {label: cellphone,   display: "Cell phone"}
+    - {label: court,       display: "Court"}
+    - {label: cow,         display: "Cow"}
+    - {label: death,       display: "Death"}
+    - {label: dog,         display: "Dog"}
+    - {label: dry,         display: "Dry"}
+    - {label: election,    display: "Election"}
+    - {label: fall,        display: "Fall"}
+    - {label: fan,         display: "Fan"}
+    - {label: father,      display: "Father"}
+    - {label: girl,        display: "Girl"}
+    - {label: good,        display: "Good"}
+    - {label: goodmorning, display: "Good morning"}
+    - {label: happy,       display: "Happy"}
+    - {label: hat,         display: "Hat"}
+    - {label: hello,       display: "Hello"}
+    - {label: hot,         display: "Hot"}
+    - {label: house,       display: "House"}
+    - {label: i,           display: "I"}
+    - {label: it,          display: "It"}
+    - {label: long,        display: "Long"}
+    - {label: loud,        display: "Loud"}
+    - {label: monday,      display: "Monday"}
+    - {label: new,         display: "New"}
+    - {label: paint,       display: "Paint"}
+    - {label: pen,         display: "Pen"}
+    - {label: priest,      display: "Priest"}
+    - {label: quiet,       display: "Quiet"}
+    - {label: red,         display: "Red"}
+    - {label: shoes,       display: "Shoes"}
+    - {label: short,       display: "Short"}
+    - {label: smalllittle, display: "Small / Little"}
+    - {label: storeorshop, display: "Store / Shop"}
+    - {label: summer,      display: "Summer"}
+    - {label: teacher,     display: "Teacher"}
+    - {label: thankyou,    display: "Thank you"}
+    - {label: time,        display: "Time"}
+    - {label: trainticket, display: "Train ticket"}
+    - {label: tshirt,      display: "T-shirt"}
+    - {label: white,       display: "White"}
+    - {label: window,      display: "Window"}
+    - {label: year,        display: "Year"}
+    - {label: youplural,   display: "You (plural)"}
+
+  rest:
+    enabled: true
+    display: "No sign"
+    synthetic_examples: 600   # train examples synthesised from real poses
+    val_examples: 120         # synthetic rest rows for validation monitoring
+
+keypoints:
+  cache_dir: data/keypoints
+  models_dir: models/mediapipe
+  num_hands: 2
+  pose_points: 25          # MediaPipe pose indices 0-24 (head to hips); no face mesh
+  use_z: false
+  presence_flags: true     # +3 dims/frame -> 137 total
+  resample_frames: 32
+  min_detection_confidence: 0.2
+  min_tracking_confidence: 0.5
+  shoulder_visibility: 0.3
+  workers: 2
+  cache_version: 1
+  overwrite: false
+
+  models:
+    hand:
+      file: hand_landmarker.task
+      url: https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+    pose:
+      file: pose_landmarker_lite.task
+      url: https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task
+
+augment:
+  enabled: true
+  p: 0.6
+  time_shift: 2
+  scale: [0.9, 1.15]
+  speed: [0.8, 1.25]
+
+model:
+  type: bigru              # bigru | transformer
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.3
+  input_dim: auto          # computed from keypoints config; never hard-coded
+
+training:
+  epochs: 80
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  label_smoothing: 0.05
+  early_stop_patience: 12
+  grad_clip: 1.0
+  device: auto
+  checkpoint_dir: models/checkpoints
+  progress_file: training_progress.txt
+
+evaluation:
+  checkpoint: models/checkpoints/include50_best.pt
+  split: test
+  reports_dir: reports
+  published_accuracy: 0.945
+  published_caveat: >-
+    The published INCLUDE-50 94.5% result uses a pretrained CNN feature
+    extractor plus an encoder. This project uses MediaPipe keypoints only, so
+    the comparison is not like-for-like.
+
+demo:
+  camera: 0
+  width: 640
+  height: 480
+  window_seconds: 2.5      # matches the ~2.7 s dataset clips
+  start_after_seconds: 2.0 # wait for a near-full window before predicting
+  infer_every_seconds: 0.33
+  confidence_threshold: 0.15
+  smoothing_alpha: 0.5
+  min_streak: 2
+  show_fps: true

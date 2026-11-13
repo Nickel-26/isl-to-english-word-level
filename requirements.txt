@@ -1,0 +1,24 @@
+# Tested on this machine with Python 3.14.7 and an RTX 3050 (6 GB).
+# The project's existing .venv already satisfies all of this.
+#
+# Installation note: installing `mediapipe` with pip normally pulls
+# opencv-contrib-python, which can conflict with the existing opencv-python.
+# The working setup used here is a venv with system site packages plus:
+#   uv pip install --no-deps mediapipe==1.2.2
+#   uv pip install "absl-py~=2.3" "flatbuffers~=25.9" "sounddevice~=0.5"
+torch==2.14.1
+torchvision==0.29.1
+mediapipe==1.2.2
+opencv-python==5.0.0.93
+numpy==2.5.4
+pandas==2.3.3
+scikit-learn==1.9.0
+matplotlib==3.10.8
+seaborn==0.13.2
+tqdm==4.70.1
+PyYAML==6.0.3
+
+# MediaPipe runtime dependencies (kept explicit because of the --no-deps install)
+absl-py==2.5.1
+flatbuffers==25.12.19
+sounddevice==0.5.6

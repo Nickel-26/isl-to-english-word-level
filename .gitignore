@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+models/
+data/
+outputs/
+logs/
+*.part
+download_progress.txt
+keypoints_progress.txt
+training_progress.txt
+.DS_Store
