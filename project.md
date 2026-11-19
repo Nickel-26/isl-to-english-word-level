@@ -614,6 +614,147 @@ failure); a blank 3 s clip produces no caption and an explicit warning. Output
 is silent because OpenCV cannot mux audio and no ffmpeg is installed. A JSON
 sidecar stores the transcript, word timestamps and the full gate timeline.
 
+### 8.7 Experimental sentence demo (post-processing, not a sentence model)
+
+`scripts/sentence_demo.py` is a third, separate script. It runs the identical
+MediaPipe → BiGRU → `DecisionGate` path and then adds an utterance buffer and one
+Gemini call. It is deliberately kept out of `demo.py` and `caption_video.py`; the
+word-level model, the checkpoint and the 97.92% test metrics are untouched.
+
+**Buffer semantics.** Only committed labels that are neither suppressed nor
+`rest` enter the buffer; a committed `rest` flushes it immediately, and any
+1.2 s without a committed sign also flushes it. Repeated commits of a held sign
+are collapsed, because the gate re-commits a static sign on every inference
+window. Caps of 12 glosses and 8 s bound the prompt. At end of session the
+remaining buffer is flushed with reason `eof`. This is pure Python in
+`src/isl/sentence.py` and is unit-tested without a camera or network.
+
+**LLM step.** The glosses are mapped to short words from their display names
+(`Big / Large` → `big`, `You (plural)` → `you`), and only those words are sent to
+Gemini's `generateContent` endpoint (default `gemini-3.1-flash-lite`, key from
+`.env` or `$GEMINI_API_KEY` in the `x-goog-api-key` header). The prompt is the
+only
+guardrail: reorder into natural English, add only function words, drop stray
+glosses, and add no new meaning. The two calibration examples are
+`big cow → the cow is big` and `loud paint bird → the bird is loud` (the stray
+`paint` is dropped). The JSON reply is parsed into `sentence`, `used` and
+`dropped`; plain text is a fallback, and malformed JSON becomes a warning. The
+configured default `temperature: 0.0` is deliberately omitted from the request:
+Google documents that Gemini 3.x Flash-Lite ignores custom sampling parameters
+and will return HTTP 400 for them in a future release, and recommends putting
+the determinism rules in the prompt instead.
+
+**Transport.** The public endpoint intermittently returns `503`/`429` or stalls.
+`GeminiRewriter` makes at most three attempts with exponential backoff
+(0.6 s, 1.2 s) and a configurable per-attempt timeout (default 30 s,
+`--timeout`). In the demo, rewrites run on one daemon worker
+(`AsyncRewriter`), so capture, inference and the overlay never block on the
+network; finished sentences are drained on later frames. On exit the demo waits
+up to `--shutdown-grace` (default 12 s) for the last rewrite and reports any
+request abandoned while the endpoint was still busy.
+
+**No validator for Gemini, no new data.** In line with the agreed "trust the
+LLM" scope for Gemini, there is no rule that rejects a sentence containing words
+absent from the glosses; `used`/`dropped` are logged so a reviewer can inspect
+that behaviour after the fact. The local Ollama variant (§8.9) adds a small
+grounding guard because the 3B model copies few-shot examples. The model sees
+neither video nor keypoints, only recognized words. No sentence training or
+self-recorded training data is involved, and live recordings remain
+evaluation-only. API failures never raise into the capture loop, and the key is
+redacted from warnings and absent from the session JSON.
+
+**Status on 2026-11-19:** implemented, unit-tested (mocked HTTP) and verified
+live with the user's key. An offline `--echo` pass on `eval_vids/cow.mp4`
+produced one utterance (`cow`, reason `eof`). Live smoke tests produced
+`it is a cow.` for `cow.mp4` and `the cow is red` for a constructed `red`+`cow`
+clip (run with a wider test-only gap so both signs buffered together). Latency
+was highly variable — roughly 1 s to over 40 s with occasional transient 503s —
+which motivated the background worker; no accuracy claim is made for the
+rewritten sentences.
+
+### 8.8 Sentence-captioned output video (final product only)
+
+`scripts/caption_sentence_vid.py` is a fourth script, separate from the word
+demo, the word captioner and the webcam sentence demo. It produces a finished
+silent MP4 in which the **only** overlay is the final rewritten sentence — no
+gloss line, no gate status, no warnings and no debug text.
+
+It works in two passes so the slow LLM call never has to stall frame decoding:
+
+1. **Pass 1 (analysis).** Identical keypoint → BiGRU → `DecisionGate` →
+   `UtteranceBuffer` path as §8.7. Completed utterances are submitted to
+   `AsyncRewriter`; at EOF the script waits for every pending rewrite.
+2. **Pass 2 (render).** Re-open the file and burn only the returned sentences
+   with `draw_caption_bar` / `wrap_caption` from `src/isl/captions.py`. A
+   caption's start is the *first committed sign* of its utterance
+   (`Utterance.started_at`), not the later flush or API arrival time. It stays
+   until the next utterance starts; the last caption is held for
+   `--hold-seconds` (default 2 s) on duplicated frames. A failed rewrite is an
+   empty timeline entry, which clears the bar rather than leaving stale text.
+
+The pure timing helper is `sentence_at(entries, t)` in `isl.captions`, so the
+timeline is unit-tested without OpenCV or a video. The output JSON sidecar is
+deliberately minimal: settings, final sentence timings and counts only — no
+per-frame gloss timeline and no API key. `--echo` exists solely as an offline
+plumbing check and captions the gloss order, not a rewrite.
+
+**Verified 2026-11-19:** `cow.mp4` produced `it is a cow.` from 2.39 s, held for
+2 s; a constructed `red`+`cow` clip produced `the cow is red.` from 2.33 s. The
+output contains no other overlay. This is a presentation layer only: it adds no
+sentence training and no accuracy claim.
+
+### 8.9 Local Ollama sentence demo and captioner
+
+Two additional scripts reuse §8.7–§8.8 byte-for-byte except for the rewrite
+backend: `scripts/sentence_demo_ollama.py` (live/file demo) and
+`scripts/caption_sentence_vid_ollama.py` (two-pass final-sentence video). The
+Gemini scripts were left unchanged. No API key, `.env` or internet is needed:
+Ollama must be running locally with `qwen2.5:3b-instruct` pulled
+(`ollama pull qwen2.5:3b-instruct`). Config adds `sentence.ollama_model`,
+`sentence.ollama_url` and `sentence.ollama_timeout_seconds` (60 s to allow a
+cold model load), with `--model`, `--url` and `--timeout` overrides.
+
+**Transport.** One `POST {ollama_url}/api/chat` per flushed utterance:
+`model: qwen2.5:3b-instruct`, `format: "json"`, `stream: false`,
+`options: {temperature: 0.0, top_p: 1.0, seed: 42, num_predict: 128}`. As with
+Gemini, rewriting runs on `AsyncRewriter` so capture/decoding never blocks.
+Failures return a warning instead of raising.
+
+**Prompt.** The system message is the user's exact instruction:
+
+```text
+following detected signs into small english sentences and remove stray signs which were probably detected on accident
+```
+
+The user message is only the glosses plus JSON response instructions. With
+glosses `big cow`:
+
+```text
+Glosses, in the order they were signed: big cow
+
+Reply with JSON only, exactly this shape:
+  {"sentence": "...", "used": ["..."], "dropped": ["..."]}
+  "used" lists the signs you kept; "dropped" lists the stray signs you ignored.
+```
+
+No rules, examples or article instructions are added for Ollama; Gemini keeps
+`build_prompt()` unchanged. A deterministic grounding guard still rejects any
+reply whose `sentence` or `used` contains a content word absent from the glosses,
+or a bare gloss list with no function word or glossed pronoun. It no longer
+forces a leading `the`, so `paint the window` survives. Rejected replies fall
+back to a gloss-only sentence such as `the cow.` and record the raw reply in the
+session JSON. The guard is Ollama-only; Gemini stays prompt-trusted.
+
+**Verified 2026-11-20 after relaxing the guard.** Direct rewrites (~0.4 s after
+warm-up, two runs each): `paint window → paint the window`, `loud paint bird →
+paint the bird` (the model drops `loud`, not the stray `paint`), `small cat → the
+cat is small`, `beautiful flower → the flower is beautiful`, `i go home → i go
+home`, `you drink water → you drink water`. Bare gloss replies still fall back:
+`big cow → the big cow.`, `red cow → the red cow.`, `quiet brother → the quiet
+brother.`, `cow → the cow.`. Defaults write
+`reports/sentence_ollama_session_*.json` and
+`reports/<name>_sentence_ollama.mp4/.json`, never overwriting Gemini output.
+
 ---
 
 ## 9. Live failure analysis
@@ -961,7 +1102,7 @@ the baseline results.
 | Test set size | 192 clips | Wide confidence interval |
 | Signer diversity | Same INCLUDE signers, random split | New-signer accuracy is lower |
 | Compute | Laptop CPU for inference, 6 GB GPU training | Real-time edge deployment |
-| Output | Isolated word only | Not continuous translation |
+| Output | Isolated word only (the experimental sentence demo post-processes committed words with an LLM) | Not continuous translation; no sequence-to-sequence sign model |
 
 ### 11.2 Where this project sits
 
@@ -1013,6 +1154,9 @@ Use this when placing the project next to a paper:
   subset has been trained and evaluated.
 - "Face landmarks are required." That is the hypothesis under test in Phase 1,
   not an established result, and it is untestable until the hands are in frame.
+- "Sentence translation works." The experimental Gemini demo reorders already
+  recognized words; it has no sentence-level evaluation and cannot fix a missed
+  or misread sign.
 
 ### 11.6 Related-work families and representative references
 
@@ -1065,6 +1209,11 @@ Without those, accuracy numbers are not comparable.
 11. **Rest vs unknown signs.** The gate rejects low-confidence input, but a
     confident wrong word is still possible; this is exactly what the live
     failure analysis must quantify.
+12. **LLM rewrite has no evaluation.** The experimental sentence demo trusts the
+    model's `used`/`dropped` report and has no measure of meaning preservation;
+    a confident wrong gloss yields a fluent but wrong sentence. Ollama's
+    grounding guard only checks that content words come from the glosses; it is
+    not a semantic validator. Neither backend has a sentence-level score.
 
 ---
 
@@ -1089,6 +1238,23 @@ python scripts/extract_keypoints.py --verify-only
 python scripts/train.py
 python scripts/evaluate.py
 python scripts/demo.py
+
+# Experimental sentence demo (needs a user-supplied key; not used for metrics):
+# key from the gitignored .env, or export it (exported value wins):
+export GEMINI_API_KEY='...'
+python scripts/sentence_demo.py
+python scripts/sentence_demo.py --echo --source eval_vids/cow.mp4 --headless
+
+# Offline video with only the final rewritten sentence burned in:
+python scripts/caption_sentence_vid.py eval_vids/cow.mp4
+
+# No key/internet: local Ollama rewrite (model must already be pulled):
+ollama pull qwen2.5:3b-instruct
+python scripts/sentence_demo_ollama.py
+python scripts/sentence_demo_ollama.py --source eval_vids/cow.mp4 --headless
+python scripts/caption_sentence_vid_ollama.py eval_vids/cow.mp4
+python scripts/caption_sentence_vid_ollama.py /tmp/opencode/red_cow.mp4 \
+    --gap 4.0 --max-wait 10   # keeps two signs in one utterance
 ```
 
 ### 13.2 Expected artifacts
@@ -1107,6 +1273,10 @@ python scripts/demo.py
 | `reports/most_confused.csv` | top off-diagonal pairs |
 | `reports/live_eval_final.json` | labelled live takes, gate sweep, hand diagnostics |
 | `reports/demo_session_*.json` | live session timelines |
+| `reports/sentence_session_*.json` | experimental Gemini sentence utterances and rewrites (no API key) |
+| `reports/<name>_sentence.mp4/.json` | Gemini final-sentence-only captioned video and its timing sidecar |
+| `reports/sentence_ollama_session_*.json` | experimental Ollama utterances, rewrites and any grounding fallback |
+| `reports/<name>_sentence_ollama.mp4/.json` | Ollama final-sentence-only captioned video and its timing sidecar |
 
 ### 13.3 Determinism notes
 
@@ -1124,10 +1294,13 @@ python scripts/demo.py
 python -m unittest discover -s tests
 ```
 
-62 tests cover config validation, split handling, keypoint layout/normalisation,
+107 tests cover config validation, split handling, keypoint layout/normalisation,
 augmentation (mirror, hand dropout), rest synthesis, model shapes, cache loading,
-timed buffer, windowing, smoothing, hand coverage, wrist framing and the decision
-gate. No camera is required.
+timed buffer, windowing, smoothing, hand coverage, wrist framing, the decision
+gate, suppression, sentence buffering/prompt/response parsing, retry/timeout
+handling, the async rewrite worker, final-sentence caption timing, Ollama's
+grounding fallback and both Gemini/Ollama calls with mocked HTTP. No camera,
+API key or Ollama server is required.
 
 ---
 
@@ -1141,7 +1314,8 @@ src/isl/keypoints.py        MediaPipe pose/hands, normalisation, resampling
 src/isl/dataset.py          cache loading, augmentation, synthetic rest
 src/isl/model.py            BiGRU / Transformer, checkpoint loading
 src/isl/live.py             timed buffer, decision gate, coverage, demo statistics
-src/isl/captions.py         caption transcript state and overlay drawing
+src/isl/captions.py         caption state, overlay drawing, sentence timing
+src/isl/sentence.py         utterance buffer, prompt, Gemini/Ollama calls, parsing, Ollama grounding guard
 src/isl/archive_index.py    remote ZIP index
 src/isl/http.py             HTTP range requests
 src/isl/remote_extract.py   remote member extraction
@@ -1149,6 +1323,10 @@ src/isl/remote_zip.py       remote ZIP parsing
 scripts/                    data, extraction, training, evaluation, demo
 scripts/eval_live_clips.py  labelled live-take evaluation + gate sweep
 scripts/caption_video.py    burn committed words into an output video
+scripts/sentence_demo.py    experimental: buffer glosses, Gemini rewrite
+scripts/caption_sentence_vid.py  Gemini final-sentence-only video renderer
+scripts/sentence_demo_ollama.py  local Ollama sentence demo (no key/internet)
+scripts/caption_sentence_vid_ollama.py  Ollama final-sentence-only video renderer
 eval_vids/                  eight labelled user takes (evaluation only)
 data/                       raw videos, splits, manifests, keypoint caches
 models/                     MediaPipe task files and checkpoints
@@ -1180,6 +1358,10 @@ project.md                  this document: approach, evidence, comparisons
 | Rest | Synthetic "No sign" class |
 | OOD | Out-of-distribution, i.e. live input unlike training data |
 | FPS | Frames per second |
+| Gloss | Word-level label emitted by the classifier for one sign |
+| Utterance buffer | Committed glosses collected until rest, silence or a safety cap |
+| Gemini rewrite | LLM post-processing that reorders/drops glosses; not sign recognition |
+| Ollama rewrite | Same post-processing with a local model (`qwen2.5:3b-instruct`); no API key |
 
 ---
 
@@ -1206,6 +1388,13 @@ project.md                  this document: approach, evidence, comparisons
 | 2026-11-13 | `scripts/caption_video.py` renders committed words into a captioned video |
 | 2026-11-13 | 55 unit tests pass; README/project.md updated with live evidence |
 | 2026-11-13 | `demo.suppress_labels: [it]` hides confident live It; model/checkpoint unchanged |
+| 2026-11-19 | Experimental sentence demo added: utterance buffer + Gemini rewrite, separate script, no model change; 89 tests pass |
+| 2026-11-19 | Sentence live path hardened: `.env` key loading, 3-attempt retry with 30 s timeout, async rewrite worker, faster default `gemini-3.1-flash-lite`; live smoke tests pass; 98 tests pass |
+| 2026-11-19 | Added `scripts/caption_sentence_vid.py`: two-pass offline renderer showing only final rewritten sentences; 101 tests pass |
+| 2026-11-20 | Added local Ollama variants of both sentence scripts with `qwen2.5:3b-instruct`, rule-only prompt + grounding guard, no key/internet; live/caption smoke tests pass; 107 tests pass |
+| 2026-11-20 | Removed the explicit "start with the" sentences from the Ollama system prompt and suffix only; grounding guard and fallback left unchanged as requested |
+| 2026-11-20 | Replaced the Ollama prompt with the user's exact instruction plus JSON/response instructions only; no examples, rules or article guidance; Gemini prompt and grounding guard unchanged; 107 tests pass |
+| 2026-11-20 | Relaxed the Ollama grounding guard: no forced leading `the`, so grounded verb-first replies such as `paint the window` are accepted; bare gloss lists still fall back; 109 tests pass |
 
 **Next action:** re-record the eight target signs with hands fully in frame
 (step back / raise camera) and re-run `scripts/eval_live_clips.py`. Only if

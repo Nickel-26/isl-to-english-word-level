@@ -17,6 +17,8 @@ matplotlib==3.10.8
 seaborn==0.13.2
 tqdm==4.70.1
 PyYAML==6.0.3
+requests==2.33.1   # sentence demo only (Gemini generateContent HTTP call)
+python-dotenv==1.2.4  # sentence demo only: read GEMINI_API_KEY from .env
 
 # MediaPipe runtime dependencies (kept explicit because of the --no-deps install)
 absl-py==2.5.1

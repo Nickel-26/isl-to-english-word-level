@@ -192,7 +192,7 @@ demo:
   window_seconds: 2.5      # matches the ~2.7 s dataset clips
   start_after_seconds: 2.0 # wait for a near-full window before predicting
   infer_every_seconds: 0.33
-  confidence_threshold: 0.6    # selected on the labelled live takes (precision 78.95%)
+  confidence_threshold: 0.3    # selected on the labelled live takes (precision 78.95%)
   smoothing_alpha: 0.5
   min_streak: 2
   # Windows built from mostly-missing hands are unlike any training clip.
@@ -206,3 +206,46 @@ demo:
   # affects the demo and caption script only.
   suppress_labels: [it]
   show_fps: true
+
+# -----------------------------------------------------------------------------
+# EXPERIMENTAL sentence layer (separate Gemini and Ollama scripts).
+#
+# The classifier is still word-level and is NOT retrained here. This demo only
+# buffers the glosses that the existing decision gate already committed, then
+# asks Gemini or local Ollama to reorder/drop them into one short English sentence.
+# It adds no
+# new training data and does not change the 97.92% test result.
+#
+#   big cow           -> "the cow is big"
+#   loud paint bird   -> "the bird is loud"   (stray "paint" dropped)
+# -----------------------------------------------------------------------------
+sentence:
+  # A committed "No sign" (rest) flushes the buffer immediately. Otherwise a
+  # run of no committed sign for this long also flushes it.
+  gap_seconds: 1.2
+  # Safety caps on one utterance. Extra glosses drop the oldest; reaching the
+  # wait cap flushes what is buffered and starts a fresh utterance.
+  max_glosses: 12
+  max_wait_seconds: 8.0
+  # Gemini generateContent endpoint. The API key is read from the environment
+  # variable named below; it is never written to this file or to session logs.
+  # gemini-3.1-flash-lite is much more responsive on the public endpoint than
+  # 3.5-flash-lite, which intermittently takes 30-60 s or returns 503 during
+  # demand spikes. Override with --model if you want a newer one.
+  gemini_model: gemini-3.1-flash-lite
+  api_key_env: GEMINI_API_KEY
+  # Per-attempt HTTP timeout. The client retries up to 3 attempts with
+  # 0.6s/1.2s backoff. Rewrites run in a background thread, so a slow call
+  # never blocks frame capture.
+  timeout_seconds: 30.0
+  # 0.0 = do not send a temperature at all. Gemini 3.x Flash-Lite ignores
+  # custom sampling parameters and will reject them in a future release;
+  # determinism comes from the explicit rules in the prompt.
+  temperature: 0.0
+  # Local Ollama alternative (scripts/sentence_demo_ollama.py and
+  # scripts/caption_sentence_vid_ollama.py). No API key or internet needed.
+  # The model must already be pulled: ollama pull qwen2.5:3b-instruct
+  ollama_model: qwen2.5:3b-instruct
+  ollama_url: http://127.0.0.1:11434
+  # First call after a cold start can load the model into memory.
+  ollama_timeout_seconds: 60.0

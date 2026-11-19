@@ -15,6 +15,7 @@ from isl.captions import (  # noqa: E402
     PERIOD,
     CaptionState,
     draw_caption_bar,
+    sentence_at,
     wrap_caption,
 )
 
@@ -70,6 +71,24 @@ class TestCaptionState(unittest.TestCase):
         captions.reset()
         self.assertEqual(captions.words, [])
         self.assertIsNone(captions.last_label)
+
+
+class TestSentenceTimeline(unittest.TestCase):
+    def test_no_entries_means_no_caption(self) -> None:
+        self.assertEqual(sentence_at([], 1.0), "")
+
+    def test_caption_starts_at_first_sign_not_at_flush(self) -> None:
+        entries = [(2.4, "the cow is big")]
+        self.assertEqual(sentence_at(entries, 2.3), "")
+        self.assertEqual(sentence_at(entries, 2.4), "the cow is big")
+        self.assertEqual(sentence_at(entries, 99.0), "the cow is big")
+
+    def test_latest_sentence_wins_and_empty_text_clears(self) -> None:
+        entries = [(2.0, "the cow is red"), (5.0, ""), (7.0, "the bird is loud")]
+        self.assertEqual(sentence_at(entries, 4.9), "the cow is red")
+        self.assertEqual(sentence_at(entries, 5.0), "")
+        self.assertEqual(sentence_at(entries, 6.9), "")
+        self.assertEqual(sentence_at(entries, 7.0), "the bird is loud")
 
 
 class TestWrapCaption(unittest.TestCase):

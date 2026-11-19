@@ -1,10 +1,14 @@
 .venv/
+.env
 __pycache__/
 *.pyc
 reports/
 data/
 outputs/
 logs/
+final_vid_show/
+eval_vids/
+models/
 *.part
 download_progress.txt
 keypoints_progress.txt

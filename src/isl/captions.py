@@ -12,6 +12,7 @@ full stop, so a caption line reads like ``Cow . Red .``.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Sequence
 
 import cv2
 import numpy as np
@@ -71,6 +72,22 @@ class CaptionState:
 
     def __len__(self) -> int:
         return len(self.words)
+
+
+def sentence_at(entries: Sequence[tuple[float, str]], t: float) -> str:
+    """Return the final sentence active at ``t``; entries are ``(start, text)``.
+
+    Entries must be sorted by start time. An empty text deliberately clears the
+    caption (for example when an utterance failed to rewrite). This is pure
+    timing logic so the sentence-caption renderer can be tested without a video.
+    """
+    active = ""
+    now = float(t)
+    for start, text in entries:
+        if float(start) > now:
+            break
+        active = str(text)
+    return active
 
 
 def _text_size(text: str, font_scale: float, thickness: int) -> tuple[int, int, int]:

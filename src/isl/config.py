@@ -26,6 +26,26 @@ class Sign:
     display: str
 
 
+@dataclass(frozen=True)
+class SentenceSettings:
+    """Settings for the experimental sentence demos (Gemini and Ollama).
+
+    Defaults are used when the optional ``sentence:`` YAML block is absent, so
+    older configs still load. The shipped config always specifies all fields.
+    """
+
+    gap_seconds: float = 1.2
+    max_glosses: int = 12
+    max_wait_seconds: float = 8.0
+    gemini_model: str = "gemini-3.1-flash-lite"
+    api_key_env: str = "GEMINI_API_KEY"
+    timeout_seconds: float = 30.0
+    temperature: float = 0.0
+    ollama_model: str = "qwen2.5:3b-instruct"
+    ollama_url: str = "http://127.0.0.1:11434"
+    ollama_timeout_seconds: float = 60.0
+
+
 def normalise_label(text: str, rule: str = "strip_nonalpha_lower") -> str:
     """Turn a folder like ``"54. Cell phone"`` into ``"cellphone"``."""
     if rule == "strip_nonalpha_lower":
@@ -100,6 +120,40 @@ class Config:
         if value is None:
             return []
         return [str(label) for label in value]
+
+    @property
+    def sentence(self) -> SentenceSettings:
+        """Validated settings for the separate experimental sentence demo."""
+        defaults = SentenceSettings()
+        return SentenceSettings(
+            gap_seconds=float(
+                self.get("sentence.gap_seconds", defaults.gap_seconds)
+            ),
+            max_glosses=int(self.get("sentence.max_glosses", defaults.max_glosses)),
+            max_wait_seconds=float(
+                self.get("sentence.max_wait_seconds", defaults.max_wait_seconds)
+            ),
+            gemini_model=str(
+                self.get("sentence.gemini_model", defaults.gemini_model)
+            ),
+            api_key_env=str(self.get("sentence.api_key_env", defaults.api_key_env)),
+            timeout_seconds=float(
+                self.get("sentence.timeout_seconds", defaults.timeout_seconds)
+            ),
+            temperature=float(
+                self.get("sentence.temperature", defaults.temperature)
+            ),
+            ollama_model=str(
+                self.get("sentence.ollama_model", defaults.ollama_model)
+            ),
+            ollama_url=str(self.get("sentence.ollama_url", defaults.ollama_url)),
+            ollama_timeout_seconds=float(
+                self.get(
+                    "sentence.ollama_timeout_seconds",
+                    defaults.ollama_timeout_seconds,
+                )
+            ),
+        )
 
     @property
     def num_classes(self) -> int:
@@ -215,6 +269,8 @@ class Config:
                     "sign or the rest class. Check the spelling against dataset.signs."
                 )
 
+        self._validate_sentence()
+
         pose_points = int(self.get("keypoints.pose_points", 25))
         if not 1 <= pose_points <= 33:
             raise ConfigError("keypoints.pose_points must be between 1 and 33.")
@@ -237,6 +293,58 @@ class Config:
         for split in ("train", "val", "test"):
             if not self.get(f"dataset.split_files.{split}", None):
                 raise ConfigError(f"dataset.split_files.{split} is required.")
+
+    def _validate_sentence(self) -> None:
+        """Validate the optional sentence-demo block, if present."""
+        if "sentence" not in self.raw:
+            return
+        block = self.raw["sentence"]
+        if not isinstance(block, dict):
+            raise ConfigError("sentence must be a mapping.")
+
+        expected_types = {
+            "gap_seconds": (int, float),
+            "max_glosses": int,
+            "max_wait_seconds": (int, float),
+            "gemini_model": str,
+            "api_key_env": str,
+            "timeout_seconds": (int, float),
+            "temperature": (int, float),
+            "ollama_model": str,
+            "ollama_url": str,
+            "ollama_timeout_seconds": (int, float),
+        }
+        for key, types in expected_types.items():
+            if key not in block:
+                continue
+            value = block[key]
+            # bool is an int subclass but is never a valid numeric setting.
+            if isinstance(value, bool) or not isinstance(value, types):
+                raise ConfigError(
+                    f"sentence.{key} must be {types}, got {type(value).__name__}."
+                )
+
+        settings = self.sentence
+        if settings.gap_seconds <= 0:
+            raise ConfigError("sentence.gap_seconds must be > 0.")
+        if settings.max_wait_seconds <= 0:
+            raise ConfigError("sentence.max_wait_seconds must be > 0.")
+        if settings.max_glosses < 1:
+            raise ConfigError("sentence.max_glosses must be >= 1.")
+        if settings.timeout_seconds <= 0:
+            raise ConfigError("sentence.timeout_seconds must be > 0.")
+        if not 0.0 <= settings.temperature <= 2.0:
+            raise ConfigError("sentence.temperature must be between 0 and 2.")
+        if not settings.gemini_model.strip():
+            raise ConfigError("sentence.gemini_model must be a non-empty string.")
+        if not settings.api_key_env.strip():
+            raise ConfigError("sentence.api_key_env must be a non-empty string.")
+        if settings.ollama_timeout_seconds <= 0:
+            raise ConfigError("sentence.ollama_timeout_seconds must be > 0.")
+        if not settings.ollama_model.strip():
+            raise ConfigError("sentence.ollama_model must be a non-empty string.")
+        if not settings.ollama_url.strip():
+            raise ConfigError("sentence.ollama_url must be a non-empty string.")
 
     def _build_labels(self) -> None:
         self._signs = [

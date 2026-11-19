@@ -1,10 +1,19 @@
 # INCLUDE-50 live ISL → English translator (course project)
 
 Word-level Indian Sign Language recognition. A webcam recognizes **one isolated
-sign at a time** and displays the English word. No sentence building, no grammar.
+sign at a time** and displays the English word. No sentence training, no grammar
+in the model.
 
 Pipeline: **MediaPipe keypoints → shoulder-normalized 32-frame sequence → BiGRU
 → live webcam demo.** The sign list lives only in `configs/include50.yaml`.
+
+An **experimental, separate script** (`scripts/sentence_demo.py`) buffers the
+words the existing gate has already committed and asks Gemini to reorder them
+into one short English sentence. `scripts/caption_sentence_vid.py` renders that
+final sentence as the only caption on an output video. Two more scripts,
+`scripts/sentence_demo_ollama.py` and `scripts/caption_sentence_vid_ollama.py`,
+do the same with a **local Ollama model** (`qwen2.5:3b-instruct`) and need no API
+key or internet. The classifier itself stays word-level.
 
 ## Dataset facts (verified 2026-11-12)
 
@@ -39,10 +48,13 @@ Notes:
 ```
 configs/include50.yaml     sign list + all settings (single source of truth)
 src/isl/                   config, splits, HTTP, remote ZIP, archive index,
-                           keypoint extraction, dataset/augmentation, models
+                           keypoint extraction, dataset/augmentation, models,
+                           live gate, captions, sentence buffering/Gemini/Ollama
 scripts/                   fetch_splits, fetch_models, index_archives,
                            download_data, verify_dataset, check_env,
-                           extract_keypoints, train, evaluate, demo
+                           extract_keypoints, train, evaluate, demo,
+                           caption_video, sentence_demo, caption_sentence_vid,
+                           sentence_demo_ollama, caption_sentence_vid_ollama
 data/raw/                  Category/NN. Sign/*.MOV (958 files, ~14 GB)
 data/splits/               include50_{train,val,test}.txt
 data/manifests/            archive_index.json, dataset_report.json, logs
@@ -350,6 +362,172 @@ Verified: `cow.mp4` → `Cow`; `black.mp4` → `Fan` (the documented
 hand-out-of-frame failure); a blank 3 s clip → no caption and an explicit
 "no committed words" warning.
 
+### Experimental sentence demo (Gemini)
+
+`scripts/sentence_demo.py` is a **separate webcam script**: `scripts/demo.py` and
+`scripts/caption_video.py` are unchanged. It reuses the identical MediaPipe →
+BiGRU → `DecisionGate` path (hand coverage, smoothing, suppression, session log)
+and adds one layer on top.
+
+```bash
+# Either put GEMINI_API_KEY=... in the project-root .env (gitignored) ...
+python scripts/sentence_demo.py
+# ... or export it; an exported variable wins over .env.
+export GEMINI_API_KEY='...'
+python scripts/sentence_demo.py
+python scripts/sentence_demo.py --source eval_vids/cow.mp4 --headless
+python scripts/sentence_demo.py --echo --source clip.mp4 --headless  # offline check
+```
+
+- Only **committed**, non-suppressed labels enter the buffer. Repeated commits
+  of a held sign collapse to one gloss.
+- A committed `No sign` flushes the buffer immediately; otherwise no committed
+  sign for `sentence.gap_seconds` (default **1.2 s**) flushes it. Safety caps:
+  **12 glosses / 8 s** per sentence.
+- Only the gloss words go to Gemini (`generateContent`, default model
+  `gemini-3.1-flash-lite`; override with `--model`). The prompt asks it to
+  reorder into natural English, add only function words, drop stray glosses, and
+  invent no new meaning:
+  `big cow` → `the cow is big`; `loud paint bird` → `the bird is loud`.
+- The public endpoint is intermittently slow or returns `503`/`429`. The client
+  makes up to **3 attempts** with `0.6 s / 1.2 s` backoff, and each request has a
+  **30 s** timeout (`--timeout`). Rewrites run on a **background worker**, so a
+  slow Gemini call never freezes the camera; the overlay shows
+  "Gemini is rewriting..." and the sentence appears when it arrives. On quit,
+  `--shutdown-grace` (default 12 s) bounds the wait for one last rewrite.
+- The response is parsed into `sentence` / `used` / `dropped`. `used` and
+  `dropped` are logged for inspection. There is **no hard validator**: the
+  rewrite is trusted, and a failed or slow API call becomes a warning instead of
+  crashing the demo. The default `temperature: 0.0` is deliberately not sent —
+  current Gemini models ignore custom sampling values and will reject them
+  later; the prompt carries the determinism rules.
+- The key is read from the variable named by `sentence.api_key_env`
+  (`GEMINI_API_KEY` by default), first from the environment and then from the
+  project-root `.env` (`--env-file` overrides the path). It is sent in the
+  `x-goog-api-key` header and never written to a file or log — the session JSON
+  stores only the variable *name*.
+- `reports/sentence_session_<timestamp>.json` records settings, the gate
+  summary/timeline, every utterance (glosses, timestamps, flush reason) and each
+  rewrite (`used`, `dropped`, warning).
+
+Live smoke test on 2026-11-19: `eval_vids/cow.mp4` → `it is a cow.`; a
+constructed `red`+`cow` clip with a wider test-only gap → `the cow is red`.
+Latency ranged from about 1 s to over 40 s during demand spikes, which is why
+the rewrite is asynchronous; use the word demo (`scripts/demo.py`) when a
+per-sign answer must appear instantly.
+
+This is **not** a sentence-level sign model. There is no sentence training and no
+new training data; live recordings remain evaluation-only. The LLM never sees
+the video or keypoints, only the recognized words, so it cannot recover a sign
+the word layer missed — word-level errors propagate straight through. Use
+`--echo` to check the buffering/logging path with no key (it echoes gloss order,
+not grammar).
+
+### Sentence-captioned video (final output only)
+
+`scripts/caption_sentence_vid.py` is a third, offline script that produces a
+**finished video**: no glosses, gate state or debug text are drawn — only the
+final Gemini-rewritten sentence in the caption bar.
+
+```bash
+python scripts/caption_sentence_vid.py eval_vids/cow.mp4
+python scripts/caption_sentence_vid.py clip.mp4 --out /tmp/final.mp4 --hold-seconds 3
+python scripts/caption_sentence_vid.py clip.mp4 --echo  # offline debug: captions glosses
+```
+
+- Pass 1 runs the same gate/buffer/Gemini path as the sentence demo; rewrites
+  happen in the background while the file is decoded.
+- Pass 2 re-reads the file and burns only the finished sentences. Each sentence
+  starts when its first sign was committed, lasts until the next utterance, and
+  the last one is held for `--hold-seconds` (default 2 s) on extra frames.
+- The output is silent (OpenCV `mp4v`). The sidecar JSON stores only sentence
+  timings and counts — no gloss timeline and no API key.
+- Verified: `cow.mp4` → `it is a cow.`; a constructed `red`+`cow` clip →
+  `the cow is red.`
+
+### Experimental sentence demo (local Ollama)
+
+`scripts/sentence_demo_ollama.py` is the same webcam/file pipeline with the
+rewrite backend swapped from Gemini to a local Ollama model. No API key, no
+`.env`, no internet and no API bill: Ollama must be running locally and the model
+must already be pulled.
+
+```bash
+ollama pull qwen2.5:3b-instruct
+ollama serve                         # only if Ollama is not already running
+python scripts/sentence_demo_ollama.py
+python scripts/sentence_demo_ollama.py --source eval_vids/cow.mp4 --headless \
+    --session-out /tmp/opencode/sentence_ollama_cow.json
+```
+
+`src/isl/config.py` / `configs/include50.yaml` default to
+`sentence.ollama_model: qwen2.5:3b-instruct`,
+`sentence.ollama_url: http://127.0.0.1:11434` and
+`sentence.ollama_timeout_seconds: 60.0` (the longer timeout allows a cold model
+load). Override them with `--model`, `--url` and `--timeout`. The gate, buffer,
+`suppress_labels`, caps and async rewrite worker are identical to the Gemini
+demo. The default session log is
+`reports/sentence_ollama_session_<timestamp>.json`.
+
+**Exactly what Ollama receives.** One `POST {ollama_url}/api/chat` per utterance,
+with `format: "json"`, `stream: false` and options
+`{"temperature": 0.0, "top_p": 1.0, "seed": 42, "num_predict": 128}`.
+
+System message:
+
+```text
+following detected signs into small english sentences and remove stray signs which were probably detected on accident
+```
+
+User message = gloss line + JSON response instructions. With glosses
+`big cow`, the user message is:
+
+```text
+Glosses, in the order they were signed: big cow
+
+Reply with JSON only, exactly this shape:
+  {"sentence": "...", "used": ["..."], "dropped": ["..."]}
+  "used" lists the signs you kept; "dropped" lists the stray signs you ignored.
+```
+
+No rules, examples or article instructions are added for Ollama; Gemini keeps
+`build_prompt()` unchanged. The small **grounding guard** still rejects any reply
+whose `sentence` or `used` contains a content word absent from the glosses, or a
+bare gloss list with no function word or glossed pronoun (e.g. `big cow`). It no
+longer forces a leading `the`, so a grounded verb-first reply such as
+`paint the window` is shown as-is. Rejected replies fall back to a gloss-only
+sentence (`cow` → `the cow.`) and log a warning. This is still only a
+presentation layer: no sentence training, no new training data, and the 97.92%
+word-level result is unchanged.
+
+Benchmarked 2026-11-20 **after relaxing the guard** (two runs each, ~0.4 s after
+warm-up): `paint window` → `paint the window`, `loud paint bird` →
+`paint the bird` (the model drops `loud`, not `paint`), `small cat` →
+`the cat is small`, `beautiful flower` → `the flower is beautiful`,
+`i go home` → `i go home`, `you drink water` → `you drink water`. Bare gloss
+replies still fall back: `big cow` → `the big cow.`, `red cow` → `the red cow.`,
+`quiet brother` → `the quiet brother.`, `cow` → `the cow.`. The fallback still
+adds the article and period; direct replies are shown exactly as the model wrote
+them.
+
+### Sentence-captioned video (local Ollama)
+
+`scripts/caption_sentence_vid_ollama.py` is the Ollama counterpart of the
+final-sentence-only renderer. Same two passes, no key, no external network call.
+
+```bash
+python scripts/caption_sentence_vid_ollama.py eval_vids/cow.mp4
+python scripts/caption_sentence_vid_ollama.py clip.mp4 --out /tmp/final.mp4 \
+    --hold-seconds 3 --gap 4.0 --max-wait 10
+```
+
+Defaults avoid overwriting Gemini artifacts:
+`reports/<name>_sentence_ollama.mp4` and a matching `.json` sidecar. Only the
+finished English sentence is burned in; no glosses, gate state, warnings or
+debug text. Verified 2026-11-20: `cow.mp4` → `the cow.` from 2.39 s; constructed
+`red`+`cow` → `the cow is red` from 2.33 s when `--gap 4.0 --max-wait 10` keeps
+both signs in one utterance.
+
 ### Labelled live evaluation (separate from test accuracy)
 
 `eval_vids/` contains eight user takes: Black, Brother, Cell phone, Cow, Fan,
@@ -436,6 +614,10 @@ Failure modes still worth logging:
 - [x] Phase 0: live instrumentation, hand-detection sweep, gate calibration
   - `DecisionGate` with hand-coverage blocking; precision–coverage sweep on
     labelled takes; `project.md` §9.
+- [x] Experimental sentence demo: Gemini rewrites buffered committed glosses
+  (separate script; word model and 97.92% test result unchanged)
+- [x] Local Ollama sentence demo + captioner: same prompt/rewrite layer with
+  `qwen2.5:3b-instruct`, no key or internet; 107 tests pass
 - [ ] Phase 1: facial-landmark ablation — **conditional** on re-recorded takes
   with hands in frame.
 
@@ -455,4 +637,15 @@ Failure modes still worth logging:
 - A short recorded clip may end before enough full-window predictions arrive, so
   the display can stay at `...`. This is expected; use `--min-streak 2` for short
   clips (the default).
-- Tests: `python -m unittest discover -s tests` (62 tests, no camera needed).
+- The sentence demo's LLM call is a presentation layer, not a measured
+  translation system. Its output has no accuracy score, and a confident wrong
+  gloss becomes a confidently wrong sentence. Gemini is prompt-trusted; Ollama
+  additionally rejects ungrounded output and falls back to a gloss-only
+  sentence. No Gemini key is committed; the key is read from an exported variable
+  or the gitignored `.env`. Ollama needs no key at all.
+- Gemini latency is erratic (roughly 1 s to >40 s in live smoke tests), so the
+  sentence demo rewrites in the background and may show a sentence after the
+  signer has moved on. Ollama answers in ~0.4 s after warm-up but still needs a
+  local GPU/CPU and the model loaded; neither is instant per-word feedback.
+- Tests: `python -m unittest discover -s tests` (107 tests, no camera or API key
+  needed; Gemini and Ollama HTTP calls are mocked).
