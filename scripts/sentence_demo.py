@@ -1,28 +1,27 @@
 #!/usr/bin/env python3
-"""EXPERIMENTAL sentence demo: committed ISL glosses -> one English sentence.
+"""EXPERIMENTAL Ollama sentence demo: committed glosses -> English sentence.
 
-This is a *separate* webcam script. The classifier is still the word-level
-INCLUDE-50 model: one isolated sign, one prediction. Here the existing decision
-gate's committed labels are buffered, and when the user stops signing (a
-committed "No sign", or a silence gap) the buffer is sent to Gemini, which
-reorders it and drops stray glosses into one short sentence.
+This is a *separate* webcam script, identical to ``scripts/sentence_demo.py``
+except that the rewrite backend is a local Ollama model instead of Gemini. The
+classifier stays word-level: one isolated sign, one prediction. The existing
+decision gate's committed labels are buffered, and when signing stops (a
+committed "No sign" or a silence gap) the glosses go to ``qwen2.5:3b-instruct``.
 
     big cow         -> "the cow is big"
     loud paint bird -> "the bird is loud"     (stray "paint" dropped)
 
+No API key, internet access or API bill: Ollama must be running locally with
+the model already pulled:
+
+    ollama pull qwen2.5:3b-instruct
+    ollama serve                      # if it is not already running
+    python scripts/sentence_demo_ollama.py
+
 No sentence training, no self-recorded training data, and no change to the
-checkpoint's 97.92% test accuracy. `scripts/demo.py` and
-`scripts/caption_video.py` are untouched.
+checkpoint's 97.92% test accuracy. The Gemini scripts are untouched.
 
-The API key is read from the environment variable named by
-`sentence.api_key_env` (default GEMINI_API_KEY), from an exported variable or
-from the project-root `.env`. It is never logged:
-
-    # put GEMINI_API_KEY=... in .env, or export it, then:
-    python scripts/sentence_demo.py
-
-Controls: press ``q`` or ``Esc`` to quit. Use ``--echo`` for an offline
-plumbing check without a key (echoes the gloss order; no grammar).
+Controls: press ``q`` or ``Esc`` to quit. Use ``--echo`` for an offline plumbing
+check (echoes the gloss order; no grammar and no Ollama call).
 """
 
 from __future__ import annotations
@@ -39,7 +38,7 @@ import mediapipe as mp
 import numpy as np
 import torch
 
-from _bootstrap import ROOT, add_config_args
+from _bootstrap import add_config_args
 
 from isl.captions import draw_caption_bar, wrap_caption
 from isl.config import ConfigError, load_config
@@ -56,11 +55,10 @@ from isl.model import load_checkpoint_model
 from isl.sentence import (
     AsyncRewriter,
     EchoRewriter,
-    GeminiRewriter,
+    OllamaRewriter,
     RewriteResult,
     Utterance,
     UtteranceBuffer,
-    read_env_key,
 )
 
 
@@ -102,12 +100,12 @@ def main() -> int:
         "--session-out",
         type=Path,
         default=None,
-        help="Session JSON (default: reports/sentence_session_<time>.json)",
+        help="Session JSON (default: reports/sentence_ollama_session_<time>.json)",
     )
     parser.add_argument(
         "--echo",
         action="store_true",
-        help="Offline debug: echo the glosses, no Gemini call and no API key needed",
+        help="Offline debug: echo the glosses, no Ollama call",
     )
     parser.add_argument("--gap", type=float, default=None, help="Override sentence.gap_seconds")
     parser.add_argument(
@@ -116,21 +114,17 @@ def main() -> int:
     parser.add_argument(
         "--max-wait", type=float, default=None, help="Override sentence.max_wait_seconds"
     )
-    parser.add_argument("--model", default=None, help="Override sentence.gemini_model")
+    parser.add_argument(
+        "--model", default=None, help="Override sentence.ollama_model"
+    )
+    parser.add_argument(
+        "--url", default=None, help="Override sentence.ollama_url (Ollama server)"
+    )
     parser.add_argument(
         "--timeout",
         type=float,
         default=None,
-        help="Override sentence.timeout_seconds (per Gemini attempt)",
-    )
-    parser.add_argument(
-        "--api-key-env", default=None, help="Override sentence.api_key_env"
-    )
-    parser.add_argument(
-        "--env-file",
-        type=Path,
-        default=None,
-        help=f"Env file for the key (default: {ROOT / '.env'})",
+        help="Override sentence.ollama_timeout_seconds (cold model load)",
     )
     parser.add_argument(
         "--shutdown-grace",
@@ -143,8 +137,6 @@ def main() -> int:
     try:
         cfg = load_config(args.config, root=args.root)
         settings = cfg.sentence
-        api_key_env = args.api_key_env or settings.api_key_env
-        api_key = read_env_key(api_key_env, env_file=args.env_file, root=ROOT)
 
         gap_seconds = float(args.gap if args.gap is not None else settings.gap_seconds)
         max_glosses = int(
@@ -153,16 +145,15 @@ def main() -> int:
         max_wait = float(
             args.max_wait if args.max_wait is not None else settings.max_wait_seconds
         )
-        gemini_model = args.model or settings.gemini_model
+        ollama_model = args.model or settings.ollama_model
+        ollama_url = args.url or settings.ollama_url
         timeout_seconds = float(
-            args.timeout if args.timeout is not None else settings.timeout_seconds
+            args.timeout
+            if args.timeout is not None
+            else settings.ollama_timeout_seconds
         )
-        if not args.echo and not api_key:
-            raise ConfigError(
-                f"No API key in ${api_key_env} or {ROOT / '.env'}. Export it, "
-                "add it to .env, or use --echo for an offline plumbing check. "
-                "The key is never written to a log."
-            )
+        if not ollama_url.strip():
+            raise ConfigError("Ollama URL is empty; set sentence.ollama_url or --url.")
 
         checkpoint_path = args.checkpoint or cfg.path("evaluation.checkpoint")
         if not checkpoint_path.is_file():
@@ -224,13 +215,13 @@ def main() -> int:
         if args.echo:
             rewriter = EchoRewriter()
         else:
-            rewriter = GeminiRewriter(
-                api_key=api_key,
-                model=gemini_model,
+            rewriter = OllamaRewriter(
+                model=ollama_model,
+                base_url=ollama_url,
                 timeout_seconds=timeout_seconds,
                 temperature=settings.temperature,
             )
-        # Never block frame capture on the network: Gemini can take 5-30 s.
+        # Keep capture smooth even if a cold local model load takes a moment.
         runner = AsyncRewriter(rewriter)
 
         source = parse_source(
@@ -282,14 +273,14 @@ def main() -> int:
             nonlocal last_sentence, status
             if result.ok:
                 last_sentence = result.text
-                status = "Gemini rewrite" if not args.echo else "echo (offline)"
+                status = "" if not args.echo else "echo (offline)"
             elif result.warning:
                 status = "Rewrite failed - see session log"
             records.append(
                 {
                     **utterance.to_dict(),
                     "rewritten_at": round(float(stream_time), 3),
-                    "backend": "echo" if args.echo else gemini_model,
+                    "backend": "echo" if args.echo else f"ollama:{ollama_model}",
                     "rewrite": result.to_dict(),
                 }
             )
@@ -312,7 +303,7 @@ def main() -> int:
             if args.echo:
                 status = "echo (offline)"
             else:
-                status = "Gemini is rewriting..."
+                status = "translating..."
             runner.submit(utterance, stream_time)
 
         def drain() -> None:
@@ -331,9 +322,11 @@ def main() -> int:
             f"sentence   : gap {gap_seconds:.1f}s | max {max_glosses} glosses / "
             f"{max_wait:.1f}s"
         )
-        print(f"backend    : {'echo (offline debug)' if args.echo else gemini_model}")
-        if not args.echo:
-            print(f"timeout    : {timeout_seconds:.0f}s per attempt (3 attempts, retries 503/429)")
+        if args.echo:
+            print("backend    : echo (offline debug)")
+        else:
+            print(f"backend    : {ollama_model} (local Ollama @ {ollama_url})")
+            print(f"timeout    : {timeout_seconds:.0f}s (allows a cold model load)")
         if suppress_labels:
             print(f"suppressed : {', '.join(suppress_labels)} (never enters a sentence)")
         print("Press q or Esc to quit." if not args.headless else "Headless mode.")
@@ -516,7 +509,7 @@ def main() -> int:
 
         session_path = args.session_out or (
             cfg.path("evaluation.reports_dir")
-            / f"sentence_session_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            / f"sentence_ollama_session_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
         session_path.parent.mkdir(parents=True, exist_ok=True)
         session_path.write_text(
@@ -537,10 +530,10 @@ def main() -> int:
                         "gap_seconds": gap_seconds,
                         "max_glosses": max_glosses,
                         "max_wait_seconds": max_wait,
-                        "gemini_model": gemini_model if not args.echo else "echo",
-                        "api_key_env": api_key_env,
+                        "ollama_model": ollama_model if not args.echo else "echo",
+                        "ollama_url": ollama_url,
                         "temperature": settings.temperature,
-                        "timeout_seconds": timeout_seconds,
+                        "ollama_timeout_seconds": timeout_seconds,
                         "suppress_labels": suppress_labels,
                     },
                     "summary": summary,
@@ -552,7 +545,7 @@ def main() -> int:
             encoding="utf-8",
         )
         print(f"Session log: {session_path}")
-        print("API key is never stored in this log (only the env var name).")
+        print("Runs fully locally: no API key and no external network call.")
         return 0
     except ConfigError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

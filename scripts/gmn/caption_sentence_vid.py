@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
-"""Render a video captioned with FINAL rewritten sentences only (Ollama).
+"""Render a video captioned with FINAL rewritten sentences only.
 
-This is the Ollama counterpart of ``scripts/caption_sentence_vid.py``. It never
-draws glosses, gate decisions, warnings or debug text into the output video --
-just the finished English sentence in the caption bar. No API key or internet
-is needed; Ollama must be running locally:
-
-    ollama pull qwen2.5:3b-instruct
-    python scripts/caption_sentence_vid_ollama.py eval_vids/cow.mp4
+This is a separate, offline script. It never draws glosses, gate decisions,
+warnings or any debug text into the output video -- just the finished English
+sentence in the caption bar, like a normal subtitled video.
 
 It makes two passes over the input file:
 
-  1. Run the same MediaPipe -> BiGRU -> DecisionGate -> UtteranceBuffer path as
-     ``scripts/sentence_demo_ollama.py``. Committed glosses are rewritten by a
-     local Ollama model in a background worker.
+  1. Run the exact same MediaPipe -> BiGRU -> DecisionGate -> UtteranceBuffer
+     path as ``scripts/sentence_demo.py``. Committed glosses are rewritten by
+     Gemini in a background worker, so a slow API call never stalls the decoder.
   2. Re-read the file and burn only the resulting sentences into a new silent
      video. A sentence starts when its first sign was committed and stays until
      the next utterance starts; the last one is held for ``--hold-seconds``.
@@ -22,9 +18,9 @@ The classifier stays word-level and is not retrained. A JSON sidecar stores the
 final sentence timings only (no glosses, no API key).
 
 Examples:
-    python scripts/caption_sentence_vid_ollama.py eval_vids/cow.mp4
-    python scripts/caption_sentence_vid_ollama.py clip.mp4 --out /tmp/final.mp4
-    python scripts/caption_sentence_vid_ollama.py clip.mp4 --echo  # offline debug
+    python scripts/caption_sentence_vid.py eval_vids/cow.mp4
+    python scripts/caption_sentence_vid.py clip.mp4 --out /tmp/final.mp4
+    python scripts/caption_sentence_vid.py clip.mp4 --echo  # offline debug only
 """
 
 from __future__ import annotations
@@ -41,7 +37,7 @@ import mediapipe as mp
 import numpy as np
 import torch
 
-from _bootstrap import add_config_args
+from _bootstrap import ROOT, add_config_args
 
 from isl.captions import draw_caption_bar, sentence_at, wrap_caption
 from isl.config import ConfigError, load_config
@@ -57,8 +53,9 @@ from isl.model import load_checkpoint_model
 from isl.sentence import (
     AsyncRewriter,
     EchoRewriter,
-    OllamaRewriter,
+    GeminiRewriter,
     UtteranceBuffer,
+    read_env_key,
 )
 
 
@@ -72,7 +69,7 @@ def parse_args() -> argparse.Namespace:
         "--out",
         type=Path,
         default=None,
-        help="Output video (default: reports/<name>_sentence_ollama.mp4)",
+        help="Output video (default: reports/<name>_sentence.mp4)",
     )
     parser.add_argument(
         "--json-out",
@@ -99,15 +96,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--gap", type=float, default=None)
     parser.add_argument("--max-glosses", type=int, default=None)
     parser.add_argument("--max-wait", type=float, default=None)
-    parser.add_argument("--model", default=None, help="Override sentence.ollama_model")
+    parser.add_argument("--model", default=None, help="Override sentence.gemini_model")
+    parser.add_argument("--timeout", type=float, default=None)
+    parser.add_argument("--api-key-env", default=None)
     parser.add_argument(
-        "--url", default=None, help="Override sentence.ollama_url (Ollama server)"
-    )
-    parser.add_argument(
-        "--timeout",
-        type=float,
+        "--env-file",
+        type=Path,
         default=None,
-        help="Override sentence.ollama_timeout_seconds (cold model load)",
+        help=f"Env file for the key (default: {ROOT / '.env'})",
     )
     parser.add_argument(
         "--echo",
@@ -141,6 +137,12 @@ def main() -> int:
     try:
         cfg = load_config(args.config, root=args.root)
         settings = cfg.sentence
+        api_key_env = args.api_key_env or settings.api_key_env
+        api_key = (
+            ""
+            if args.echo
+            else read_env_key(api_key_env, env_file=args.env_file, root=ROOT)
+        )
 
         gap_seconds = float(args.gap if args.gap is not None else settings.gap_seconds)
         max_glosses = int(
@@ -149,15 +151,16 @@ def main() -> int:
         max_wait = float(
             args.max_wait if args.max_wait is not None else settings.max_wait_seconds
         )
-        ollama_model = args.model or settings.ollama_model
-        ollama_url = args.url or settings.ollama_url
+        gemini_model = args.model or settings.gemini_model
         timeout_seconds = float(
-            args.timeout
-            if args.timeout is not None
-            else settings.ollama_timeout_seconds
+            args.timeout if args.timeout is not None else settings.timeout_seconds
         )
-        if not ollama_url.strip():
-            raise ConfigError("Ollama URL is empty; set sentence.ollama_url or --url.")
+        if not args.echo and not api_key:
+            raise ConfigError(
+                f"No API key in ${api_key_env} or {ROOT / '.env'}. Export it or add "
+                "it to .env. Use --echo for an offline plumbing check. The key is "
+                "never written to a log."
+            )
 
         checkpoint_path = args.checkpoint or cfg.path("evaluation.checkpoint")
         if not checkpoint_path.is_file():
@@ -236,7 +239,7 @@ def main() -> int:
         out_path = (
             args.out
             or cfg.path("evaluation.reports_dir")
-            / f"{input_path.stem}_sentence_ollama.mp4"
+            / f"{input_path.stem}_sentence.mp4"
         ).expanduser()
         out_path.parent.mkdir(parents=True, exist_ok=True)
         writer = cv2.VideoWriter(
@@ -274,13 +277,10 @@ def main() -> int:
             f"gate       : window {window_seconds:.1f}s | threshold {threshold:.2f} | "
             f"streak {min_streak} | min hand coverage {min_hand_coverage:.2f}"
         )
-        if args.echo:
-            backend = "echo (offline debug)"
-        else:
-            backend = f"{ollama_model} (local Ollama @ {ollama_url})"
         print(
             f"sentence   : gap {gap_seconds:.1f}s | max {max_glosses} glosses / "
-            f"{max_wait:.1f}s | backend {backend}"
+            f"{max_wait:.1f}s | backend "
+            f"{'echo (offline debug)' if args.echo else gemini_model}"
         )
         print("Analysing signs and rewriting sentences...")
 
@@ -290,9 +290,9 @@ def main() -> int:
         if args.echo:
             rewriter = EchoRewriter()
         else:
-            rewriter = OllamaRewriter(
-                model=ollama_model,
-                base_url=ollama_url,
+            rewriter = GeminiRewriter(
+                api_key=api_key,
+                model=gemini_model,
                 timeout_seconds=timeout_seconds,
                 temperature=settings.temperature,
             )
@@ -486,7 +486,7 @@ def main() -> int:
                     "input": str(input_path),
                     "output": str(out_path),
                     "checkpoint": str(checkpoint_path),
-                    "backend": "echo" if args.echo else f"ollama:{ollama_model}",
+                    "backend": "echo" if args.echo else gemini_model,
                     "settings": {
                         "window_seconds": window_seconds,
                         "start_after_seconds": effective_start,
@@ -497,9 +497,7 @@ def main() -> int:
                         "gap_seconds": gap_seconds,
                         "max_glosses": max_glosses,
                         "max_wait_seconds": max_wait,
-                        "ollama_model": ollama_model,
-                        "ollama_url": ollama_url,
-                        "ollama_timeout_seconds": timeout_seconds,
+                        "timeout_seconds": timeout_seconds,
                         "hold_seconds": args.hold_seconds,
                         "suppressed_labels": cfg.suppress_labels,
                     },
