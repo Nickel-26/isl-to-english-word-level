@@ -61,6 +61,8 @@ from isl.sentence import (
     UtteranceBuffer,
 )
 
+SENTENCE_DISPLAY_SECONDS = 2.0
+
 
 def parse_source(text: str) -> int | str:
     return int(text) if text.strip().isdigit() else str(Path(text).expanduser())
@@ -262,6 +264,7 @@ def main() -> int:
         last_ts = -1
         last_inference = -1e9
         last_sentence = ""
+        last_sentence_until = 0.0
         status = "Sign one word at a time. Pause to finish the sentence."
         fps = 0.0
         last_frame_time = started
@@ -270,9 +273,10 @@ def main() -> int:
             utterance: Utterance, stream_time: float, result: RewriteResult
         ) -> None:
             """Record and display one finished rewrite."""
-            nonlocal last_sentence, status
+            nonlocal last_sentence, last_sentence_until, status
             if result.ok:
                 last_sentence = result.text
+                last_sentence_until = time.perf_counter() + SENTENCE_DISPLAY_SECONDS
                 status = "" if not args.echo else "echo (offline)"
             elif result.warning:
                 status = "Rewrite failed - see session log"
@@ -464,8 +468,13 @@ def main() -> int:
                         2,
                         cv2.LINE_AA,
                     )
+                    shown_sentence = (
+                        last_sentence
+                        if time.perf_counter() < last_sentence_until
+                        else ""
+                    )
                     lines = wrap_caption(
-                        _display_lines(gloss_text, last_sentence, ""),
+                        _display_lines(gloss_text, shown_sentence, ""),
                         font_scale=0.8,
                         thickness=2,
                         max_width=max(32, frame.shape[1] - 32),
